@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: FlowAccount Open BatchImport CompanyCurrency API
+  version: 1.0.0
+servers:
+- url: https://openapi.flowaccount.com/sandbox
+  description: The sandbox server
+- url: https://openapi.flowaccount.com/v3-alpha
+  description: The prod server
+security:
+- bearer: []
+tags:
+- name: CompanyCurrency
+paths:
+  /{culture}/company-currency:
+    get:
+      tags:
+      - CompanyCurrency
+      summary: Get all currency which user selected for multi-currency
+      operationId: CompanyCurrency_GetList
+      parameters:
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+  /{culture}/company-currency/currency:
+    get:
+      tags:
+      - CompanyCurrency
+      summary: Get company currencies except selected list
+      operationId: CompanyCurrency_GetCompanyCurrencies
+      parameters:
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      description: Specify the authorization token.
+      scheme: bearer
+      bearerFormat: Reference
+x-generator: NSwag v13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v13.0.0.0))

@@ -1,0 +1,614 @@
+openapi: 3.0.0
+info:
+  title: FlowAccount Open BatchImport ProductInventory API
+  version: 1.0.0
+servers:
+- url: https://openapi.flowaccount.com/sandbox
+  description: The sandbox server
+- url: https://openapi.flowaccount.com/v3-alpha
+  description: The prod server
+security:
+- bearer: []
+tags:
+- name: ProductInventory
+paths:
+  /{culture}/product-inventories/{id}:
+    get:
+      tags:
+      - ProductInventory
+      operationId: ProductInventory_GetList
+      parameters:
+      - name: SortBy
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - name: CurrentPage
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 2
+      - name: PageSize
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 3
+      - name: Filter
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 4
+      - name: SearchString
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 5
+      - name: CustomDocumentModels
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 6
+      - name: Range
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 7
+      - name: Month
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 8
+      - name: Year
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 9
+      - name: StartDate
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 10
+      - name: EndDate
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 11
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+          default: 0
+        x-position: 12
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 13
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - ProductInventory
+      operationId: ProductInventory_DeleteProductInventory
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+  /{culture}/product-inventories/adjust:
+    post:
+      tags:
+      - ProductInventory
+      operationId: ProductInventory_Adjust
+      parameters:
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      requestBody:
+        x-name: stockCard
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StockCard'
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+components:
+  schemas:
+    DocumentTypes:
+      type: integer
+      description: '1 = PurchaseOrder
+
+        3 = Quotation
+
+        5 = BillingNote
+
+        7 = TaxInvoice
+
+        9 = Receipt
+
+        13 = Expense
+
+        15 = Vendor
+
+        17 = WithHoldingTax
+
+        19 = BillingNotePartials
+
+        21 = TaxInvoicePartails
+
+        23 = Purchase
+
+        24 = PurchaseTax
+
+        25 = ReceivableInvoice
+
+        29 = AdjustInventory
+
+        31 = CreditNote
+
+        33 = DebitNote
+
+        35 = CashInvoice
+
+        37 = PaymentSlip
+
+        51 = JournalEntry
+
+        53 = PurchaseVoucher
+
+        55 = SalesVoucher
+
+        57 = PaymentVoucher
+
+        59 = ReceivedVoucher
+
+        61 = ConversionBalance
+
+        63 = Transaction
+
+        65 = SupplierInvoice
+
+        67 = BatchTaxFiling
+
+        69 = FixedAsset
+
+        71 = Depreciation
+
+        73 = BankTransfer
+
+        151 = DraftJournalEntry
+
+        153 = DraftPurchaseVoucher
+
+        155 = DraftSalesVoucher
+
+        157 = DraftPaymentVoucher
+
+        159 = DraftReceivedVoucher
+
+        201 = Payroll
+
+        202 = PayrollDetail
+
+        203 = Employee
+
+        204 = PayrollPayment'
+      x-enumNames:
+      - PurchaseOrder
+      - Quotation
+      - BillingNote
+      - TaxInvoice
+      - Receipt
+      - Expense
+      - Vendor
+      - WithHoldingTax
+      - BillingNotePartials
+      - TaxInvoicePartails
+      - Purchase
+      - PurchaseTax
+      - ReceivableInvoice
+      - AdjustInventory
+      - CreditNote
+      - DebitNote
+      - CashInvoice
+      - PaymentSlip
+      - JournalEntry
+      - PurchaseVoucher
+      - SalesVoucher
+      - PaymentVoucher
+      - ReceivedVoucher
+      - ConversionBalance
+      - Transaction
+      - SupplierInvoice
+      - BatchTaxFiling
+      - FixedAsset
+      - Depreciation
+      - BankTransfer
+      - DraftJournalEntry
+      - DraftPurchaseVoucher
+      - DraftSalesVoucher
+      - DraftPaymentVoucher
+      - DraftReceivedVoucher
+      - Payroll
+      - PayrollDetail
+      - Employee
+      - PayrollPayment
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 13
+      - 15
+      - 17
+      - 19
+      - 21
+      - 23
+      - 24
+      - 25
+      - 29
+      - 31
+      - 33
+      - 35
+      - 37
+      - 51
+      - 53
+      - 55
+      - 57
+      - 59
+      - 61
+      - 63
+      - 65
+      - 67
+      - 69
+      - 71
+      - 73
+      - 151
+      - 153
+      - 155
+      - 157
+      - 159
+      - 201
+      - 202
+      - 203
+      - 204
+    StockCard:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        productId:
+          type: integer
+          format: int64
+        productName:
+          type: string
+          nullable: true
+        productCode:
+          type: string
+          nullable: true
+        inventoryId:
+          type: integer
+          format: int64
+        inventoryType:
+          $ref: '#/components/schemas/InventoryType'
+        date:
+          type: string
+          format: date-time
+        quantity:
+          type: number
+          format: decimal
+        unitId:
+          type: integer
+          format: int64
+        unitPrice:
+          type: number
+          format: decimal
+        unitName:
+          type: string
+          nullable: true
+        total:
+          type: number
+          format: decimal
+        remaining:
+          type: number
+          format: decimal
+        documentId:
+          type: integer
+          format: int64
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        documentSerial:
+          type: string
+          nullable: true
+        allowDelete:
+          type: boolean
+        remarks:
+          type: string
+          nullable: true
+        reason:
+          $ref: '#/components/schemas/AdjustInventoryReason'
+        contactName:
+          type: string
+          nullable: true
+        isOverSold:
+          type: boolean
+        rowIndex:
+          type: integer
+          format: int32
+        reasonDescription:
+          type: string
+          nullable: true
+        averagePricePerUnit:
+          type: number
+          format: decimal
+        remainingAmount:
+          type: number
+          format: decimal
+        transactions:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/IStockCard'
+    InventoryType:
+      type: integer
+      description: '3 = Initial
+
+        5 = BroughtForward
+
+        7 = In
+
+        11 = TransferIn
+
+        17 = Out
+
+        21 = TransferOut
+
+        25 = CreditNote
+
+        27 = DebitNote
+
+        29 = InternalUse
+
+        31 = Hold
+
+        35 = AdjustIn
+
+        39 = AdjustOut'
+      x-enumNames:
+      - Initial
+      - BroughtForward
+      - In
+      - TransferIn
+      - Out
+      - TransferOut
+      - CreditNote
+      - DebitNote
+      - InternalUse
+      - Hold
+      - AdjustIn
+      - AdjustOut
+      enum:
+      - 3
+      - 5
+      - 7
+      - 11
+      - 17
+      - 21
+      - 25
+      - 27
+      - 29
+      - 31
+      - 35
+      - 39
+    IStockCard:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        productId:
+          type: integer
+          format: int64
+        productName:
+          type: string
+          nullable: true
+        productCode:
+          type: string
+          nullable: true
+        inventoryId:
+          type: integer
+          format: int64
+        inventoryType:
+          $ref: '#/components/schemas/InventoryType'
+        date:
+          type: string
+          format: date-time
+        quantity:
+          type: number
+          format: decimal
+        unitId:
+          type: integer
+          format: int64
+        unitPrice:
+          type: number
+          format: decimal
+        unitName:
+          type: string
+          nullable: true
+        total:
+          type: number
+          format: decimal
+        remaining:
+          type: number
+          format: decimal
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        documentSerial:
+          type: string
+          nullable: true
+        allowDelete:
+          type: boolean
+        remarks:
+          type: string
+          nullable: true
+        reason:
+          $ref: '#/components/schemas/AdjustInventoryReason'
+        contactName:
+          type: string
+          nullable: true
+        isOverSold:
+          type: boolean
+        rowIndex:
+          type: integer
+          format: int32
+        reasonDescription:
+          type: string
+          nullable: true
+        averagePricePerUnit:
+          type: number
+          format: decimal
+        remainingAmount:
+          type: number
+          format: decimal
+        transactions:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/IStockCard'
+    AdjustInventoryReason:
+      type: integer
+      description: '0 = Default
+
+        1 = DisastersFire
+
+        3 = StolenGoods
+
+        5 = StockWrittenOff
+
+        7 = StockTakingResults
+
+        9 = ReturnedStock
+
+        11 = DamagedGoods
+
+        13 = RawMaterialUsed
+
+        15 = FinishedGoodsTransfer
+
+        17 = Other'
+      x-enumNames:
+      - Default
+      - DisastersFire
+      - StolenGoods
+      - StockWrittenOff
+      - StockTakingResults
+      - ReturnedStock
+      - DamagedGoods
+      - RawMaterialUsed
+      - FinishedGoodsTransfer
+      - Other
+      enum:
+      - 0
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+      - 13
+      - 15
+      - 17
+    ObjectId:
+      type: object
+      description: Represents an ObjectId (see also BsonObjectId).
+      additionalProperties: false
+      properties:
+        Timestamp:
+          type: integer
+          description: Gets the timestamp.
+          format: int32
+        Machine:
+          type: integer
+          description: Gets the machine.
+          format: int32
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        Pid:
+          type: integer
+          description: Gets the PID.
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        Increment:
+          type: integer
+          description: Gets the increment.
+          format: int32
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        CreationTime:
+          type: string
+          description: Gets the creation time (derived from the timestamp).
+          format: date-time
+  securitySchemes:
+    bearer:
+      type: http
+      description: Specify the authorization token.
+      scheme: bearer
+      bearerFormat: Reference
+x-generator: NSwag v13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v13.0.0.0))

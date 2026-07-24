@@ -1,0 +1,993 @@
+openapi: 3.0.0
+info:
+  title: FlowAccount Open BatchImport API
+  version: 1.0.0
+servers:
+- url: https://openapi.flowaccount.com/sandbox
+  description: The sandbox server
+- url: https://openapi.flowaccount.com/v3-alpha
+  description: The prod server
+security:
+- bearer: []
+tags:
+- name: BatchImport
+paths:
+  /{culture}/cash-invoices/batch-metadata:
+    get:
+      tags:
+      - BatchImport
+      summary: To get details of a document
+      operationId: BatchImport_GenerateBacthIdMetadata
+      parameters:
+      - name: fileName
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchImportMetadata'
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/batch-import-history:
+    post:
+      tags:
+      - BatchImport
+      operationId: BatchImport_QueryBatchHistory
+      parameters:
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchHistory'
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/query-batch:
+    post:
+      tags:
+      - BatchImport
+      summary: Query the batch by id and status
+      operationId: BatchImport_QueryBatch
+      parameters:
+      - name: status
+        in: query
+        schema:
+          $ref: '#/components/schemas/BatchImportStatus'
+        x-position: 2
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 3
+      requestBody:
+        x-name: batchId
+        content:
+          application/json:
+            schema:
+              type: string
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchStatus'
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/retry-simple-documents:
+    post:
+      tags:
+      - BatchImport
+      operationId: BatchImport_RetrySimpleDocuments
+      parameters:
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      requestBody:
+        x-name: retryRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchImportRetry'
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: boolean
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/mark-viewed:
+    post:
+      tags:
+      - BatchImport
+      summary: Mark the batch as viewed in notification.
+      operationId: BatchImport_MarkViewed
+      parameters:
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int64
+        x-position: 2
+      - name: batchId
+        in: query
+        schema:
+          type: string
+          nullable: true
+        x-position: 3
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 4
+      requestBody:
+        x-name: companyId
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int64
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: boolean
+  /{culture}/cash-invoices/get-presign-for-upload-simpledoc:
+    post:
+      tags:
+      - BatchImport
+      summary: Get presign url to upload the file with payloads
+      operationId: BatchImport_GetPresign
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int64
+        x-position: 1
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 3
+      requestBody:
+        x-name: payload
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchImportPayload'
+        required: true
+        x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/get-batch-import-org-file/{batchId}:
+    get:
+      tags:
+      - BatchImport
+      summary: Get Original File
+      operationId: BatchImport_GetOrgingalFile
+      parameters:
+      - name: batchId
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/get-batch-s3-data/{batchId}:
+    get:
+      tags:
+      - BatchImport
+      summary: Get data from Storage
+      operationId: BatchImport_GetBatchS3Data
+      parameters:
+      - name: batchId
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/custom-template:
+    post:
+      tags:
+      - BatchImport
+      summary: Create or Update (Upsert) custom template
+      operationId: BatchImport_UpsertCustomTemplate
+      parameters:
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      requestBody:
+        x-name: payload
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomTemplate'
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+  /{culture}/cash-invoices/custom-template/{templateId}:
+    get:
+      tags:
+      - BatchImport
+      summary: Get custom template
+      operationId: BatchImport_GetCustomTemplate
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - BatchImport
+      summary: Delete custom template
+      operationId: BatchImport_DeleteCustomTemplate
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - name: culture
+        in: path
+        required: true
+        schema:
+          type: string
+        x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      security:
+      - bearer: []
+components:
+  schemas:
+    CustomTemplate:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          nullable: true
+        sheetIndex:
+          type: integer
+          format: int32
+        columns:
+          nullable: true
+        dateFormat:
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/DateInfo'
+        ignoreLastRow:
+          type: boolean
+        imageUrl:
+          type: string
+          nullable: true
+        customTemplateInfo:
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/CustomTemplateInfo'
+        formulas:
+          nullable: true
+    BatchImportPayload:
+      type: object
+      additionalProperties: false
+      properties:
+        simpleDocuments:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/SimpleDocument'
+        batchId:
+          type: string
+          nullable: true
+        fileName:
+          type: string
+          nullable: true
+        batchCount:
+          type: integer
+          format: int32
+    SimpleDocument:
+      example:
+        items:
+        - type: 1
+          name: ค่าสินค้าและบริการ POS
+          description: ''
+          quantity: 1.0
+          unitName: ''
+          pricePerUnit: 210.28
+          total: 210.28
+          sellChartOfAccountCode: null
+          buyChartOfAccountCode: null
+          productCode: null
+        documentReference: null
+        exemptAmount: 0.0
+        recordId: 0
+        contactCode: null
+        contactName: test_payload_mock_new1112
+        contactAddress: ''
+        contactTaxId: ''
+        contactBranch: สำนักงานใหญ่
+        contactPerson: ''
+        contactEmail: ''
+        contactNumber: ''
+        contactZipCode: ''
+        contactGroup: 1
+        publishedOn: '2022-10-10T09:37:39.2943643+07:00'
+        creditType: 3
+        creditDays: 0
+        dueDate: '2022-10-10T09:37:39.294366+07:00'
+        salesName: Wongnai POS
+        projectName: ''
+        reference: null
+        isVatInclusive: false
+        useReceiptDeduction: true
+        subTotal: 210.28
+        discountPercentage: 0
+        discountAmount: 0.0
+        totalAfterDiscount: 210.28
+        isVat: true
+        vatAmount: 14.72
+        grandTotal: 225.0
+        documentShowWithholdingTax: false
+        documentWithholdingTaxPercentage: 0
+        documentWithholdingTaxAmount: 0.0
+        documentDeductionType: 1
+        documentDeductionAmount: 2.0
+        remarks: POS ID 1\nรหัสถาดเก็บเงิน 5G5
+        internalNotes: INV. No D/00002407\nหมายเลขใบเสร็จ / ID NUT9G
+        showSignatureOrStamp: true
+        documentStructureType: null
+        externalId: null
+        saleAndPurchaseChannel: ''
+        rowIndex: null
+      allOf:
+      - $ref: '#/components/schemas/Document'
+      - type: object
+        additionalProperties: false
+        properties:
+          items:
+            type: array
+            nullable: true
+            items:
+              $ref: '#/components/schemas/SimpleProductItem'
+          documentReference:
+            type: array
+            nullable: true
+            items:
+              $ref: '#/components/schemas/UpgradeDocument'
+          exemptAmount:
+            type: number
+            format: decimal
+            nullable: true
+    DocumentTypes:
+      type: integer
+      description: '1 = PurchaseOrder
+
+        3 = Quotation
+
+        5 = BillingNote
+
+        7 = TaxInvoice
+
+        9 = Receipt
+
+        13 = Expense
+
+        15 = Vendor
+
+        17 = WithHoldingTax
+
+        19 = BillingNotePartials
+
+        21 = TaxInvoicePartails
+
+        23 = Purchase
+
+        24 = PurchaseTax
+
+        25 = ReceivableInvoice
+
+        29 = AdjustInventory
+
+        31 = CreditNote
+
+        33 = DebitNote
+
+        35 = CashInvoice
+
+        37 = PaymentSlip
+
+        51 = JournalEntry
+
+        53 = PurchaseVoucher
+
+        55 = SalesVoucher
+
+        57 = PaymentVoucher
+
+        59 = ReceivedVoucher
+
+        61 = ConversionBalance
+
+        63 = Transaction
+
+        65 = SupplierInvoice
+
+        67 = BatchTaxFiling
+
+        69 = FixedAsset
+
+        71 = Depreciation
+
+        73 = BankTransfer
+
+        151 = DraftJournalEntry
+
+        153 = DraftPurchaseVoucher
+
+        155 = DraftSalesVoucher
+
+        157 = DraftPaymentVoucher
+
+        159 = DraftReceivedVoucher
+
+        201 = Payroll
+
+        202 = PayrollDetail
+
+        203 = Employee
+
+        204 = PayrollPayment'
+      x-enumNames:
+      - PurchaseOrder
+      - Quotation
+      - BillingNote
+      - TaxInvoice
+      - Receipt
+      - Expense
+      - Vendor
+      - WithHoldingTax
+      - BillingNotePartials
+      - TaxInvoicePartails
+      - Purchase
+      - PurchaseTax
+      - ReceivableInvoice
+      - AdjustInventory
+      - CreditNote
+      - DebitNote
+      - CashInvoice
+      - PaymentSlip
+      - JournalEntry
+      - PurchaseVoucher
+      - SalesVoucher
+      - PaymentVoucher
+      - ReceivedVoucher
+      - ConversionBalance
+      - Transaction
+      - SupplierInvoice
+      - BatchTaxFiling
+      - FixedAsset
+      - Depreciation
+      - BankTransfer
+      - DraftJournalEntry
+      - DraftPurchaseVoucher
+      - DraftSalesVoucher
+      - DraftPaymentVoucher
+      - DraftReceivedVoucher
+      - Payroll
+      - PayrollDetail
+      - Employee
+      - PayrollPayment
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 13
+      - 15
+      - 17
+      - 19
+      - 21
+      - 23
+      - 24
+      - 25
+      - 29
+      - 31
+      - 33
+      - 35
+      - 37
+      - 51
+      - 53
+      - 55
+      - 57
+      - 59
+      - 61
+      - 63
+      - 65
+      - 67
+      - 69
+      - 71
+      - 73
+      - 151
+      - 153
+      - 155
+      - 157
+      - 159
+      - 201
+      - 202
+      - 203
+      - 204
+    DateInfo:
+      type: object
+      additionalProperties: false
+      properties:
+        format:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+    BatchStatus:
+      type: object
+      additionalProperties: false
+      properties:
+        messages:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/BatchMessageStatus'
+        metadata:
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/BatchImportMetadata'
+    BatchMessageStatus:
+      type: object
+      additionalProperties: false
+      properties:
+        companyUserGuid:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        batchId:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/BatchImportStatus'
+        messageId:
+          type: string
+          nullable: true
+        failedReason:
+          type: string
+          nullable: true
+        payload:
+          type: string
+          nullable: true
+        retryCount:
+          type: integer
+          format: int32
+        documentSerial:
+          type: string
+          nullable: true
+        sqlId:
+          type: integer
+          format: int64
+        rowIndex:
+          type: integer
+          format: int32
+    BatchImportStatus:
+      type: integer
+      description: '0 = None
+
+        1 = Awaiting
+
+        3 = Pending
+
+        5 = Failed
+
+        6 = HandledDuplicated
+
+        7 = Succeed'
+      x-enumNames:
+      - None
+      - Awaiting
+      - Pending
+      - Failed
+      - HandledDuplicated
+      - Succeed
+      enum:
+      - 0
+      - 1
+      - 3
+      - 5
+      - 6
+      - 7
+    CustomTemplateColumn:
+      type: object
+      additionalProperties: false
+    BatchImportMetadata:
+      type: object
+      additionalProperties: false
+      properties:
+        companyUserGuid:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        templateId:
+          type: string
+          nullable: true
+        batchId:
+          type: string
+          nullable: true
+        filename:
+          type: string
+          nullable: true
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        status:
+          $ref: '#/components/schemas/BatchImportStatus'
+        documentCount:
+          type: integer
+          format: int32
+        successCount:
+          type: integer
+          format: int32
+        failedCount:
+          type: integer
+          format: int32
+        s3Key:
+          type: string
+          nullable: true
+        userId:
+          type: integer
+          format: int64
+        companyId:
+          type: integer
+          format: int64
+        isViewed:
+          type: boolean
+    UpgradeDocument:
+      type: object
+      additionalProperties: false
+      properties:
+        recordId:
+          type: integer
+          format: int64
+        referenceDocumentSerial:
+          type: string
+          nullable: true
+        referenceDocumentType:
+          type: integer
+          format: int64
+    Document:
+      type: object
+      additionalProperties: false
+      properties:
+        recordId:
+          type: integer
+          format: int64
+        contactCode:
+          type: string
+          nullable: true
+        contactName:
+          type: string
+          nullable: true
+        contactAddress:
+          type: string
+          nullable: true
+        contactTaxId:
+          type: string
+          nullable: true
+        contactBranch:
+          type: string
+          nullable: true
+        contactPerson:
+          type: string
+          nullable: true
+        contactEmail:
+          type: string
+          nullable: true
+        contactNumber:
+          type: string
+          nullable: true
+        contactZipCode:
+          type: string
+          nullable: true
+        contactGroup:
+          type: integer
+          format: int32
+        publishedOn:
+          type: string
+          format: date-time
+        creditType:
+          type: integer
+          format: int32
+        creditDays:
+          type: integer
+          format: int32
+        dueDate:
+          type: string
+          format: date-time
+        salesName:
+          type: string
+          nullable: true
+        projectName:
+          type: string
+          nullable: true
+        reference:
+          type: string
+          nullable: true
+        isVatInclusive:
+          type: boolean
+        useReceiptDeduction:
+          type: boolean
+        subTotal:
+          type: number
+          format: decimal
+        discountPercentage:
+          type: integer
+          format: int32
+        discountAmount:
+          type: number
+          format: decimal
+        totalAfterDiscount:
+          type: number
+          format: decimal
+        isVat:
+          type: boolean
+        vatAmount:
+          type: number
+          format: decimal
+        grandTotal:
+          type: number
+          format: decimal
+        documentShowWithholdingTax:
+          type: boolean
+        documentWithholdingTaxPercentage:
+          type: integer
+          format: int32
+        documentWithholdingTaxAmount:
+          type: number
+          format: decimal
+        documentDeductionType:
+          type: integer
+          format: int32
+        documentDeductionAmount:
+          type: number
+          format: decimal
+        remarks:
+          type: string
+          nullable: true
+        internalNotes:
+          type: string
+          nullable: true
+        showSignatureOrStamp:
+          type: boolean
+        documentStructureType:
+          type: string
+          nullable: true
+        externalId:
+          type: string
+          nullable: true
+        saleAndPurchaseChannel:
+          type: string
+          nullable: true
+        rowIndex:
+          type: string
+          nullable: true
+    BatchImportRetry:
+      type: object
+      additionalProperties: false
+      properties:
+        batchId:
+          type: string
+          nullable: true
+        messageIds:
+          type: array
+          nullable: true
+          items:
+            type: string
+    BatchHistory:
+      type: object
+      additionalProperties: false
+      properties:
+        metadataList:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/BatchImportMetadata'
+    SimpleProductItem:
+      allOf:
+      - $ref: '#/components/schemas/ProductItem'
+      - type: object
+        additionalProperties: false
+    ProductItem:
+      type: object
+      additionalProperties: false
+      properties:
+        type:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        quantity:
+          type: number
+          format: decimal
+        unitName:
+          type: string
+          nullable: true
+        pricePerUnit:
+          type: number
+          format: decimal
+        total:
+          type: number
+          format: decimal
+        sellChartOfAccountCode:
+          type: string
+          nullable: true
+        buyChartOfAccountCode:
+          type: string
+          nullable: true
+        productCode:
+          type: string
+          nullable: true
+    CustomTemplateInfo:
+      type: object
+      additionalProperties: false
+      properties:
+        headerIndex:
+          type: string
+          nullable: true
+        productName:
+          type: string
+          nullable: true
+        includeTax:
+          type: string
+          nullable: true
+        isChooseDateColumn:
+          type: boolean
+        isChooseUnitPriceColumn:
+          type: boolean
+        columns:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/CustomTemplateColumn'
+  securitySchemes:
+    bearer:
+      type: http
+      description: Specify the authorization token.
+      scheme: bearer
+      bearerFormat: Reference
+x-generator: NSwag v13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v13.0.0.0))
