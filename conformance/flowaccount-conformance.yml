@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/flowaccount-openapi-original.json
+description: >-
+  Cross-cutting standards conformance derived from the FlowAccount OpenAPI and
+  the documented OAuth client-credentials flow. No published compliance-program
+  certifications (SOC 2 / ISO 27001 / PCI) were found, so no Compliance pointer
+  is emitted.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: OAuth 2.0 client_credentials grant (scope flowaccount-api) documented in flowaccount/open-api.
+  - id: openapi-3.0
+    conforms: true
+    evidence: openapi/flowaccount-openapi-original.json declares openapi 3.0.0.
+  - id: bearer-token-http
+    conforms: true
+    evidence: components.securitySchemes.bearer type http scheme bearer.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json responses in the spec.
+  - id: oidc
+    conforms: false
+  - id: json-api
+    conforms: false
+  - id: fhir-r4
+    conforms: false

@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.flowaccount.com/
+description: >-
+  FlowAccount publishes a dedicated Sandbox environment for the Open API. On
+  registration, integrations receive separate Sandbox and Production client
+  credentials; the Sandbox server mirrors the production surface for safe testing
+  before go-live. No public magic test values (test cards/accounts) are published;
+  test data is created in the sandbox organization itself.
+environments:
+  - mode: sandbox
+    base_url: https://openapi.flowaccount.com/sandbox
+    token_scope: flowaccount-api
+    credentials: Separate Sandbox client_id / client_secret issued on registration.
+  - mode: production
+    base_url: https://openapi.flowaccount.com/v3-alpha
+    token_scope: flowaccount-api
+    credentials: Separate Production client_id / client_secret issued on registration.
+access:
+  request_form: https://form.flowaccount.com/request-openapi
+  support: developer_support@flowaccount.com
+test_values:
+  published: false
+  note: >-
+    FlowAccount does not publish fixed magic test identifiers; testing is done
+    against real documents created inside the sandbox organization.

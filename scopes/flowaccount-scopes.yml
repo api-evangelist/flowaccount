@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/flowaccount/open-api
+docs: https://developers.flowaccount.com/
+description: >-
+  FlowAccount Open API authorizes with OAuth 2.0 client credentials. Access is
+  granted through a single coarse API scope, flowaccount-api, requested at the
+  token endpoint; per-resource scopes are not published. Evidence:
+  flowaccount/open-api apps/api/flowaccount-webhook/env.json (CLIENT_SCOPE=flowaccount-api).
+schemes:
+  - name: oauth2ClientCredentials
+    flow: clientCredentials
+    token_endpoint: "{base}/token"
+    source: https://github.com/flowaccount/open-api
+scopes:
+  - scope: flowaccount-api
+    description: >-
+      Full access to the FlowAccount Open API surface permitted for the registered
+      integration (documents, contacts, products, payments). The API does not
+      publish finer-grained per-resource scopes.
+    flows: [clientCredentials]
+    sources: [https://github.com/flowaccount/open-api]

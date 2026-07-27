@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/flowaccount-openapi-original.json
+skills:
+  - file: flowaccount-create-contact-and-quote.md
+    name: Create a contact and issue a quotation
+    api: openapi/flowaccount-openapi-original.json
+    operations: [Contact_Create, Contact_GetContactList, Quotation_Create]
+  - file: flowaccount-cash-sale-and-payment.md
+    name: Record a cash sale and receive payment
+    api: openapi/flowaccount-openapi-original.json
+    operations: [CashInvoice_Create, CashInvoice_ReceivePayment, CashInvoice_ChangeStatusByKey]
+  - file: flowaccount-manage-products.md
+    name: Manage products and inventory
+    api: openapi/flowaccount-openapi-original.json
+    operations: [Products_Create, Products_Search, Products_GetList, Products_Update, ProductInventory_Adjust]

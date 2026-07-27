@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/flowaccount-openapi-original.json
+docs: https://developers.flowaccount.com/
+description: >-
+  Cross-cutting request/response conventions for the FlowAccount Open API, derived
+  from the OpenAPI and the published developer docs / SDK repo.
+authentication:
+  style: oauth2-client-credentials
+  header: "Authorization: Bearer <token>"
+  scope: flowaccount-api
+  ref: authentication/flowaccount-authentication.yml
+localization:
+  culture_path_parameter: "{culture}"
+  note: >-
+    Every operation is prefixed with a culture segment (e.g. en, th) that selects
+    the response language and locale.
+pagination:
+  style: page-number
+  params:
+    page: currentPage
+    page_size: pageSize
+  note: >-
+    List endpoints page with currentPage + pageSize query parameters (also exposed
+    as CurrentPage/PageSize on batch endpoints).
+filtering:
+  params: [Filter, SearchString, SortBy, StartDate, EndDate, Month, Year, Range, status]
+idempotency:
+  supported: false
+  note: >-
+    No idempotency-key header or parameter is documented in the OpenAPI or SDK.
+versioning:
+  style: uri-path
+  current: v3-alpha
+  environments:
+    sandbox: https://openapi.flowaccount.com/sandbox
+    production: https://openapi.flowaccount.com/v3-alpha
+error_envelope:
+  documented: false
+  note: >-
+    The published OpenAPI documents only 200 responses; a structured error
+    envelope / problem+json is not published in the spec.
+rate_limiting:
+  documented: false
+webhooks:
+  supported: true
+  ref: asyncapi/flowaccount-webhooks.yml

@@ -1,0 +1,776 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/flowaccount-openapi-original.json
+description: Candidate MCP tool surface derived one-to-one from FlowAccount Open API operations. No official
+  hosted MCP server was found; this is a governance starting point, not a published server.
+server:
+  name: flowaccount
+  transport: stdio
+tool_count: 153
+tools:
+- name: BatchImport_GenerateBacthIdMetadata
+  description: To get details of a document
+  method: GET
+  path: /{culture}/cash-invoices/batch-metadata
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_GenerateBacthIdMetadata
+- name: BatchImport_QueryBatchHistory
+  description: BatchImport QueryBatchHistory
+  method: POST
+  path: /{culture}/cash-invoices/batch-import-history
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_QueryBatchHistory
+- name: BatchImport_QueryBatch
+  description: Query the batch by id and status
+  method: POST
+  path: /{culture}/cash-invoices/query-batch
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_QueryBatch
+- name: BatchImport_RetrySimpleDocuments
+  description: BatchImport RetrySimpleDocuments
+  method: POST
+  path: /{culture}/cash-invoices/retry-simple-documents
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_RetrySimpleDocuments
+- name: BatchImport_MarkViewed
+  description: Mark the batch as viewed in notification.
+  method: POST
+  path: /{culture}/cash-invoices/mark-viewed
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_MarkViewed
+- name: BatchImport_GetPresign
+  description: Get presign url to upload the file with payloads
+  method: POST
+  path: /{culture}/cash-invoices/get-presign-for-upload-simpledoc
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_GetPresign
+- name: BatchImport_GetOrgingalFile
+  description: Get Original File
+  method: GET
+  path: /{culture}/cash-invoices/get-batch-import-org-file/{batchId}
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_GetOrgingalFile
+- name: BatchImport_GetBatchS3Data
+  description: Get data from Storage
+  method: GET
+  path: /{culture}/cash-invoices/get-batch-s3-data/{batchId}
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_GetBatchS3Data
+- name: BatchImport_UpsertCustomTemplate
+  description: Create or Update (Upsert) custom template
+  method: POST
+  path: /{culture}/cash-invoices/custom-template
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_UpsertCustomTemplate
+- name: BatchImport_GetCustomTemplate
+  description: Get custom template
+  method: GET
+  path: /{culture}/cash-invoices/custom-template/{templateId}
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_GetCustomTemplate
+- name: BatchImport_DeleteCustomTemplate
+  description: Delete custom template
+  method: DELETE
+  path: /{culture}/cash-invoices/custom-template/{templateId}
+  source_operation: openapi/flowaccount-openapi-original.json#BatchImport_DeleteCustomTemplate
+- name: Contact_Search
+  description: Contact Search
+  method: GET
+  path: /api/{culture}/contacts/search
+  source_operation: openapi/flowaccount-openapi-original.json#Contact_Search
+- name: Contact_GetContactList
+  description: Contact GetContactList
+  method: GET
+  path: /api/{culture}/contacts
+  source_operation: openapi/flowaccount-openapi-original.json#Contact_GetContactList
+- name: Contact_Create
+  description: Contact Create
+  method: POST
+  path: /api/{culture}/contacts
+  source_operation: openapi/flowaccount-openapi-original.json#Contact_Create
+- name: Contact_GetContactList2
+  description: Contact GetContactList2
+  method: GET
+  path: /api/{culture}/contacts/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Contact_GetContactList2
+- name: Contact_Update
+  description: Contact Update
+  method: PUT
+  path: /api/{culture}/contacts/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Contact_Update
+- name: Contact_RemoveContact
+  description: Contact RemoveContact
+  method: DELETE
+  path: /api/{culture}/contacts/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Contact_RemoveContact
+- name: Contact_UploadContactQRCode
+  description: Contact UploadContactQRCode
+  method: POST
+  path: /api/{culture}/contacts/{contactId}/update-contact-qrcode
+  source_operation: openapi/flowaccount-openapi-original.json#Contact_UploadContactQRCode
+- name: CashInvoice_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/cash-invoices
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_Index
+- name: CashInvoice_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/cash-invoices/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_Details
+- name: CashInvoice_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/cash-invoices/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_Delete
+- name: CashInvoice_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/cash-invoices/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_Create
+- name: CashInvoice_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/cash-invoices/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_Create2
+- name: CashInvoice_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/cash-invoices/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_Edit
+- name: CashInvoice_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/cash-invoices/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_Edit2
+- name: CashInvoice_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/cash-invoices/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_ChangeStatusByKey
+- name: CashInvoice_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/cash-invoices/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#CashInvoice_ReceivePayment
+- name: BillingNote_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/billing-notes
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_Index
+- name: BillingNote_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/billing-notes/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_Details
+- name: BillingNote_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/billing-notes/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_Delete
+- name: BillingNote_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/billing-notes/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_Create
+- name: BillingNote_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/billing-notes/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_Create2
+- name: BillingNote_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/billing-notes/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_Edit
+- name: BillingNote_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/billing-notes/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_Edit2
+- name: BillingNote_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/billing-notes/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_ChangeStatusByKey
+- name: BillingNote_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/billing-notes/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#BillingNote_ReceivePayment
+- name: Quotation_CreatePartialManualPayall
+  description: Quotation CreatePartialManualPayall
+  method: POST
+  path: /{culture}/quotations/{id}/partial-manual-payall
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_CreatePartialManualPayall
+- name: Quotation_PartialManualCancel
+  description: Quotation PartialManualCancel
+  method: POST
+  path: /{culture}/quotations/{id}/partial-manual-cancel
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_PartialManualCancel
+- name: Quotation_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/quotations
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_Index
+- name: Quotation_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/quotations/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_Details
+- name: Quotation_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/quotations/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_Delete
+- name: Quotation_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/quotations/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_Create
+- name: Quotation_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/quotations/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_Create2
+- name: Quotation_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/quotations/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_Edit
+- name: Quotation_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/quotations/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_Edit2
+- name: Quotation_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/quotations/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_ChangeStatusByKey
+- name: Quotation_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/quotations/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#Quotation_ReceivePayment
+- name: Receipt_GetBusinessCategories
+  description: Receipt GetBusinessCategories
+  method: GET
+  path: /{culture}/receipts/categories/business
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_GetBusinessCategories
+- name: Receipt_GetChartOfAccounts
+  description: Receipt GetChartOfAccounts
+  method: GET
+  path: /{culture}/receipts/categories/accounting
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_GetChartOfAccounts
+- name: Receipt_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/receipts
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_Index
+- name: Receipt_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/receipts/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_Details
+- name: Receipt_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/receipts/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_Delete
+- name: Receipt_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/receipts/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_Create
+- name: Receipt_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/receipts/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_Create2
+- name: Receipt_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/receipts/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_Edit
+- name: Receipt_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/receipts/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_Edit2
+- name: Receipt_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/receipts/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_ChangeStatusByKey
+- name: Receipt_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/receipts/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#Receipt_ReceivePayment
+- name: ReceivableInvoice_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/receivable-invoices
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_Index
+- name: ReceivableInvoice_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/receivable-invoices/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_Details
+- name: ReceivableInvoice_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/receivable-invoices/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_Delete
+- name: ReceivableInvoice_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/receivable-invoices/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_Create
+- name: ReceivableInvoice_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/receivable-invoices/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_Create2
+- name: ReceivableInvoice_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/receivable-invoices/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_Edit
+- name: ReceivableInvoice_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/receivable-invoices/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_Edit2
+- name: ReceivableInvoice_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/receivable-invoices/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_ChangeStatusByKey
+- name: ReceivableInvoice_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/receivable-invoices/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#ReceivableInvoice_ReceivePayment
+- name: TaxInvoice_GetCumulativeDocumentReferenceList
+  description: TaxInvoice GetCumulativeDocumentReferenceList
+  method: GET
+  path: /{culture}/tax-invoices/cumulative-references
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_GetCumulativeDocumentReferenceList
+- name: TaxInvoice_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/tax-invoices
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_Index
+- name: TaxInvoice_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/tax-invoices/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_Details
+- name: TaxInvoice_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/tax-invoices/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_Delete
+- name: TaxInvoice_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/tax-invoices/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_Create
+- name: TaxInvoice_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/tax-invoices/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_Create2
+- name: TaxInvoice_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/tax-invoices/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_Edit
+- name: TaxInvoice_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/tax-invoices/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_Edit2
+- name: TaxInvoice_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/tax-invoices/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_ChangeStatusByKey
+- name: TaxInvoice_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/tax-invoices/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#TaxInvoice_ReceivePayment
+- name: CreditNote_GetCumulativeDocumentReferenceList
+  description: CreditNote GetCumulativeDocumentReferenceList
+  method: GET
+  path: /{culture}/credit-notes/cumulative-references
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_GetCumulativeDocumentReferenceList
+- name: CreditNote_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/credit-notes
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_Index
+- name: CreditNote_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/credit-notes/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_Details
+- name: CreditNote_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/credit-notes/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_Delete
+- name: CreditNote_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/credit-notes/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_Create
+- name: CreditNote_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/credit-notes/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_Create2
+- name: CreditNote_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/credit-notes/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_Edit
+- name: CreditNote_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/credit-notes/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_Edit2
+- name: CreditNote_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/credit-notes/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_ChangeStatusByKey
+- name: CreditNote_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/credit-notes/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#CreditNote_ReceivePayment
+- name: DebitNote_GetCumulativeDocumentReferenceList
+  description: DebitNote GetCumulativeDocumentReferenceList
+  method: GET
+  path: /{culture}/debit-notes/cumulative-references
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_GetCumulativeDocumentReferenceList
+- name: DebitNote_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/debit-notes
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_Index
+- name: DebitNote_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/debit-notes/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_Details
+- name: DebitNote_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/debit-notes/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_Delete
+- name: DebitNote_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/debit-notes/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_Create
+- name: DebitNote_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/debit-notes/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_Create2
+- name: DebitNote_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/debit-notes/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_Edit
+- name: DebitNote_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/debit-notes/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_Edit2
+- name: DebitNote_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/debit-notes/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_ChangeStatusByKey
+- name: DebitNote_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/debit-notes/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#DebitNote_ReceivePayment
+- name: Expense_GetBusinessCategories
+  description: Expense GetBusinessCategories
+  method: GET
+  path: /{culture}/expenses/categories/business
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_GetBusinessCategories
+- name: Expense_GetChartOfAccounts
+  description: Expense GetChartOfAccounts
+  method: GET
+  path: /{culture}/expenses/categories/accounting
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_GetChartOfAccounts
+- name: Expense_GetBusinessCategoriesWithoutAsset
+  description: Expense GetBusinessCategoriesWithoutAsset
+  method: GET
+  path: /{culture}/expenses/categories/business-without-asset
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_GetBusinessCategoriesWithoutAsset
+- name: Expense_GetChartOfAccountsWithoutAsset
+  description: Expense GetChartOfAccountsWithoutAsset
+  method: GET
+  path: /{culture}/expenses/categories/accounting-without-asset
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_GetChartOfAccountsWithoutAsset
+- name: Expense_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/expenses
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_Index
+- name: Expense_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/expenses/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_Details
+- name: Expense_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/expenses/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_Delete
+- name: Expense_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/expenses/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_Create
+- name: Expense_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/expenses/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_Create2
+- name: Expense_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/expenses/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_Edit
+- name: Expense_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/expenses/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_Edit2
+- name: Expense_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/expenses/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_ChangeStatusByKey
+- name: Expense_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/expenses/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#Expense_ReceivePayment
+- name: Purchase_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/purchases
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_Index
+- name: Purchase_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/purchases/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_Details
+- name: Purchase_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/purchases/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_Delete
+- name: Purchase_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/purchases/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_Create
+- name: Purchase_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/purchases/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_Create2
+- name: Purchase_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/purchases/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_Edit
+- name: Purchase_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/purchases/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_Edit2
+- name: Purchase_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/purchases/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_ChangeStatusByKey
+- name: Purchase_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/purchases/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#Purchase_ReceivePayment
+- name: PurchaseOrder_Index
+  description: To query for documents.
+  method: GET
+  path: /{culture}/purchase-orders
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_Index
+- name: PurchaseOrder_Details
+  description: To get details of a document
+  method: GET
+  path: /{culture}/purchase-orders/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_Details
+- name: PurchaseOrder_Delete
+  description: To delete the document given a list of documentids
+  method: DELETE
+  path: /{culture}/purchase-orders/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_Delete
+- name: PurchaseOrder_Create
+  description: To Create a document with SimpleDocument as the parameter
+  method: POST
+  path: /{culture}/purchase-orders/simple-document
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_Create
+- name: PurchaseOrder_Create2
+  description: To Create a document with InlineDocument as the parameter
+  method: POST
+  path: /{culture}/purchase-orders/inline-document
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_Create2
+- name: PurchaseOrder_Edit
+  description: To Update a document with simpleDocument as the parameter
+  method: PUT
+  path: /{culture}/purchase-orders/simple-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_Edit
+- name: PurchaseOrder_Edit2
+  description: To Update a document with inlineDocument as the parameter
+  method: PUT
+  path: /{culture}/purchase-orders/inline-document/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_Edit2
+- name: PurchaseOrder_ChangeStatusByKey
+  description: To change status by the document id and key
+  method: POST
+  path: /{culture}/purchase-orders/{documentId}/status-key/{statusKey}
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_ChangeStatusByKey
+- name: PurchaseOrder_ReceivePayment
+  description: To Accept payment with the paymentModel
+  method: POST
+  path: /{culture}/purchase-orders/{id}/payments
+  source_operation: openapi/flowaccount-openapi-original.json#PurchaseOrder_ReceivePayment
+- name: Employee_GetById
+  description: Get employee by Id
+  method: GET
+  path: /Employee/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Employee_GetById
+- name: Employee_Remove
+  description: Delete/Remove Employee by Id
+  method: DELETE
+  path: /Employee/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Employee_Remove
+- name: Employee_GetList
+  description: Get employee list with payrollQuery model
+  method: GET
+  path: /Employee
+  source_operation: openapi/flowaccount-openapi-original.json#Employee_GetList
+- name: Employee_Create
+  description: Create Employee
+  method: POST
+  path: /Employee
+  source_operation: openapi/flowaccount-openapi-original.json#Employee_Create
+- name: Employee_Edit
+  description: Update Employee
+  method: PUT
+  path: /Employee
+  source_operation: openapi/flowaccount-openapi-original.json#Employee_Edit
+- name: Employee_Count
+  description: Count employees
+  method: GET
+  path: /Employee/count
+  source_operation: openapi/flowaccount-openapi-original.json#Employee_Count
+- name: CompanyCurrency_GetList
+  description: Get all currency which user selected for multi-currency
+  method: GET
+  path: /{culture}/company-currency
+  source_operation: openapi/flowaccount-openapi-original.json#CompanyCurrency_GetList
+- name: CompanyCurrency_GetCompanyCurrencies
+  description: Get company currencies except selected list
+  method: GET
+  path: /{culture}/company-currency/currency
+  source_operation: openapi/flowaccount-openapi-original.json#CompanyCurrency_GetCompanyCurrencies
+- name: ProductCategory_GetProductCategory
+  description: ProductCategory GetProductCategory
+  method: GET
+  path: /{culture}/products/categories
+  source_operation: openapi/flowaccount-openapi-original.json#ProductCategory_GetProductCategory
+- name: ProductCategory_CreateProductCategory
+  description: ProductCategory CreateProductCategory
+  method: POST
+  path: /{culture}/products/categories
+  source_operation: openapi/flowaccount-openapi-original.json#ProductCategory_CreateProductCategory
+- name: ProductCategory_UpdateProductCategory
+  description: ProductCategory UpdateProductCategory
+  method: PUT
+  path: /{culture}/products/categories/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ProductCategory_UpdateProductCategory
+- name: ProductCategory_DeleteProductCategory
+  description: ProductCategory DeleteProductCategory
+  method: DELETE
+  path: /{culture}/products/categories/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ProductCategory_DeleteProductCategory
+- name: ProductInventory_GetList
+  description: ProductInventory GetList
+  method: GET
+  path: /{culture}/product-inventories/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ProductInventory_GetList
+- name: ProductInventory_DeleteProductInventory
+  description: ProductInventory DeleteProductInventory
+  method: DELETE
+  path: /{culture}/product-inventories/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ProductInventory_DeleteProductInventory
+- name: ProductInventory_Adjust
+  description: ProductInventory Adjust
+  method: POST
+  path: /{culture}/product-inventories/adjust
+  source_operation: openapi/flowaccount-openapi-original.json#ProductInventory_Adjust
+- name: Products_Search
+  description: Products Search
+  method: GET
+  path: /{culture}/Products/search
+  source_operation: openapi/flowaccount-openapi-original.json#Products_Search
+- name: Products_GetList
+  description: Products GetList
+  method: GET
+  path: /{culture}/Products
+  source_operation: openapi/flowaccount-openapi-original.json#Products_GetList
+- name: Products_Create
+  description: Products Create
+  method: POST
+  path: /{culture}/Products
+  source_operation: openapi/flowaccount-openapi-original.json#Products_Create
+- name: Products_GetById
+  description: Products GetById
+  method: GET
+  path: /{culture}/Products/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Products_GetById
+- name: Products_Update
+  description: Products Update
+  method: PUT
+  path: /{culture}/Products/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Products_Update
+- name: Products_Remove
+  description: Products Remove
+  method: DELETE
+  path: /{culture}/Products/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#Products_Remove
+- name: ProductUnit_GetProductUnitList
+  description: ProductUnit GetProductUnitList
+  method: GET
+  path: /{culture}/products/units
+  source_operation: openapi/flowaccount-openapi-original.json#ProductUnit_GetProductUnitList
+- name: ProductUnit_CreateProductUnit
+  description: ProductUnit CreateProductUnit
+  method: POST
+  path: /{culture}/products/units
+  source_operation: openapi/flowaccount-openapi-original.json#ProductUnit_CreateProductUnit
+- name: ProductUnit_UpdateProductUnit
+  description: ProductUnit UpdateProductUnit
+  method: PUT
+  path: /{culture}/products/units/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ProductUnit_UpdateProductUnit
+- name: ProductUnit_DeleteProductUnit
+  description: ProductUnit DeleteProductUnit
+  method: DELETE
+  path: /{culture}/products/units/{id}
+  source_operation: openapi/flowaccount-openapi-original.json#ProductUnit_DeleteProductUnit

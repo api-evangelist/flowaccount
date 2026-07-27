@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/flowaccount/open-api
+spec_type: Webhooks
+description: >-
+  FlowAccount exposes an event/webhook surface: registered integrations receive
+  HTTP POST callbacks for FlowAccount events and can subscribe partner systems
+  (e.g. the Page365 POS integration) to receive document/transaction notifications.
+  Evidence: flowaccount/open-api apps/api/flowaccount-webhook (serverless.yml)
+  defines a POST /webhook receiver and a POST /subscribe registration handler.
+  No published AsyncAPI document was found and the full event-type catalog is not
+  enumerated in public docs, so no channels are fabricated here.
+transport: http-callback
+delivery: POST to a subscriber-registered endpoint
+endpoints:
+  - name: webhook_receiver
+    method: POST
+    role: Integration endpoint that receives FlowAccount event callbacks.
+  - name: subscribe
+    method: POST
+    role: Registers a subscriber (e.g. POS/partner) to receive event callbacks.
+docs: https://developers.flowaccount.com/
+event_catalog:
+  published: false
+  note: Specific event type names are not enumerated in the public developer portal.

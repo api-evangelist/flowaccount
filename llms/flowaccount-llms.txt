@@ -1,0 +1,34 @@
+# FlowAccount
+
+> FlowAccount is a Thai cloud accounting platform for SMEs, accountants, and accounting firms — invoicing, expenses, tax documents, payroll, inventory, and POS. The FlowAccount Open API (OAuth 2.0 client credentials) lets integrations create and manage quotations, invoices, tax invoices, receipts, cash invoices, contacts, and products, and receive webhook event callbacks.
+
+## APIs
+- [FlowAccount Open API](https://developers.flowaccount.com/): Document, contact, product, and payment operations. OpenAPI 3.0, 153 operations. Sandbox: https://openapi.flowaccount.com/sandbox — Production: https://openapi.flowaccount.com/v3-alpha
+- [OpenAPI spec](openapi/flowaccount-openapi-original.json): The harvested FlowAccount Open API definition.
+
+## Authentication
+- OAuth 2.0 client credentials: POST grant_type=client_credentials, scope=flowaccount-api with client_id/client_secret to {base}/token; send Authorization: Bearer <token>.
+- [Authentication profile](authentication/flowaccount-authentication.yml)
+- [OAuth scopes](scopes/flowaccount-scopes.yml)
+
+## Docs
+- [Developer portal](https://developers.flowaccount.com/)
+- [Request Open API access](https://form.flowaccount.com/request-openapi)
+- [Conventions](conventions/flowaccount-conventions.yml)
+- [Webhooks](asyncapi/flowaccount-webhooks.yml)
+- [Lifecycle & status](lifecycle/flowaccount-lifecycle.yml)
+- [Status page](https://flowaccount.statuspage.io)
+
+## SDKs
+- [npm @flowaccount/openapi-sdk](https://www.npmjs.com/package/@flowaccount/openapi-sdk)
+- [GitHub organization](https://github.com/flowaccount)
+
+## Agent
+- [Agent skills](skills/_index.yml)
+- [Candidate MCP tools](mcp/flowaccount-mcp.yml)
+- [Agentic access contracts](agentic-access/flowaccount-agentic-access.yml)
+
+## Company
+- [Website](https://flowaccount.com)
+- [Pricing](https://flowaccount.com/pricing)
+- [Blog](https://flowaccount.com/blog/)

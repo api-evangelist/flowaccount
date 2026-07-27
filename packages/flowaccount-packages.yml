@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/flowaccount
+description: >-
+  First-party FlowAccount Open API client libraries. The npm package is published
+  under the @flowaccount org scope; the remaining clients are generated with the
+  OpenAPI Generator and published as source in the flowaccount GitHub organization
+  (see flowaccount/open-api libs/*).
+packages:
+  - language: javascript
+    registry: npm
+    name: "@flowaccount/openapi-sdk"
+    url: https://www.npmjs.com/package/@flowaccount/openapi-sdk
+    install: npm install @flowaccount/openapi-sdk
+    official: true
+  - language: typescript
+    registry: github
+    name: flowaccount-typescript-node-client
+    url: https://github.com/flowaccount/flowaccount-typescript-node-client
+    official: true
+    note: Generated TypeScript node client for the FlowAccount Open API.
+  - language: java
+    registry: github
+    name: flowaccount-openapi-sdk
+    url: https://github.com/flowaccount/flowaccount-openapi-sdk
+    official: true
+  - language: php
+    registry: github
+    name: flowaccount-openapi-sdk-php
+    url: https://github.com/flowaccount/flowaccount-openapi-sdk-php
+    official: true
+  - language: php
+    registry: github
+    name: open-api (PHP client)
+    url: https://github.com/flowaccount/open-api
+    official: true
+  - language: csharp
+    registry: github
+    name: FlowAccount.OpenAPIClient (.NET)
+    url: https://github.com/flowaccount/open-api/tree/main/libs/api-dotnet
+    official: true
+    note: Generated .NET client under flowaccount/open-api libs/api-dotnet.
+  - language: go
+    registry: github
+    name: flowaccount-golang-client
+    url: https://github.com/flowaccount/open-api/tree/main/libs/api-golang
+    official: true
+    note: Generated Go client under flowaccount/open-api.

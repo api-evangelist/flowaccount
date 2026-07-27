@@ -1,0 +1,527 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/flowaccount-openapi-original.json
+description: Entity-relationship graph derived from FlowAccount OpenAPI component schemas ($ref links).
+entity_count: 131
+relationship_count: 97
+entities:
+- APIResponseOfBoolean
+- APIResponseOfISimpleListResultOfIProductResult
+- AdjustInventoryReason
+- Bank
+- BankAccount
+- BankAccountType
+- BankingChannelsStatus
+- BatchHistory
+- BatchImportMetadata
+- BatchImportPayload
+- BatchImportRetry
+- BatchImportStatus
+- BatchMessageStatus
+- BatchStatus
+- BatchTaxFiling
+- BatchTaxFilingStatus
+- BookOfAccountStatus
+- BusinessType
+- ChartOfAccount
+- ChartOfAccountCategory
+- Cheque
+- Company
+- CompanyExpenseCategory
+- CompanyPreferences
+- CompanySubscription
+- CompanyTypeEnum
+- ConditionsOfWithholdingTax
+- Contact
+- ContactGroups
+- ContactResult
+- ContactTypes
+- CreditCard
+- CreditCardType
+- Currency
+- CustomDocumentModel
+- CustomTemplate
+- CustomTemplateColumn
+- CustomTemplateInfo
+- DataRange
+- DateInfo
+- DateType
+- DeductionType
+- Department
+- Document
+- Document2
+- DocumentQuery
+- DocumentReferenceTypes
+- DocumentTemplates
+- DocumentTypes
+- Employee
+- EmployeeModel
+- EmployeeTypes
+- Entity
+- ExpenseCategory
+- ExpenseList
+- ExpenseStatus
+- FilterOptions
+- FinancialTransactionType
+- FiscalYear
+- FiscalYearStatus
+- Gallery
+- GenderPrefix
+- IBookOfAccount
+- IChartOfAccount
+- IDocumentReference
+- IJournalEntryBase
+- IProductResult
+- ISimpleListResultOfIProductResult
+- IStockCard
+- ImageResult
+- IncomeType
+- InlineDocument
+- InlineProductItem
+- InventoryType
+- JournalEntry
+- JournalEntryStatus
+- JournalEntryTemplateType
+- KConnectProductCode
+- ListItem
+- Media
+- MessageSent
+- ObjectId
+- OrderBy
+- OtherChannels
+- OtherChannelsType
+- PackageList
+- PackageStatus
+- PaidPeriod
+- PartialPaymentMethod
+- PaymentChannel
+- PaymentChannelsType
+- PaymentMethod
+- PaymentModel
+- Payroll
+- PayrollDetail
+- PayrollDetailStatus
+- PayrollPreferences
+- PayrollQuery
+- PayrollStatus
+- PayrollType
+- PettyCash
+- PredicateOperator
+- ProductCategory
+- ProductItem
+- ProductList
+- ProductNonInventoryType
+- ProductResult
+- ProductTypes
+- ProductUnit
+- ReceivableInvoice
+- ReceivableInvoiceStatus
+- ReconciledDocument
+- RemainingCollectedType
+- ReportTypes
+- RuleCompileStatus
+- RunningNumberType
+- SalesType
+- SendEmailStatus
+- SimpleDocument
+- SimpleProductItem
+- SimpleQuery
+- SortOptions
+- StockCard
+- SupplierInvoice
+- SupplierInvoiceStatus
+- SystemChartOfAccount
+- TemplateFont
+- UpgradeDocument
+- UpgradeType
+- User
+- VatTypes
+relationships:
+- from: BatchImportMetadata
+  to: DocumentTypes
+  kind: has_one
+  via: documentType
+- from: BatchImportMetadata
+  to: BatchImportStatus
+  kind: has_one
+  via: status
+- from: BatchHistory
+  to: BatchImportMetadata
+  kind: has_many
+  via: metadataList
+- from: BatchStatus
+  to: BatchMessageStatus
+  kind: has_many
+  via: messages
+- from: BatchMessageStatus
+  to: BatchImportStatus
+  kind: has_one
+  via: status
+- from: BatchImportPayload
+  to: SimpleDocument
+  kind: has_many
+  via: simpleDocuments
+- from: CustomTemplateInfo
+  to: CustomTemplateColumn
+  kind: has_many
+  via: columns
+- from: ContactResult
+  to: ContactTypes
+  kind: has_one
+  via: contactType
+- from: ContactResult
+  to: ContactGroups
+  kind: has_one
+  via: contactGroup
+- from: ContactResult
+  to: Media
+  kind: has_many
+  via: media
+- from: Company
+  to: CompanyTypeEnum
+  kind: has_one
+  via: companyType
+- from: Company
+  to: CompanySubscription
+  kind: has_many
+  via: companySubscription
+- from: CompanyPreferences
+  to: BusinessType
+  kind: has_one
+  via: businessType
+- from: CompanyPreferences
+  to: RunningNumberType
+  kind: has_one
+  via: runningNumberType
+- from: CompanyPreferences
+  to: DocumentTemplates
+  kind: has_one
+  via: documentTemplates
+- from: CompanyPreferences
+  to: TemplateFont
+  kind: has_one
+  via: templateFont
+- from: CompanyPreferences
+  to: RunningNumberType
+  kind: has_one
+  via: generalLedgerRunningNumberType
+- from: CompanyPreferences
+  to: DocumentTemplates
+  kind: has_one
+  via: shortCashInvoiceTemplates
+- from: PayrollPreferences
+  to: KConnectProductCode
+  kind: has_one
+  via: kConnect_ProductCode
+- from: CompanySubscription
+  to: PackageStatus
+  kind: has_one
+  via: packageStatus
+- from: CompanySubscription
+  to: UpgradeType
+  kind: has_one
+  via: type
+- from: Gallery
+  to: ProductList
+  kind: has_many
+  via: productList
+- from: Gallery
+  to: Media
+  kind: has_many
+  via: media
+- from: Gallery
+  to: JournalEntry
+  kind: has_many
+  via: journalEntry
+- from: Gallery
+  to: ReceivableInvoice
+  kind: has_many
+  via: receivableInvoice
+- from: Gallery
+  to: SupplierInvoice
+  kind: has_many
+  via: supplierInvoice
+- from: ProductList
+  to: ProductTypes
+  kind: has_one
+  via: type
+- from: JournalEntry
+  to: DocumentTypes
+  kind: has_one
+  via: documentType
+- from: JournalEntry
+  to: JournalEntryStatus
+  kind: has_one
+  via: status
+- from: JournalEntry
+  to: JournalEntryTemplateType
+  kind: has_one
+  via: templateType
+- from: JournalEntry
+  to: RuleCompileStatus
+  kind: has_one
+  via: ruleCompileStatus
+- from: JournalEntry
+  to: IBookOfAccount
+  kind: has_many
+  via: bookOfAccounts
+- from: Contact
+  to: ContactTypes
+  kind: has_one
+  via: contactType
+- from: Contact
+  to: ContactGroups
+  kind: has_one
+  via: contactGroup
+- from: FiscalYear
+  to: FiscalYearStatus
+  kind: has_one
+  via: status
+- from: IBookOfAccount
+  to: FinancialTransactionType
+  kind: has_one
+  via: debitCredit
+- from: IBookOfAccount
+  to: BookOfAccountStatus
+  kind: has_one
+  via: bookOfAccountStatus
+- from: IJournalEntryBase
+  to: DocumentTypes
+  kind: has_one
+  via: documentType
+- from: IJournalEntryBase
+  to: JournalEntryStatus
+  kind: has_one
+  via: status
+- from: IJournalEntryBase
+  to: JournalEntryTemplateType
+  kind: has_one
+  via: templateType
+- from: IJournalEntryBase
+  to: RuleCompileStatus
+  kind: has_one
+  via: ruleCompileStatus
+- from: IChartOfAccount
+  to: ChartOfAccountCategory
+  kind: has_one
+  via: category
+- from: IDocumentReference
+  to: DocumentTypes
+  kind: has_one
+  via: referenceDocumentType
+- from: IDocumentReference
+  to: DocumentTypes
+  kind: has_one
+  via: documentType
+- from: IDocumentReference
+  to: DocumentReferenceTypes
+  kind: has_one
+  via: type
+- from: SupplierInvoice
+  to: DocumentTypes
+  kind: has_one
+  via: referenceDocumentType
+- from: PaymentModel
+  to: PaymentMethod
+  kind: has_one
+  via: paymentMethod
+- from: PaymentModel
+  to: IncomeType
+  kind: has_one
+  via: withholdingTaxIncomeType
+- from: PaymentModel
+  to: Entity
+  kind: has_one
+  via: withholdingTaxEntity
+- from: SimpleQuery
+  to: DateType
+  kind: has_one
+  via: dateType
+- from: SimpleQuery
+  to: DataRange
+  kind: has_one
+  via: range
+- from: SimpleQuery
+  to: ReportTypes
+  kind: has_one
+  via: reportType
+- from: SimpleQuery
+  to: FilterOptions
+  kind: has_many
+  via: filter
+- from: SimpleQuery
+  to: SortOptions
+  kind: has_many
+  via: sortBy
+- from: FilterOptions
+  to: PredicateOperator
+  kind: has_one
+  via: columnPredicateOperator
+- from: SortOptions
+  to: OrderBy
+  kind: has_one
+  via: sortOrder
+- from: Employee
+  to: GenderPrefix
+  kind: has_one
+  via: prefix
+- from: Employee
+  to: PayrollDetail
+  kind: has_many
+  via: payrollDetail
+- from: Bank
+  to: BankAccount
+  kind: has_many
+  via: bankAccount
+- from: Bank
+  to: ReconciledDocument
+  kind: has_many
+  via: reconciledDocument
+- from: BankAccount
+  to: BankingChannelsStatus
+  kind: has_one
+  via: status
+- from: ChartOfAccount
+  to: ChartOfAccountCategory
+  kind: has_one
+  via: category
+- from: PettyCash
+  to: BankingChannelsStatus
+  kind: has_one
+  via: status
+- from: Cheque
+  to: BankingChannelsStatus
+  kind: has_one
+  via: status
+- from: CreditCard
+  to: CreditCardType
+  kind: has_one
+  via: type
+- from: CreditCard
+  to: BankingChannelsStatus
+  kind: has_one
+  via: status
+- from: OtherChannels
+  to: BankingChannelsStatus
+  kind: has_one
+  via: status
+- from: OtherChannels
+  to: PaymentChannelsType
+  kind: has_one
+  via: channel
+- from: OtherChannels
+  to: OtherChannelsType
+  kind: has_one
+  via: type
+- from: ReconciledDocument
+  to: DocumentTypes
+  kind: has_one
+  via: documentType
+- from: PayrollDetail
+  to: PayrollDetailStatus
+  kind: has_one
+  via: status
+- from: PayrollDetail
+  to: RuleCompileStatus
+  kind: has_one
+  via: ruleCompileStatus
+- from: ExpenseCategory
+  to: ExpenseList
+  kind: has_many
+  via: expenseList
+- from: ExpenseCategory
+  to: CompanyExpenseCategory
+  kind: has_many
+  via: companyExpenseCategory
+- from: Payroll
+  to: PayrollStatus
+  kind: has_one
+  via: status
+- from: Payroll
+  to: PayrollDetail
+  kind: has_many
+  via: payrollDetail
+- from: Payroll
+  to: RuleCompileStatus
+  kind: has_one
+  via: ruleCompileStatus
+- from: Department
+  to: Employee
+  kind: has_many
+  via: employees
+- from: StockCard
+  to: ObjectId
+  kind: has_one
+  via: id
+- from: StockCard
+  to: InventoryType
+  kind: has_one
+  via: inventoryType
+- from: StockCard
+  to: DocumentTypes
+  kind: has_one
+  via: documentType
+- from: StockCard
+  to: AdjustInventoryReason
+  kind: has_one
+  via: reason
+- from: StockCard
+  to: IStockCard
+  kind: has_many
+  via: transactions
+- from: IStockCard
+  to: ObjectId
+  kind: has_one
+  via: id
+- from: IStockCard
+  to: InventoryType
+  kind: has_one
+  via: inventoryType
+- from: IStockCard
+  to: DocumentTypes
+  kind: has_one
+  via: documentType
+- from: IStockCard
+  to: AdjustInventoryReason
+  kind: has_one
+  via: reason
+- from: IStockCard
+  to: IStockCard
+  kind: has_many
+  via: transactions
+- from: ISimpleListResultOfIProductResult
+  to: IProductResult
+  kind: has_many
+  via: list
+- from: IProductResult
+  to: ProductTypes
+  kind: has_one
+  via: type
+- from: IProductResult
+  to: VatTypes
+  kind: has_one
+  via: buyVatType
+- from: IProductResult
+  to: VatTypes
+  kind: has_one
+  via: sellVatType
+- from: IProductResult
+  to: IStockCard
+  kind: has_many
+  via: stockCard
+- from: ProductResult
+  to: ProductTypes
+  kind: has_one
+  via: type
+- from: ProductResult
+  to: VatTypes
+  kind: has_one
+  via: buyVatType
+- from: ProductResult
+  to: VatTypes
+  kind: has_one
+  via: sellVatType
+- from: ProductResult
+  to: IStockCard
+  kind: has_many
+  via: stockCard

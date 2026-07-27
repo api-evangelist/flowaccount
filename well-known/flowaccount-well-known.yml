@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+description: >-
+  Probed the /.well-known/ discovery surface on the FlowAccount API, developer,
+  and marketing hosts. No dedicated well-known documents are served: the API host
+  returns 403 at root and the marketing host serves the SPA (302 -> HTML) for
+  well-known paths. Absence recorded honestly; no WellKnown pointer emitted.
+hosts:
+  - host: https://openapi.flowaccount.com
+    documents:
+      - {path: /.well-known/security.txt, status: 403}
+      - {path: /.well-known/openid-configuration, status: 403}
+      - {path: /.well-known/oauth-authorization-server, status: 403}
+      - {path: /.well-known/api-catalog, status: 403}
+      - {path: /.well-known/ai-plugin.json, status: 403}
+  - host: https://flowaccount.com
+    documents:
+      - {path: /.well-known/security.txt, status: 302, note: SPA fallback returns HTML, not a real security.txt}
+      - {path: /.well-known/openid-configuration, status: 302}
+      - {path: /.well-known/oauth-authorization-server, status: 302}
+      - {path: /.well-known/api-catalog, status: 302}
+      - {path: /.well-known/ai-plugin.json, status: 302}
+security_contact:
+  note: >-
+    A security contact IS published via DNS CAA iodef on flowaccount.com:
+    mailto:security@flowaccount.com (see security/flowaccount-vulnerability-disclosure.yml).

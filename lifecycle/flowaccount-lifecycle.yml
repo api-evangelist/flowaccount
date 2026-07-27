@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.flowaccount.com/
+description: >-
+  Versioning, environment, and operational-transparency signals for the
+  FlowAccount Open API.
+versioning:
+  scheme: uri-path
+  current: v3-alpha
+  environments:
+    sandbox: https://openapi.flowaccount.com/sandbox
+    production: https://openapi.flowaccount.com/v3-alpha
+  docs: https://developers.flowaccount.com/
+release_notes:
+  url: https://developers.flowaccount.com/
+  note: >-
+    The developer portal publishes "Releases" and "Announcements" sections for
+    API changes.
+status_page: https://flowaccount.statuspage.io
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No formal deprecation policy or RFC 8594 Sunset header support was found.
+deprecated_operations: []
