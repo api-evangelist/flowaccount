@@ -1,0 +1,288 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FlowAccount Open BatchImport Products API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Products_Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/Products/search",
+            "params": [
+              {
+                "name": "SortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CurrentPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SearchString",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CustomDocumentModels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Range",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Month",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Products_GetList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/Products",
+            "params": [
+              {
+                "name": "SortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CurrentPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SearchString",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CustomDocumentModels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Range",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Month",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Products_Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/Products",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Products_GetById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/Products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Products_Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/Products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Products_Remove",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/Products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FlowAccount Open BatchImport ProductCategory API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProductCategory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ProductCategory_GetProductCategory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/products/categories",
+            "params": [
+              {
+                "name": "currentPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "ProductCategory_CreateProductCategory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/products/categories",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "ProductCategory_UpdateProductCategory",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/products/categories/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "ProductCategory_DeleteProductCategory",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/products/categories/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

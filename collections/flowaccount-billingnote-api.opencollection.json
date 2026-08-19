@@ -1,0 +1,333 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FlowAccount Open BatchImport BillingNote API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BillingNote",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "To query for documents.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes",
+            "params": [
+              {
+                "name": "SortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CurrentPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SearchString",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CustomDocumentModels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Range",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Month",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To query for documents."
+        },
+        {
+          "info": {
+            "name": "To get details of a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Sql DocumentId"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To get details of a document"
+        },
+        {
+          "info": {
+            "name": "To delete the document given a list of documentids",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To delete the document given a list of documentids"
+        },
+        {
+          "info": {
+            "name": "To Create a document with SimpleDocument as the parameter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/simple-document",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To Create a document with SimpleDocument as the parameter"
+        },
+        {
+          "info": {
+            "name": "To Create a document with InlineDocument as the parameter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/inline-document",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To Create a document with InlineDocument as the parameter"
+        },
+        {
+          "info": {
+            "name": "To Update a document with simpleDocument as the parameter",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/simple-document/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To Update a document with simpleDocument as the parameter"
+        },
+        {
+          "info": {
+            "name": "To Update a document with inlineDocument as the parameter",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/inline-document/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To Update a document with inlineDocument as the parameter"
+        },
+        {
+          "info": {
+            "name": "To change status by the document id and key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/:documentId/status-key/:statusKey",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "statusKey",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To change status by the document id and key"
+        },
+        {
+          "info": {
+            "name": "To Accept payment with the paymentModel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/billing-notes/:id/payments",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To Accept payment with the paymentModel"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

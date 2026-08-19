@@ -774,3 +774,9 @@ tools:
   method: DELETE
   path: /{culture}/products/units/{id}
   source_operation: openapi/flowaccount-openapi-original.json#ProductUnit_DeleteProductUnit
+deployment:
+  mode: none
+  verified: derived
+  tools: 153
+  checked: '2026-08-12'
+  source: catalog MCP census

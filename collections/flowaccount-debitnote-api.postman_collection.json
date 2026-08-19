@@ -1,0 +1,1384 @@
+{
+  "item": [
+    {
+      "id": "fe498d2b-c70a-477b-8659-4643c8fc8294",
+      "name": "DebitNote",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "07dc2176-3b2d-4152-9199-1289bcb4274f",
+          "name": "Debit Note Get Cumulative Document Reference List",
+          "request": {
+            "name": "Debit Note Get Cumulative Document Reference List",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                "cumulative-references"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cf957d17-d3cf-4e6b-a141-d7e34dbe798c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    "cumulative-references"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af816800-fdf6-41ff-8ad2-8a0de3cce0af",
+          "name": "To query for documents.",
+          "request": {
+            "name": "To query for documents.",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CurrentPage",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "PageSize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "SearchString",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CustomDocumentModels",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Range",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Month",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "StartDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "EndDate",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3f3fb5cc-dda0-4611-bcf9-78c339e48738",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CurrentPage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SearchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CustomDocumentModels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Range",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Month",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "StartDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "EndDate",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ba100a05-a334-41f8-83ef-3400d54802fd",
+          "name": "To get details of a document",
+          "request": {
+            "name": "To get details of a document",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) Sql DocumentId"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d7693260-879b-404c-8748-e7abe5460a57",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) Sql DocumentId"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9764a69d-f88c-42a0-a534-7615a42bc220",
+          "name": "To delete the document given a list of documentids",
+          "request": {
+            "name": "To delete the document given a list of documentids",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5cf0efc6-bb90-46e5-ad72-4eb7c102c90c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9718792d-4a0c-4573-8975-ac00de52ff39",
+          "name": "To Create a document with SimpleDocument as the parameter",
+          "request": {
+            "name": "To Create a document with SimpleDocument as the parameter",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                "simple-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ],\n  \"exemptAmount\": \"<decimal>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "051e2877-9416-4107-ac90-1be5ff8b93eb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    "simple-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ],\n  \"exemptAmount\": \"<decimal>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"messageId\": \"string\",\n  \"externalDocumentId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51728481-122d-43eb-ad4a-275f069b76b0",
+          "name": "To Create a document with InlineDocument as the parameter",
+          "request": {
+            "name": "To Create a document with InlineDocument as the parameter",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                "inline-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"discountType\": \"<integer>\",\n  \"useInlineDiscount\": \"<boolean>\",\n  \"useInlineVat\": \"<boolean>\",\n  \"exemptAmount\": \"<decimal>\",\n  \"vatableAmount\": \"<decimal>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2eca7e6e-4c51-4f63-8bda-ebc513da779e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    "inline-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"discountType\": \"<integer>\",\n  \"useInlineDiscount\": \"<boolean>\",\n  \"useInlineVat\": \"<boolean>\",\n  \"exemptAmount\": \"<decimal>\",\n  \"vatableAmount\": \"<decimal>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"messageId\": \"string\",\n  \"externalDocumentId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "042f0fee-db53-44e9-8e26-97285388534e",
+          "name": "To Update a document with simpleDocument as the parameter",
+          "request": {
+            "name": "To Update a document with simpleDocument as the parameter",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                "simple-document",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ],\n  \"exemptAmount\": \"<decimal>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "81f250ba-dd58-470b-921f-44e8c39217b6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    "simple-document",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"productCode\": \"<string>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ],\n  \"exemptAmount\": \"<decimal>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12425fdc-1159-44f9-b71a-b236db9b8f8d",
+          "name": "To Update a document with inlineDocument as the parameter",
+          "request": {
+            "name": "To Update a document with inlineDocument as the parameter",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                "inline-document",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"discountType\": \"<integer>\",\n  \"useInlineDiscount\": \"<boolean>\",\n  \"useInlineVat\": \"<boolean>\",\n  \"exemptAmount\": \"<decimal>\",\n  \"vatableAmount\": \"<decimal>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1b59f399-f867-4cf4-aa50-cc0d25d51073",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    "inline-document",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recordId\": \"<long>\",\n  \"contactCode\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactAddress\": \"<string>\",\n  \"contactTaxId\": \"<string>\",\n  \"contactBranch\": \"<string>\",\n  \"contactPerson\": \"<string>\",\n  \"contactEmail\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"contactZipCode\": \"<string>\",\n  \"contactGroup\": \"<integer>\",\n  \"publishedOn\": \"<dateTime>\",\n  \"creditType\": \"<integer>\",\n  \"creditDays\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"salesName\": \"<string>\",\n  \"projectName\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"isVatInclusive\": \"<boolean>\",\n  \"useReceiptDeduction\": \"<boolean>\",\n  \"subTotal\": \"<decimal>\",\n  \"discountPercentage\": \"<integer>\",\n  \"discountAmount\": \"<decimal>\",\n  \"totalAfterDiscount\": \"<decimal>\",\n  \"isVat\": \"<boolean>\",\n  \"vatAmount\": \"<decimal>\",\n  \"grandTotal\": \"<decimal>\",\n  \"documentShowWithholdingTax\": \"<boolean>\",\n  \"documentWithholdingTaxPercentage\": \"<integer>\",\n  \"documentWithholdingTaxAmount\": \"<decimal>\",\n  \"documentDeductionType\": \"<integer>\",\n  \"documentDeductionAmount\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"internalNotes\": \"<string>\",\n  \"showSignatureOrStamp\": \"<boolean>\",\n  \"documentStructureType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"saleAndPurchaseChannel\": \"<string>\",\n  \"rowIndex\": \"<string>\",\n  \"discountType\": \"<integer>\",\n  \"useInlineDiscount\": \"<boolean>\",\n  \"useInlineVat\": \"<boolean>\",\n  \"exemptAmount\": \"<decimal>\",\n  \"vatableAmount\": \"<decimal>\",\n  \"items\": [\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    },\n    {\n      \"type\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"pricePerUnit\": \"<decimal>\",\n      \"total\": \"<decimal>\",\n      \"sellChartOfAccountCode\": \"<string>\",\n      \"buyChartOfAccountCode\": \"<string>\",\n      \"discountAmount\": \"<decimal>\",\n      \"vatRate\": \"<integer>\"\n    }\n  ],\n  \"documentReference\": [\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"referenceDocumentSerial\": \"<string>\",\n      \"referenceDocumentType\": \"<long>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a85099b8-6ded-48be-a3cc-f5c79346cfea",
+          "name": "To change status by the document id and key",
+          "request": {
+            "name": "To change status by the document id and key",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                ":documentId",
+                "status-key",
+                ":statusKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "documentId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "statusKey",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "95293b0c-1d36-449e-8bb9-36b863a9dcae",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    ":documentId",
+                    "status-key",
+                    ":statusKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "documentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "statusKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "903eab54-7a0e-43a6-a12f-f08f6a565e36",
+          "name": "To Accept payment with the paymentModel",
+          "request": {
+            "name": "To Accept payment with the paymentModel",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "debit-notes",
+                ":id",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cashRemarks\": \"<string>\",\n  \"excludeVat\": \"<double>\",\n  \"cashTax\": \"<integer>\",\n  \"creditCardNumber\": \"<string>\",\n  \"companyVatRate\": \"<integer>\",\n  \"net\": \"<decimal>\",\n  \"bankAccountNumber\": \"<string>\",\n  \"bankAccountId\": \"<long>\",\n  \"paymentMethod\": \"<integer>\",\n  \"dateNow\": \"<dateTime>\",\n  \"amountCollected\": \"<decimal>\",\n  \"amountWithheld\": \"<decimal>\",\n  \"withholdingTax\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"transferBankAccountId\": \"<integer>\",\n  \"bankAccountCreditCardId\": \"<integer>\",\n  \"charge\": \"<decimal>\",\n  \"chequeDate\": \"<dateTime>\",\n  \"chequeNumber\": \"<string>\",\n  \"chequeBankAccountId\": \"<string>\",\n  \"creditCardBankAccountId\": \"<string>\",\n  \"remainingCollected\": \"<decimal>\",\n  \"remainingCollectedType\": \"<integer>\",\n  \"deductionAmount\": \"<decimal>\",\n  \"paymentDeductionType\": \"<integer>\",\n  \"pettyCashName\": \"<string>\",\n  \"pettyCashId\": \"<long>\",\n  \"chequeId\": \"<long>\",\n  \"creditCardId\": \"<long>\",\n  \"otherChannelId\": \"<long>\",\n  \"chequeDepositDate\": \"<dateTime>\",\n  \"chequeDepositBankId\": \"<long>\",\n  \"chequeCashingDate\": \"<dateTime>\",\n  \"autoCreateWithholdingTax\": \"<boolean>\",\n  \"withholdingTaxIncomeType\": \"<integer>\",\n  \"withholdingTaxIncomeDescription\": \"<string>\",\n  \"withholdingTaxEntity\": \"<integer>\",\n  \"exchangeRateFee\": \"<decimal>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "32576b11-eb8d-4ed9-846d-d6dbe0737d94",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "debit-notes",
+                    ":id",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cashRemarks\": \"<string>\",\n  \"excludeVat\": \"<double>\",\n  \"cashTax\": \"<integer>\",\n  \"creditCardNumber\": \"<string>\",\n  \"companyVatRate\": \"<integer>\",\n  \"net\": \"<decimal>\",\n  \"bankAccountNumber\": \"<string>\",\n  \"bankAccountId\": \"<long>\",\n  \"paymentMethod\": \"<integer>\",\n  \"dateNow\": \"<dateTime>\",\n  \"amountCollected\": \"<decimal>\",\n  \"amountWithheld\": \"<decimal>\",\n  \"withholdingTax\": \"<decimal>\",\n  \"remarks\": \"<string>\",\n  \"transferBankAccountId\": \"<integer>\",\n  \"bankAccountCreditCardId\": \"<integer>\",\n  \"charge\": \"<decimal>\",\n  \"chequeDate\": \"<dateTime>\",\n  \"chequeNumber\": \"<string>\",\n  \"chequeBankAccountId\": \"<string>\",\n  \"creditCardBankAccountId\": \"<string>\",\n  \"remainingCollected\": \"<decimal>\",\n  \"remainingCollectedType\": \"<integer>\",\n  \"deductionAmount\": \"<decimal>\",\n  \"paymentDeductionType\": \"<integer>\",\n  \"pettyCashName\": \"<string>\",\n  \"pettyCashId\": \"<long>\",\n  \"chequeId\": \"<long>\",\n  \"creditCardId\": \"<long>\",\n  \"otherChannelId\": \"<long>\",\n  \"chequeDepositDate\": \"<dateTime>\",\n  \"chequeDepositBankId\": \"<long>\",\n  \"chequeCashingDate\": \"<dateTime>\",\n  \"autoCreateWithholdingTax\": \"<boolean>\",\n  \"withholdingTaxIncomeType\": \"<integer>\",\n  \"withholdingTaxIncomeDescription\": \"<string>\",\n  \"withholdingTaxEntity\": \"<integer>\",\n  \"exchangeRateFee\": \"<decimal>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.flowaccount.com/sandbox",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "36569367-454d-4f3f-ac07-06db2ef40bf5",
+    "name": "FlowAccount Open BatchImport DebitNote API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

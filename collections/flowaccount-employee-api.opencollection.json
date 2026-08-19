@@ -1,0 +1,140 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FlowAccount Open BatchImport Employee API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employee",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get employee by Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/Employee/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get employee by Id"
+        },
+        {
+          "info": {
+            "name": "Delete/Remove Employee by Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://openapi.flowaccount.com/sandbox/Employee/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete/Remove Employee by Id"
+        },
+        {
+          "info": {
+            "name": "Get employee list with payrollQuery model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/Employee",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get employee list with payrollQuery model"
+        },
+        {
+          "info": {
+            "name": "Create Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/Employee",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create Employee"
+        },
+        {
+          "info": {
+            "name": "Update Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://openapi.flowaccount.com/sandbox/Employee",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update Employee"
+        },
+        {
+          "info": {
+            "name": "Count employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/Employee/count",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Count employees"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FlowAccount Open BatchImport CompanyCurrency API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CompanyCurrency",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all currency which user selected for multi-currency",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/company-currency",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get all currency which user selected for multi-currency"
+        },
+        {
+          "info": {
+            "name": "Get company currencies except selected list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/company-currency/currency",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get company currencies except selected list"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

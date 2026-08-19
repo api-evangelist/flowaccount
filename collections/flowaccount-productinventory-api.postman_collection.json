@@ -1,0 +1,497 @@
+{
+  "item": [
+    {
+      "id": "3acd985b-108a-48ad-bb8a-29fba6bd788c",
+      "name": "ProductInventory",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "06f60eff-1b92-4b4b-9b28-4162ed0ce93e",
+          "name": "Product Inventory Get List",
+          "request": {
+            "name": "Product Inventory Get List",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "product-inventories",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CurrentPage",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "PageSize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "SearchString",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CustomDocumentModels",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Range",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Month",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "StartDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "EndDate",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "0",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "370a0859-4b35-4627-9b0c-fca25b61b2d7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "product-inventories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CurrentPage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SearchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CustomDocumentModels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Range",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Month",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "StartDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "EndDate",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "0",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aef0a80f-2c66-4bb6-a9a4-c8c1fc52d526",
+          "name": "Product Inventory Delete Product Inventory",
+          "request": {
+            "name": "Product Inventory Delete Product Inventory",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "product-inventories",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bc587e29-1ec3-4ec8-a14f-668eb45130e7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "product-inventories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e838aefe-447a-4b5a-87c1-77e8fbe71834",
+          "name": "Product Inventory Adjust",
+          "request": {
+            "name": "Product Inventory Adjust",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "product-inventories",
+                "adjust"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": {\n    \"Timestamp\": \"<integer>\",\n    \"Machine\": \"<integer>\",\n    \"Pid\": \"<integer>\",\n    \"Increment\": \"<integer>\",\n    \"CreationTime\": \"<dateTime>\"\n  },\n  \"productId\": \"<long>\",\n  \"productName\": \"<string>\",\n  \"productCode\": \"<string>\",\n  \"inventoryId\": \"<long>\",\n  \"inventoryType\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"quantity\": \"<decimal>\",\n  \"unitId\": \"<long>\",\n  \"unitPrice\": \"<decimal>\",\n  \"unitName\": \"<string>\",\n  \"total\": \"<decimal>\",\n  \"remaining\": \"<decimal>\",\n  \"documentId\": \"<long>\",\n  \"documentType\": \"<integer>\",\n  \"documentSerial\": \"<string>\",\n  \"allowDelete\": \"<boolean>\",\n  \"remarks\": \"<string>\",\n  \"reason\": \"<integer>\",\n  \"contactName\": \"<string>\",\n  \"isOverSold\": \"<boolean>\",\n  \"rowIndex\": \"<integer>\",\n  \"reasonDescription\": \"<string>\",\n  \"averagePricePerUnit\": \"<decimal>\",\n  \"remainingAmount\": \"<decimal>\",\n  \"transactions\": [\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e25a5c79-21fb-44a2-977d-f129e5eb90f8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "product-inventories",
+                    "adjust"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": {\n    \"Timestamp\": \"<integer>\",\n    \"Machine\": \"<integer>\",\n    \"Pid\": \"<integer>\",\n    \"Increment\": \"<integer>\",\n    \"CreationTime\": \"<dateTime>\"\n  },\n  \"productId\": \"<long>\",\n  \"productName\": \"<string>\",\n  \"productCode\": \"<string>\",\n  \"inventoryId\": \"<long>\",\n  \"inventoryType\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"quantity\": \"<decimal>\",\n  \"unitId\": \"<long>\",\n  \"unitPrice\": \"<decimal>\",\n  \"unitName\": \"<string>\",\n  \"total\": \"<decimal>\",\n  \"remaining\": \"<decimal>\",\n  \"documentId\": \"<long>\",\n  \"documentType\": \"<integer>\",\n  \"documentSerial\": \"<string>\",\n  \"allowDelete\": \"<boolean>\",\n  \"remarks\": \"<string>\",\n  \"reason\": \"<integer>\",\n  \"contactName\": \"<string>\",\n  \"isOverSold\": \"<boolean>\",\n  \"rowIndex\": \"<integer>\",\n  \"reasonDescription\": \"<string>\",\n  \"averagePricePerUnit\": \"<decimal>\",\n  \"remainingAmount\": \"<decimal>\",\n  \"transactions\": [\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.flowaccount.com/sandbox",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c6e8bdbd-f9ba-4d68-8071-9344a2c7b518",
+    "name": "FlowAccount Open BatchImport ProductInventory API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

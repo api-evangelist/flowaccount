@@ -1,0 +1,1377 @@
+{
+  "item": [
+    {
+      "id": "5663803d-b290-4b58-9cd0-0ee7df9e110a",
+      "name": "BatchImport",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "66729851-217f-45d6-8964-29572ab54102",
+          "name": "To get details of a document",
+          "request": {
+            "name": "To get details of a document",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "batch-metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fileName",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6b2f1d72-e59c-4c62-90da-4c55c1155fe9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "batch-metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fileName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"companyUserGuid\": \"string\",\n  \"createdAt\": \"2002-02-28T04:12:21.031Z\",\n  \"updatedAt\": \"1961-01-17T04:49:55.365Z\",\n  \"templateId\": \"string\",\n  \"batchId\": \"string\",\n  \"filename\": \"string\",\n  \"documentType\": 5,\n  \"status\": 0,\n  \"documentCount\": 5260,\n  \"successCount\": 4835,\n  \"failedCount\": 9075,\n  \"s3Key\": \"string\",\n  \"userId\": 2689,\n  \"companyId\": 7479,\n  \"isViewed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ca90f0c-95ba-438e-acef-a8987781e15c",
+          "name": "Batch Import Query Batch History",
+          "request": {
+            "name": "Batch Import Query Batch History",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "batch-import-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7a07d775-79f1-44c5-9d24-34adcf9a3252",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "batch-import-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metadataList\": [\n    {\n      \"companyUserGuid\": \"string\",\n      \"createdAt\": \"1946-10-09T17:09:49.258Z\",\n      \"updatedAt\": \"1990-07-20T14:44:36.575Z\",\n      \"templateId\": \"string\",\n      \"batchId\": \"string\",\n      \"filename\": \"string\",\n      \"documentType\": 203,\n      \"status\": 3,\n      \"documentCount\": 3740,\n      \"successCount\": 7088,\n      \"failedCount\": 3104,\n      \"s3Key\": \"string\",\n      \"userId\": 1146,\n      \"companyId\": 9935,\n      \"isViewed\": true\n    },\n    {\n      \"companyUserGuid\": \"string\",\n      \"createdAt\": \"1952-06-06T14:40:05.569Z\",\n      \"updatedAt\": \"2015-09-02T08:35:44.707Z\",\n      \"templateId\": \"string\",\n      \"batchId\": \"string\",\n      \"filename\": \"string\",\n      \"documentType\": 61,\n      \"status\": 1,\n      \"documentCount\": 7556,\n      \"successCount\": 4398,\n      \"failedCount\": 9266,\n      \"s3Key\": \"string\",\n      \"userId\": 9136,\n      \"companyId\": 510,\n      \"isViewed\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11db623f-7dce-43d7-a58f-6cae8005682d",
+          "name": "Query the batch by id and status",
+          "request": {
+            "name": "Query the batch by id and status",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "query-batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff2bf138-0cdb-4a17-a553-7c8affe29324",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "query-batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"messages\": [\n    {\n      \"companyUserGuid\": \"string\",\n      \"createdAt\": \"1960-08-11T19:59:21.591Z\",\n      \"updatedAt\": \"1990-04-03T18:38:15.656Z\",\n      \"batchId\": \"string\",\n      \"status\": \"<integer>\",\n      \"messageId\": \"string\",\n      \"failedReason\": \"string\",\n      \"payload\": \"string\",\n      \"retryCount\": 9602,\n      \"documentSerial\": \"string\",\n      \"sqlId\": 1227,\n      \"rowIndex\": 2633\n    },\n    {\n      \"companyUserGuid\": \"string\",\n      \"createdAt\": \"1951-10-30T15:48:19.571Z\",\n      \"updatedAt\": \"1967-07-09T02:34:41.625Z\",\n      \"batchId\": \"string\",\n      \"status\": \"<integer>\",\n      \"messageId\": \"string\",\n      \"failedReason\": \"string\",\n      \"payload\": \"string\",\n      \"retryCount\": 425,\n      \"documentSerial\": \"string\",\n      \"sqlId\": 398,\n      \"rowIndex\": 4492\n    }\n  ],\n  \"metadata\": {\n    \"companyUserGuid\": \"string\",\n    \"createdAt\": \"2008-06-06T07:20:47.235Z\",\n    \"updatedAt\": \"1965-12-03T05:01:14.452Z\",\n    \"templateId\": \"string\",\n    \"batchId\": \"string\",\n    \"filename\": \"string\",\n    \"documentType\": 24,\n    \"status\": \"<integer>\",\n    \"documentCount\": 53,\n    \"successCount\": 5844,\n    \"failedCount\": 8847,\n    \"s3Key\": \"string\",\n    \"userId\": 7242,\n    \"companyId\": 6373,\n    \"isViewed\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cdb731c-76d2-4db5-987b-d8cebcc04fa7",
+          "name": "Batch Import Retry Simple Documents",
+          "request": {
+            "name": "Batch Import Retry Simple Documents",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "retry-simple-documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batchId\": \"<string>\",\n  \"messageIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a64c7cf-bf12-478c-8a49-c25794561f28",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "retry-simple-documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"batchId\": \"<string>\",\n  \"messageIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "true",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28f509fe-7fd3-4a71-bb91-5d68029237bf",
+          "name": "Mark the batch as viewed in notification.",
+          "request": {
+            "name": "Mark the batch as viewed in notification.",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "mark-viewed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batchId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<long>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eb7d86cb-6f2a-4928-8178-7a466079b0aa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "mark-viewed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "userId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "batchId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<long>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "true",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31a78442-feec-483e-8d96-5c2ff9a7a1ce",
+          "name": "Get presign url to upload the file with payloads",
+          "request": {
+            "name": "Get presign url to upload the file with payloads",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "get-presign-for-upload-simpledoc"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"simpleDocuments\": [\n    {\n      \"recordId\": \"<long>\",\n      \"contactCode\": \"<string>\",\n      \"contactName\": \"<string>\",\n      \"contactAddress\": \"<string>\",\n      \"contactTaxId\": \"<string>\",\n      \"contactBranch\": \"<string>\",\n      \"contactPerson\": \"<string>\",\n      \"contactEmail\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"contactZipCode\": \"<string>\",\n      \"contactGroup\": \"<integer>\",\n      \"publishedOn\": \"<dateTime>\",\n      \"creditType\": \"<integer>\",\n      \"creditDays\": \"<integer>\",\n      \"dueDate\": \"<dateTime>\",\n      \"salesName\": \"<string>\",\n      \"projectName\": \"<string>\",\n      \"reference\": \"<string>\",\n      \"isVatInclusive\": \"<boolean>\",\n      \"useReceiptDeduction\": \"<boolean>\",\n      \"subTotal\": \"<decimal>\",\n      \"discountPercentage\": \"<integer>\",\n      \"discountAmount\": \"<decimal>\",\n      \"totalAfterDiscount\": \"<decimal>\",\n      \"isVat\": \"<boolean>\",\n      \"vatAmount\": \"<decimal>\",\n      \"grandTotal\": \"<decimal>\",\n      \"documentShowWithholdingTax\": \"<boolean>\",\n      \"documentWithholdingTaxPercentage\": \"<integer>\",\n      \"documentWithholdingTaxAmount\": \"<decimal>\",\n      \"documentDeductionType\": \"<integer>\",\n      \"documentDeductionAmount\": \"<decimal>\",\n      \"remarks\": \"<string>\",\n      \"internalNotes\": \"<string>\",\n      \"showSignatureOrStamp\": \"<boolean>\",\n      \"documentStructureType\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"saleAndPurchaseChannel\": \"<string>\",\n      \"rowIndex\": \"<string>\",\n      \"items\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"documentReference\": [\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        },\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        }\n      ],\n      \"exemptAmount\": \"<decimal>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"contactCode\": \"<string>\",\n      \"contactName\": \"<string>\",\n      \"contactAddress\": \"<string>\",\n      \"contactTaxId\": \"<string>\",\n      \"contactBranch\": \"<string>\",\n      \"contactPerson\": \"<string>\",\n      \"contactEmail\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"contactZipCode\": \"<string>\",\n      \"contactGroup\": \"<integer>\",\n      \"publishedOn\": \"<dateTime>\",\n      \"creditType\": \"<integer>\",\n      \"creditDays\": \"<integer>\",\n      \"dueDate\": \"<dateTime>\",\n      \"salesName\": \"<string>\",\n      \"projectName\": \"<string>\",\n      \"reference\": \"<string>\",\n      \"isVatInclusive\": \"<boolean>\",\n      \"useReceiptDeduction\": \"<boolean>\",\n      \"subTotal\": \"<decimal>\",\n      \"discountPercentage\": \"<integer>\",\n      \"discountAmount\": \"<decimal>\",\n      \"totalAfterDiscount\": \"<decimal>\",\n      \"isVat\": \"<boolean>\",\n      \"vatAmount\": \"<decimal>\",\n      \"grandTotal\": \"<decimal>\",\n      \"documentShowWithholdingTax\": \"<boolean>\",\n      \"documentWithholdingTaxPercentage\": \"<integer>\",\n      \"documentWithholdingTaxAmount\": \"<decimal>\",\n      \"documentDeductionType\": \"<integer>\",\n      \"documentDeductionAmount\": \"<decimal>\",\n      \"remarks\": \"<string>\",\n      \"internalNotes\": \"<string>\",\n      \"showSignatureOrStamp\": \"<boolean>\",\n      \"documentStructureType\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"saleAndPurchaseChannel\": \"<string>\",\n      \"rowIndex\": \"<string>\",\n      \"items\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"documentReference\": [\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        },\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        }\n      ],\n      \"exemptAmount\": \"<decimal>\"\n    }\n  ],\n  \"batchId\": \"<string>\",\n  \"fileName\": \"<string>\",\n  \"batchCount\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ee2a0ded-5dd5-456b-9c0b-c0cf532709f5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "get-presign-for-upload-simpledoc"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"simpleDocuments\": [\n    {\n      \"recordId\": \"<long>\",\n      \"contactCode\": \"<string>\",\n      \"contactName\": \"<string>\",\n      \"contactAddress\": \"<string>\",\n      \"contactTaxId\": \"<string>\",\n      \"contactBranch\": \"<string>\",\n      \"contactPerson\": \"<string>\",\n      \"contactEmail\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"contactZipCode\": \"<string>\",\n      \"contactGroup\": \"<integer>\",\n      \"publishedOn\": \"<dateTime>\",\n      \"creditType\": \"<integer>\",\n      \"creditDays\": \"<integer>\",\n      \"dueDate\": \"<dateTime>\",\n      \"salesName\": \"<string>\",\n      \"projectName\": \"<string>\",\n      \"reference\": \"<string>\",\n      \"isVatInclusive\": \"<boolean>\",\n      \"useReceiptDeduction\": \"<boolean>\",\n      \"subTotal\": \"<decimal>\",\n      \"discountPercentage\": \"<integer>\",\n      \"discountAmount\": \"<decimal>\",\n      \"totalAfterDiscount\": \"<decimal>\",\n      \"isVat\": \"<boolean>\",\n      \"vatAmount\": \"<decimal>\",\n      \"grandTotal\": \"<decimal>\",\n      \"documentShowWithholdingTax\": \"<boolean>\",\n      \"documentWithholdingTaxPercentage\": \"<integer>\",\n      \"documentWithholdingTaxAmount\": \"<decimal>\",\n      \"documentDeductionType\": \"<integer>\",\n      \"documentDeductionAmount\": \"<decimal>\",\n      \"remarks\": \"<string>\",\n      \"internalNotes\": \"<string>\",\n      \"showSignatureOrStamp\": \"<boolean>\",\n      \"documentStructureType\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"saleAndPurchaseChannel\": \"<string>\",\n      \"rowIndex\": \"<string>\",\n      \"items\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"documentReference\": [\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        },\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        }\n      ],\n      \"exemptAmount\": \"<decimal>\"\n    },\n    {\n      \"recordId\": \"<long>\",\n      \"contactCode\": \"<string>\",\n      \"contactName\": \"<string>\",\n      \"contactAddress\": \"<string>\",\n      \"contactTaxId\": \"<string>\",\n      \"contactBranch\": \"<string>\",\n      \"contactPerson\": \"<string>\",\n      \"contactEmail\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"contactZipCode\": \"<string>\",\n      \"contactGroup\": \"<integer>\",\n      \"publishedOn\": \"<dateTime>\",\n      \"creditType\": \"<integer>\",\n      \"creditDays\": \"<integer>\",\n      \"dueDate\": \"<dateTime>\",\n      \"salesName\": \"<string>\",\n      \"projectName\": \"<string>\",\n      \"reference\": \"<string>\",\n      \"isVatInclusive\": \"<boolean>\",\n      \"useReceiptDeduction\": \"<boolean>\",\n      \"subTotal\": \"<decimal>\",\n      \"discountPercentage\": \"<integer>\",\n      \"discountAmount\": \"<decimal>\",\n      \"totalAfterDiscount\": \"<decimal>\",\n      \"isVat\": \"<boolean>\",\n      \"vatAmount\": \"<decimal>\",\n      \"grandTotal\": \"<decimal>\",\n      \"documentShowWithholdingTax\": \"<boolean>\",\n      \"documentWithholdingTaxPercentage\": \"<integer>\",\n      \"documentWithholdingTaxAmount\": \"<decimal>\",\n      \"documentDeductionType\": \"<integer>\",\n      \"documentDeductionAmount\": \"<decimal>\",\n      \"remarks\": \"<string>\",\n      \"internalNotes\": \"<string>\",\n      \"showSignatureOrStamp\": \"<boolean>\",\n      \"documentStructureType\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"saleAndPurchaseChannel\": \"<string>\",\n      \"rowIndex\": \"<string>\",\n      \"items\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"quantity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"unitName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"pricePerUnit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"total\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sellChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"buyChartOfAccountCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"productCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"documentReference\": [\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        },\n        {\n          \"recordId\": \"<long>\",\n          \"referenceDocumentSerial\": \"<string>\",\n          \"referenceDocumentType\": \"<long>\"\n        }\n      ],\n      \"exemptAmount\": \"<decimal>\"\n    }\n  ],\n  \"batchId\": \"<string>\",\n  \"fileName\": \"<string>\",\n  \"batchCount\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47e6714b-0014-45e6-b86f-5c7c9d3fadc2",
+          "name": "Get Original File",
+          "request": {
+            "name": "Get Original File",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "get-batch-import-org-file",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batchId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8530ea4f-1483-42c1-8ae3-a6f12084268c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "get-batch-import-org-file",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bef03c4-ac14-4151-86f1-ff33d7b2924a",
+          "name": "Get data from Storage",
+          "request": {
+            "name": "Get data from Storage",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "get-batch-s3-data",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batchId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a1504035-3862-4bb9-a341-f8f70c339c75",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "get-batch-s3-data",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc026755-5201-409d-ba64-cd1e467434a5",
+          "name": "Create or Update (Upsert) custom template",
+          "request": {
+            "name": "Create or Update (Upsert) custom template",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "custom-template"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"sheetIndex\": \"<integer>\",\n  \"columns\": {},\n  \"dateFormat\": {\n    \"format\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"ignoreLastRow\": \"<boolean>\",\n  \"imageUrl\": \"<string>\",\n  \"customTemplateInfo\": {\n    \"headerIndex\": \"<string>\",\n    \"productName\": \"<string>\",\n    \"includeTax\": \"<string>\",\n    \"isChooseDateColumn\": \"<boolean>\",\n    \"isChooseUnitPriceColumn\": \"<boolean>\"\n  },\n  \"formulas\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d2d46916-6625-4f8b-8ada-8bbdd96add8e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "custom-template"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"sheetIndex\": \"<integer>\",\n  \"columns\": {},\n  \"dateFormat\": {\n    \"format\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"ignoreLastRow\": \"<boolean>\",\n  \"imageUrl\": \"<string>\",\n  \"customTemplateInfo\": {\n    \"headerIndex\": \"<string>\",\n    \"productName\": \"<string>\",\n    \"includeTax\": \"<string>\",\n    \"isChooseDateColumn\": \"<boolean>\",\n    \"isChooseUnitPriceColumn\": \"<boolean>\"\n  },\n  \"formulas\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4473c267-54de-44c2-8a85-507b3f965c9f",
+          "name": "Get custom template",
+          "request": {
+            "name": "Get custom template",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "custom-template",
+                ":templateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "34b2d5f7-6ee1-4035-a488-2fd55c2a8865",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "custom-template",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9223ed7-14b3-4b90-bfe8-b96301c2839d",
+          "name": "Delete custom template",
+          "request": {
+            "name": "Delete custom template",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "cash-invoices",
+                "custom-template",
+                ":templateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0caef823-1578-4c0a-a9d1-e4d31df65037",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "cash-invoices",
+                    "custom-template",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.flowaccount.com/sandbox",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "085f0af7-d72b-449b-9d49-fe0db8d0cea6",
+    "name": "FlowAccount Open BatchImport API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

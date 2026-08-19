@@ -1,0 +1,944 @@
+{
+  "item": [
+    {
+      "id": "34f042c9-2a15-4c87-a32f-002a08219a4a",
+      "name": "Products",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "591f46c3-fd9a-4087-8e36-d36fba9c10b8",
+          "name": "Products Search",
+          "request": {
+            "name": "Products Search",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "Products",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CurrentPage",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "PageSize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "SearchString",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CustomDocumentModels",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Range",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Month",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "StartDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "EndDate",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bec2362d-2c96-4c3c-86c1-3f481010c0b3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "Products",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CurrentPage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SearchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CustomDocumentModels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Range",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Month",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "StartDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "EndDate",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"message\": \"string\",\n  \"code\": 5528,\n  \"data\": {\n    \"list\": [\n      {\n        \"id\": 4555,\n        \"type\": 5,\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": 1,\n        \"buyPrice\": 8290.956674403538,\n        \"buyPriceWithVat\": 4931.801038643493,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 854,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": 1,\n        \"sellPrice\": 3526.798535317386,\n        \"sellPriceWithVat\": 8380.257154369583,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 7900,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 5202,\n        \"categoryName\": \"string\",\n        \"unitId\": 2427,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": 5,\n        \"broughtForwardOn\": \"1951-06-17T03:00:45.797Z\",\n        \"inventoryPublishedOn\": \"1996-02-06T04:41:56.454Z\",\n        \"inventoryQuantity\": 952.3267300291916,\n        \"inventoryPrice\": 1058.0141885197536,\n        \"inventoryTotal\": 1092.869834305008,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 6900.512632899148,\n        \"averageSellPrice\": 2255.6706236317646,\n        \"remainingStock\": 4711.514550231841,\n        \"totalValueInHand\": 8476.879714629547,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      {\n        \"id\": 9878,\n        \"type\": 5,\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": 5,\n        \"buyPrice\": 7391.919667793568,\n        \"buyPriceWithVat\": 7924.535670980111,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 9750,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": 1,\n        \"sellPrice\": 376.95812478800826,\n        \"sellPriceWithVat\": 7344.961933994735,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 1302,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 6800,\n        \"categoryName\": \"string\",\n        \"unitId\": 2614,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": 5,\n        \"broughtForwardOn\": \"1989-12-07T15:43:12.769Z\",\n        \"inventoryPublishedOn\": \"1987-07-28T21:13:35.338Z\",\n        \"inventoryQuantity\": 3672.893763581826,\n        \"inventoryPrice\": 5610.233334500647,\n        \"inventoryTotal\": 2676.894807787421,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 2381.7068073524215,\n        \"averageSellPrice\": 5566.4482212718,\n        \"remainingStock\": 7246.06227613208,\n        \"totalValueInHand\": 906.3477219497629,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e3debab-9f34-48f0-98d4-d15e29e82091",
+          "name": "Products Get List",
+          "request": {
+            "name": "Products Get List",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "Products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CurrentPage",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "PageSize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "SearchString",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CustomDocumentModels",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Range",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Month",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "StartDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "EndDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "0"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f1ecd71e-9749-47b4-af00-bf73ba46257a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "Products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CurrentPage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SearchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CustomDocumentModels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Range",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Month",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "StartDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "EndDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"message\": \"string\",\n  \"code\": 8225,\n  \"data\": {\n    \"list\": [\n      {\n        \"id\": 7013,\n        \"type\": 1,\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": 5,\n        \"buyPrice\": 9863.12388259853,\n        \"buyPriceWithVat\": 8508.0117963723,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 4807,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": 7,\n        \"sellPrice\": 6776.926213968341,\n        \"sellPriceWithVat\": 5831.069524508325,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 6394,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 6435,\n        \"categoryName\": \"string\",\n        \"unitId\": 8122,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": 1,\n        \"broughtForwardOn\": \"1997-01-14T18:56:37.680Z\",\n        \"inventoryPublishedOn\": \"2011-10-10T00:35:11.105Z\",\n        \"inventoryQuantity\": 6565.501185592978,\n        \"inventoryPrice\": 6627.811020187255,\n        \"inventoryTotal\": 7288.550629438403,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 8154.222969489838,\n        \"averageSellPrice\": 2709.597624969905,\n        \"remainingStock\": 717.8991012069403,\n        \"totalValueInHand\": 8570.795694626733,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      {\n        \"id\": 8415,\n        \"type\": 3,\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": 3,\n        \"buyPrice\": 8734.658664404207,\n        \"buyPriceWithVat\": 2954.5697569650806,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 9760,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": 7,\n        \"sellPrice\": 3375.8289529385675,\n        \"sellPriceWithVat\": 2420.5565479334546,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 1315,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 4642,\n        \"categoryName\": \"string\",\n        \"unitId\": 3535,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": 11,\n        \"broughtForwardOn\": \"1996-09-16T06:45:00.426Z\",\n        \"inventoryPublishedOn\": \"1949-10-06T03:21:43.382Z\",\n        \"inventoryQuantity\": 4175.042628318711,\n        \"inventoryPrice\": 6415.486677179861,\n        \"inventoryTotal\": 8744.70929583699,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 614.7535937127458,\n        \"averageSellPrice\": 960.2547862624244,\n        \"remainingStock\": 2405.610572669651,\n        \"totalValueInHand\": 9161.73332902682,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b5d4c3b-bf63-4860-9fe1-fd6ba5d2fb52",
+          "name": "Products Create",
+          "request": {
+            "name": "Products Create",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "Products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<integer>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"barcode\": \"<string>\",\n  \"image\": {\n    \"companyId\": \"<long>\",\n    \"fileName\": \"<string>\",\n    \"url\": \"<string>\",\n    \"previewURL\": \"<string>\",\n    \"thumbURL\": \"<string>\"\n  },\n  \"buyVatType\": \"<integer>\",\n  \"buyPrice\": \"<decimal>\",\n  \"buyPriceWithVat\": \"<decimal>\",\n  \"buyDescription\": \"<string>\",\n  \"buyChartOfAccountId\": \"<long>\",\n  \"buyChartOfAccountCode\": \"<string>\",\n  \"buyChartOfAccountNameLocal\": \"<string>\",\n  \"buyChartOfAccountNameForeign\": \"<string>\",\n  \"sellVatType\": \"<integer>\",\n  \"sellPrice\": \"<decimal>\",\n  \"sellPriceWithVat\": \"<decimal>\",\n  \"sellDescription\": \"<string>\",\n  \"sellChartOfAccountId\": \"<long>\",\n  \"sellChartOfAccountCode\": \"<string>\",\n  \"sellChartOfAccountNameLocal\": \"<string>\",\n  \"sellChartOfAccountNameForeign\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"categoryName\": \"<string>\",\n  \"unitId\": \"<long>\",\n  \"unitName\": \"<string>\",\n  \"productNonInventoryType\": \"<integer>\",\n  \"broughtForwardOn\": \"<dateTime>\",\n  \"inventoryPublishedOn\": \"<dateTime>\",\n  \"inventoryQuantity\": \"<decimal>\",\n  \"inventoryPrice\": \"<decimal>\",\n  \"inventoryTotal\": \"<decimal>\",\n  \"inventoryRemark\": \"<string>\",\n  \"averageBuyPrice\": \"<decimal>\",\n  \"averageSellPrice\": \"<decimal>\",\n  \"remainingStock\": \"<decimal>\",\n  \"totalValueInHand\": \"<decimal>\",\n  \"stockCard\": [\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c1533bb2-1b3c-4afe-a3f7-ea36961a9204",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "Products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<integer>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"barcode\": \"<string>\",\n  \"image\": {\n    \"companyId\": \"<long>\",\n    \"fileName\": \"<string>\",\n    \"url\": \"<string>\",\n    \"previewURL\": \"<string>\",\n    \"thumbURL\": \"<string>\"\n  },\n  \"buyVatType\": \"<integer>\",\n  \"buyPrice\": \"<decimal>\",\n  \"buyPriceWithVat\": \"<decimal>\",\n  \"buyDescription\": \"<string>\",\n  \"buyChartOfAccountId\": \"<long>\",\n  \"buyChartOfAccountCode\": \"<string>\",\n  \"buyChartOfAccountNameLocal\": \"<string>\",\n  \"buyChartOfAccountNameForeign\": \"<string>\",\n  \"sellVatType\": \"<integer>\",\n  \"sellPrice\": \"<decimal>\",\n  \"sellPriceWithVat\": \"<decimal>\",\n  \"sellDescription\": \"<string>\",\n  \"sellChartOfAccountId\": \"<long>\",\n  \"sellChartOfAccountCode\": \"<string>\",\n  \"sellChartOfAccountNameLocal\": \"<string>\",\n  \"sellChartOfAccountNameForeign\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"categoryName\": \"<string>\",\n  \"unitId\": \"<long>\",\n  \"unitName\": \"<string>\",\n  \"productNonInventoryType\": \"<integer>\",\n  \"broughtForwardOn\": \"<dateTime>\",\n  \"inventoryPublishedOn\": \"<dateTime>\",\n  \"inventoryQuantity\": \"<decimal>\",\n  \"inventoryPrice\": \"<decimal>\",\n  \"inventoryTotal\": \"<decimal>\",\n  \"inventoryRemark\": \"<string>\",\n  \"averageBuyPrice\": \"<decimal>\",\n  \"averageSellPrice\": \"<decimal>\",\n  \"remainingStock\": \"<decimal>\",\n  \"totalValueInHand\": \"<decimal>\",\n  \"stockCard\": [\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"message\": \"string\",\n  \"code\": 9537,\n  \"data\": {\n    \"list\": [\n      {\n        \"id\": 7184,\n        \"type\": \"<integer>\",\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": \"<integer>\",\n        \"buyPrice\": 2806.7105277816295,\n        \"buyPriceWithVat\": 2807.1577014346317,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 47,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": \"<integer>\",\n        \"sellPrice\": 9270.7453744256,\n        \"sellPriceWithVat\": 9675.85019004078,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 7828,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 7306,\n        \"categoryName\": \"string\",\n        \"unitId\": 2613,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": \"<integer>\",\n        \"broughtForwardOn\": \"1984-04-14T11:16:29.845Z\",\n        \"inventoryPublishedOn\": \"2000-02-05T17:23:34.530Z\",\n        \"inventoryQuantity\": 595.9078739205736,\n        \"inventoryPrice\": 5253.912428208713,\n        \"inventoryTotal\": 8799.242355593426,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 9898.453722238986,\n        \"averageSellPrice\": 2197.0697173714348,\n        \"remainingStock\": 1661.4833900453696,\n        \"totalValueInHand\": 5197.64940619289,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      {\n        \"id\": 5172,\n        \"type\": \"<integer>\",\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": \"<integer>\",\n        \"buyPrice\": 9672.496749496202,\n        \"buyPriceWithVat\": 1174.6928406856916,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 4405,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": \"<integer>\",\n        \"sellPrice\": 5690.62749001172,\n        \"sellPriceWithVat\": 4583.105117607801,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 1821,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 7181,\n        \"categoryName\": \"string\",\n        \"unitId\": 2116,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": \"<integer>\",\n        \"broughtForwardOn\": \"1994-01-08T07:42:16.355Z\",\n        \"inventoryPublishedOn\": \"1997-05-10T18:51:04.094Z\",\n        \"inventoryQuantity\": 8746.792959970877,\n        \"inventoryPrice\": 8143.632887638828,\n        \"inventoryTotal\": 3718.590381082899,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 6925.023143346033,\n        \"averageSellPrice\": 5574.635893848855,\n        \"remainingStock\": 5204.235632641592,\n        \"totalValueInHand\": 9075.658284148729,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc89e95b-9482-456c-879b-ec55fd011197",
+          "name": "Products Get By Id",
+          "request": {
+            "name": "Products Get By Id",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "Products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ea6829a2-16f3-43be-8ae7-f1f8dee69c58",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "Products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"message\": \"string\",\n  \"code\": 9537,\n  \"data\": {\n    \"list\": [\n      {\n        \"id\": 7184,\n        \"type\": \"<integer>\",\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": \"<integer>\",\n        \"buyPrice\": 2806.7105277816295,\n        \"buyPriceWithVat\": 2807.1577014346317,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 47,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": \"<integer>\",\n        \"sellPrice\": 9270.7453744256,\n        \"sellPriceWithVat\": 9675.85019004078,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 7828,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 7306,\n        \"categoryName\": \"string\",\n        \"unitId\": 2613,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": \"<integer>\",\n        \"broughtForwardOn\": \"1984-04-14T11:16:29.845Z\",\n        \"inventoryPublishedOn\": \"2000-02-05T17:23:34.530Z\",\n        \"inventoryQuantity\": 595.9078739205736,\n        \"inventoryPrice\": 5253.912428208713,\n        \"inventoryTotal\": 8799.242355593426,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 9898.453722238986,\n        \"averageSellPrice\": 2197.0697173714348,\n        \"remainingStock\": 1661.4833900453696,\n        \"totalValueInHand\": 5197.64940619289,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      {\n        \"id\": 5172,\n        \"type\": \"<integer>\",\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": \"<integer>\",\n        \"buyPrice\": 9672.496749496202,\n        \"buyPriceWithVat\": 1174.6928406856916,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 4405,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": \"<integer>\",\n        \"sellPrice\": 5690.62749001172,\n        \"sellPriceWithVat\": 4583.105117607801,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 1821,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 7181,\n        \"categoryName\": \"string\",\n        \"unitId\": 2116,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": \"<integer>\",\n        \"broughtForwardOn\": \"1994-01-08T07:42:16.355Z\",\n        \"inventoryPublishedOn\": \"1997-05-10T18:51:04.094Z\",\n        \"inventoryQuantity\": 8746.792959970877,\n        \"inventoryPrice\": 8143.632887638828,\n        \"inventoryTotal\": 3718.590381082899,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 6925.023143346033,\n        \"averageSellPrice\": 5574.635893848855,\n        \"remainingStock\": 5204.235632641592,\n        \"totalValueInHand\": 9075.658284148729,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b66ff87c-f476-4e0e-ab77-01d8cccc8b8d",
+          "name": "Products Update",
+          "request": {
+            "name": "Products Update",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "Products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<integer>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"barcode\": \"<string>\",\n  \"image\": {\n    \"companyId\": \"<long>\",\n    \"fileName\": \"<string>\",\n    \"url\": \"<string>\",\n    \"previewURL\": \"<string>\",\n    \"thumbURL\": \"<string>\"\n  },\n  \"buyVatType\": \"<integer>\",\n  \"buyPrice\": \"<decimal>\",\n  \"buyPriceWithVat\": \"<decimal>\",\n  \"buyDescription\": \"<string>\",\n  \"buyChartOfAccountId\": \"<long>\",\n  \"buyChartOfAccountCode\": \"<string>\",\n  \"buyChartOfAccountNameLocal\": \"<string>\",\n  \"buyChartOfAccountNameForeign\": \"<string>\",\n  \"sellVatType\": \"<integer>\",\n  \"sellPrice\": \"<decimal>\",\n  \"sellPriceWithVat\": \"<decimal>\",\n  \"sellDescription\": \"<string>\",\n  \"sellChartOfAccountId\": \"<long>\",\n  \"sellChartOfAccountCode\": \"<string>\",\n  \"sellChartOfAccountNameLocal\": \"<string>\",\n  \"sellChartOfAccountNameForeign\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"categoryName\": \"<string>\",\n  \"unitId\": \"<long>\",\n  \"unitName\": \"<string>\",\n  \"productNonInventoryType\": \"<integer>\",\n  \"broughtForwardOn\": \"<dateTime>\",\n  \"inventoryPublishedOn\": \"<dateTime>\",\n  \"inventoryQuantity\": \"<decimal>\",\n  \"inventoryPrice\": \"<decimal>\",\n  \"inventoryTotal\": \"<decimal>\",\n  \"inventoryRemark\": \"<string>\",\n  \"averageBuyPrice\": \"<decimal>\",\n  \"averageSellPrice\": \"<decimal>\",\n  \"remainingStock\": \"<decimal>\",\n  \"totalValueInHand\": \"<decimal>\",\n  \"stockCard\": [\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4c7b3f31-4851-4c4f-93db-4d0845411ff4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "Products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<integer>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"barcode\": \"<string>\",\n  \"image\": {\n    \"companyId\": \"<long>\",\n    \"fileName\": \"<string>\",\n    \"url\": \"<string>\",\n    \"previewURL\": \"<string>\",\n    \"thumbURL\": \"<string>\"\n  },\n  \"buyVatType\": \"<integer>\",\n  \"buyPrice\": \"<decimal>\",\n  \"buyPriceWithVat\": \"<decimal>\",\n  \"buyDescription\": \"<string>\",\n  \"buyChartOfAccountId\": \"<long>\",\n  \"buyChartOfAccountCode\": \"<string>\",\n  \"buyChartOfAccountNameLocal\": \"<string>\",\n  \"buyChartOfAccountNameForeign\": \"<string>\",\n  \"sellVatType\": \"<integer>\",\n  \"sellPrice\": \"<decimal>\",\n  \"sellPriceWithVat\": \"<decimal>\",\n  \"sellDescription\": \"<string>\",\n  \"sellChartOfAccountId\": \"<long>\",\n  \"sellChartOfAccountCode\": \"<string>\",\n  \"sellChartOfAccountNameLocal\": \"<string>\",\n  \"sellChartOfAccountNameForeign\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"categoryName\": \"<string>\",\n  \"unitId\": \"<long>\",\n  \"unitName\": \"<string>\",\n  \"productNonInventoryType\": \"<integer>\",\n  \"broughtForwardOn\": \"<dateTime>\",\n  \"inventoryPublishedOn\": \"<dateTime>\",\n  \"inventoryQuantity\": \"<decimal>\",\n  \"inventoryPrice\": \"<decimal>\",\n  \"inventoryTotal\": \"<decimal>\",\n  \"inventoryRemark\": \"<string>\",\n  \"averageBuyPrice\": \"<decimal>\",\n  \"averageSellPrice\": \"<decimal>\",\n  \"remainingStock\": \"<decimal>\",\n  \"totalValueInHand\": \"<decimal>\",\n  \"stockCard\": [\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": {\n        \"Timestamp\": \"<integer>\",\n        \"Machine\": \"<integer>\",\n        \"Pid\": \"<integer>\",\n        \"Increment\": \"<integer>\",\n        \"CreationTime\": \"<dateTime>\"\n      },\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"productCode\": \"<string>\",\n      \"inventoryId\": \"<long>\",\n      \"inventoryType\": \"<integer>\",\n      \"date\": \"<dateTime>\",\n      \"quantity\": \"<decimal>\",\n      \"unitId\": \"<long>\",\n      \"unitPrice\": \"<decimal>\",\n      \"unitName\": \"<string>\",\n      \"total\": \"<decimal>\",\n      \"remaining\": \"<decimal>\",\n      \"documentType\": \"<integer>\",\n      \"documentSerial\": \"<string>\",\n      \"allowDelete\": \"<boolean>\",\n      \"remarks\": \"<string>\",\n      \"reason\": \"<integer>\",\n      \"contactName\": \"<string>\",\n      \"isOverSold\": \"<boolean>\",\n      \"rowIndex\": \"<integer>\",\n      \"reasonDescription\": \"<string>\",\n      \"averagePricePerUnit\": \"<decimal>\",\n      \"remainingAmount\": \"<decimal>\",\n      \"transactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/IStockCard detected>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"message\": \"string\",\n  \"code\": 9537,\n  \"data\": {\n    \"list\": [\n      {\n        \"id\": 7184,\n        \"type\": \"<integer>\",\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": \"<integer>\",\n        \"buyPrice\": 2806.7105277816295,\n        \"buyPriceWithVat\": 2807.1577014346317,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 47,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": \"<integer>\",\n        \"sellPrice\": 9270.7453744256,\n        \"sellPriceWithVat\": 9675.85019004078,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 7828,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 7306,\n        \"categoryName\": \"string\",\n        \"unitId\": 2613,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": \"<integer>\",\n        \"broughtForwardOn\": \"1984-04-14T11:16:29.845Z\",\n        \"inventoryPublishedOn\": \"2000-02-05T17:23:34.530Z\",\n        \"inventoryQuantity\": 595.9078739205736,\n        \"inventoryPrice\": 5253.912428208713,\n        \"inventoryTotal\": 8799.242355593426,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 9898.453722238986,\n        \"averageSellPrice\": 2197.0697173714348,\n        \"remainingStock\": 1661.4833900453696,\n        \"totalValueInHand\": 5197.64940619289,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      {\n        \"id\": 5172,\n        \"type\": \"<integer>\",\n        \"code\": \"string\",\n        \"name\": \"string\",\n        \"barcode\": \"string\",\n        \"buyVatType\": \"<integer>\",\n        \"buyPrice\": 9672.496749496202,\n        \"buyPriceWithVat\": 1174.6928406856916,\n        \"buyDescription\": \"string\",\n        \"buyChartOfAccountId\": 4405,\n        \"buyChartOfAccountCode\": \"string\",\n        \"buyChartOfAccountNameLocal\": \"string\",\n        \"buyChartOfAccountNameForeign\": \"string\",\n        \"sellVatType\": \"<integer>\",\n        \"sellPrice\": 5690.62749001172,\n        \"sellPriceWithVat\": 4583.105117607801,\n        \"sellDescription\": \"string\",\n        \"sellChartOfAccountId\": 1821,\n        \"sellChartOfAccountCode\": \"string\",\n        \"sellChartOfAccountNameLocal\": \"string\",\n        \"sellChartOfAccountNameForeign\": \"string\",\n        \"categoryId\": 7181,\n        \"categoryName\": \"string\",\n        \"unitId\": 2116,\n        \"unitName\": \"string\",\n        \"productNonInventoryType\": \"<integer>\",\n        \"broughtForwardOn\": \"1994-01-08T07:42:16.355Z\",\n        \"inventoryPublishedOn\": \"1997-05-10T18:51:04.094Z\",\n        \"inventoryQuantity\": 8746.792959970877,\n        \"inventoryPrice\": 8143.632887638828,\n        \"inventoryTotal\": 3718.590381082899,\n        \"inventoryRemark\": \"string\",\n        \"averageBuyPrice\": 6925.023143346033,\n        \"averageSellPrice\": 5574.635893848855,\n        \"remainingStock\": 5204.235632641592,\n        \"totalValueInHand\": 9075.658284148729,\n        \"stockCard\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"productCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"inventoryType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"quantity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitPrice\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"unitName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remaining\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentSerial\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"allowDelete\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remarks\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reason\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contactName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isOverSold\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rowIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"reasonDescription\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"averagePricePerUnit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"remainingAmount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"transactions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94f52cb6-15f5-4d97-946a-9bfa65230088",
+          "name": "Products Remove",
+          "request": {
+            "name": "Products Remove",
+            "description": {},
+            "url": {
+              "path": [
+                ":culture",
+                "Products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "culture",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7cf4d88f-30c5-4bf8-82fa-83fd705f3a86",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":culture",
+                    "Products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "culture",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"message\": \"string\",\n  \"code\": 8633,\n  \"data\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.flowaccount.com/sandbox",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7b896f2e-b92a-45fa-8f6e-e69da10b7e26",
+    "name": "FlowAccount Open BatchImport Products API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

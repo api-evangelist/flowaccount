@@ -1,0 +1,325 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FlowAccount Open BatchImport API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BatchImport",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "To get details of a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/batch-metadata",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "To get details of a document"
+        },
+        {
+          "info": {
+            "name": "BatchImport_QueryBatchHistory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/batch-import-history",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Query the batch by id and status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/query-batch",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Query the batch by id and status"
+        },
+        {
+          "info": {
+            "name": "BatchImport_RetrySimpleDocuments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/retry-simple-documents",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Mark the batch as viewed in notification.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/mark-viewed",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark the batch as viewed in notification."
+        },
+        {
+          "info": {
+            "name": "Get presign url to upload the file with payloads",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/get-presign-for-upload-simpledoc",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get presign url to upload the file with payloads"
+        },
+        {
+          "info": {
+            "name": "Get Original File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/get-batch-import-org-file/:batchId",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get Original File"
+        },
+        {
+          "info": {
+            "name": "Get data from Storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/get-batch-s3-data/:batchId",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get data from Storage"
+        },
+        {
+          "info": {
+            "name": "Create or Update (Upsert) custom template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/custom-template",
+            "params": [
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create or Update (Upsert) custom template"
+        },
+        {
+          "info": {
+            "name": "Get custom template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/custom-template/:templateId",
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get custom template"
+        },
+        {
+          "info": {
+            "name": "Delete custom template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://openapi.flowaccount.com/sandbox/:culture/cash-invoices/custom-template/:templateId",
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "culture",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete custom template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
