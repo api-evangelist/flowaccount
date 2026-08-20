@@ -38,6 +38,17 @@ tags:
 - Accounting
 - Invoicing
 - Payroll
+- Point-of-Sale
+- SME
+- Finance
+- Tax
+- Thailand
+- Bookkeeping
+tags_raw:
+- Company
+- Accounting
+- Invoicing
+- Payroll
 - Point of Sale
 - SME
 - Finance
@@ -51,6 +62,8 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
+  - Batch Import
+  tags_raw:
   - BatchImport
   properties:
   - type: OpenAPI
@@ -285,6 +298,8 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
+  - Product Category
+  tags_raw:
   - ProductCategory
   properties:
   - type: OpenAPI
@@ -337,6 +352,8 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -415,6 +432,8 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
+  - Purchase Order
+  tags_raw:
   - PurchaseOrder
   properties:
   - type: OpenAPI
