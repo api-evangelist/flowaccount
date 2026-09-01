@@ -74,7 +74,7 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
-  - BatchImport
+  - Batch Import
   tags_raw:
   - BatchImport
   properties:
@@ -446,7 +446,7 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
-  - PurchaseOrder
+  - Purchase Order
   tags_raw:
   - PurchaseOrder
   properties:
