@@ -68,34 +68,6 @@ tags_raw:
 - Thailand
 - Bookkeeping
 apis:
-- aid: flowaccount:flowaccount-batchimport-api
-  name: FlowAccount BatchImport API
-  description: The BatchImport API from FlowAccount — 10 operation(s) for batchimport.
-  humanURL: https://developers.flowaccount.com/
-  baseURL: https://openapi.flowaccount.com/v3-alpha
-  tags:
-  - Batch Import
-  tags_raw:
-  - BatchImport
-  properties:
-  - type: OpenAPI
-    url: openapi/flowaccount-batchimport-api-openapi.yml
-  - type: APIReference
-    url: https://developers.flowaccount.com/
-  - type: Authentication
-    url: authentication/flowaccount-authentication.yml
-  - type: OAuthScopes
-    url: scopes/flowaccount-scopes.yml
-  - type: Conventions
-    url: conventions/flowaccount-conventions.yml
-  - type: Sandbox
-    url: sandbox/flowaccount-sandbox.yml
-  - type: Webhooks
-    url: asyncapi/flowaccount-webhooks.yml
-  - type: DataModel
-    url: data-model/flowaccount-data-model.yml
-  - type: Conformance
-    url: conformance/flowaccount-conformance.yml
 - aid: flowaccount:flowaccount-billingnote-api
   name: FlowAccount BillingNote API
   description: The BillingNote API from FlowAccount — 8 operation(s) for billingnote.
@@ -200,32 +172,6 @@ apis:
     url: data-model/flowaccount-data-model.yml
   - type: Conformance
     url: conformance/flowaccount-conformance.yml
-- aid: flowaccount:flowaccount-creditnote-api
-  name: FlowAccount CreditNote API
-  description: The CreditNote API from FlowAccount — 9 operation(s) for creditnote.
-  humanURL: https://developers.flowaccount.com/
-  baseURL: https://openapi.flowaccount.com/v3-alpha
-  tags:
-  - CreditNote
-  properties:
-  - type: OpenAPI
-    url: openapi/flowaccount-creditnote-api-openapi.yml
-  - type: APIReference
-    url: https://developers.flowaccount.com/
-  - type: Authentication
-    url: authentication/flowaccount-authentication.yml
-  - type: OAuthScopes
-    url: scopes/flowaccount-scopes.yml
-  - type: Conventions
-    url: conventions/flowaccount-conventions.yml
-  - type: Sandbox
-    url: sandbox/flowaccount-sandbox.yml
-  - type: Webhooks
-    url: asyncapi/flowaccount-webhooks.yml
-  - type: DataModel
-    url: data-model/flowaccount-data-model.yml
-  - type: Conformance
-    url: conformance/flowaccount-conformance.yml
 - aid: flowaccount:flowaccount-debitnote-api
   name: FlowAccount DebitNote API
   description: The DebitNote API from FlowAccount — 9 operation(s) for debitnote.
@@ -288,62 +234,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/flowaccount-expense-api-openapi.yml
-  - type: APIReference
-    url: https://developers.flowaccount.com/
-  - type: Authentication
-    url: authentication/flowaccount-authentication.yml
-  - type: OAuthScopes
-    url: scopes/flowaccount-scopes.yml
-  - type: Conventions
-    url: conventions/flowaccount-conventions.yml
-  - type: Sandbox
-    url: sandbox/flowaccount-sandbox.yml
-  - type: Webhooks
-    url: asyncapi/flowaccount-webhooks.yml
-  - type: DataModel
-    url: data-model/flowaccount-data-model.yml
-  - type: Conformance
-    url: conformance/flowaccount-conformance.yml
-- aid: flowaccount:flowaccount-productcategory-api
-  name: FlowAccount ProductCategory API
-  description: The ProductCategory API from FlowAccount — 2 operation(s) for productcategory.
-  humanURL: https://developers.flowaccount.com/
-  baseURL: https://openapi.flowaccount.com/v3-alpha
-  tags:
-  - Product Category
-  tags_raw:
-  - ProductCategory
-  properties:
-  - type: OpenAPI
-    url: openapi/flowaccount-productcategory-api-openapi.yml
-  - type: APIReference
-    url: https://developers.flowaccount.com/
-  - type: Authentication
-    url: authentication/flowaccount-authentication.yml
-  - type: OAuthScopes
-    url: scopes/flowaccount-scopes.yml
-  - type: Conventions
-    url: conventions/flowaccount-conventions.yml
-  - type: Sandbox
-    url: sandbox/flowaccount-sandbox.yml
-  - type: Webhooks
-    url: asyncapi/flowaccount-webhooks.yml
-  - type: DataModel
-    url: data-model/flowaccount-data-model.yml
-  - type: Conformance
-    url: conformance/flowaccount-conformance.yml
-- aid: flowaccount:flowaccount-productinventory-api
-  name: FlowAccount ProductInventory API
-  description: The ProductInventory API from FlowAccount — 2 operation(s) for productinventory.
-  humanURL: https://developers.flowaccount.com/
-  baseURL: https://openapi.flowaccount.com/v3-alpha
-  tags:
-  - Product Inventory
-  tags_raw:
-  - ProductInventory
-  properties:
-  - type: OpenAPI
-    url: openapi/flowaccount-productinventory-api-openapi.yml
   - type: APIReference
     url: https://developers.flowaccount.com/
   - type: Authentication
@@ -424,34 +314,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/flowaccount-purchase-api-openapi.yml
-  - type: APIReference
-    url: https://developers.flowaccount.com/
-  - type: Authentication
-    url: authentication/flowaccount-authentication.yml
-  - type: OAuthScopes
-    url: scopes/flowaccount-scopes.yml
-  - type: Conventions
-    url: conventions/flowaccount-conventions.yml
-  - type: Sandbox
-    url: sandbox/flowaccount-sandbox.yml
-  - type: Webhooks
-    url: asyncapi/flowaccount-webhooks.yml
-  - type: DataModel
-    url: data-model/flowaccount-data-model.yml
-  - type: Conformance
-    url: conformance/flowaccount-conformance.yml
-- aid: flowaccount:flowaccount-purchaseorder-api
-  name: FlowAccount PurchaseOrder API
-  description: The PurchaseOrder API from FlowAccount — 8 operation(s) for purchaseorder.
-  humanURL: https://developers.flowaccount.com/
-  baseURL: https://openapi.flowaccount.com/v3-alpha
-  tags:
-  - Purchase Order
-  tags_raw:
-  - PurchaseOrder
-  properties:
-  - type: OpenAPI
-    url: openapi/flowaccount-purchaseorder-api-openapi.yml
   - type: APIReference
     url: https://developers.flowaccount.com/
   - type: Authentication
@@ -556,6 +418,136 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/flowaccount-taxinvoice-api-openapi.yml
+  - type: APIReference
+    url: https://developers.flowaccount.com/
+  - type: Authentication
+    url: authentication/flowaccount-authentication.yml
+  - type: OAuthScopes
+    url: scopes/flowaccount-scopes.yml
+  - type: Conventions
+    url: conventions/flowaccount-conventions.yml
+  - type: Sandbox
+    url: sandbox/flowaccount-sandbox.yml
+  - type: Webhooks
+    url: asyncapi/flowaccount-webhooks.yml
+  - type: DataModel
+    url: data-model/flowaccount-data-model.yml
+  - type: Conformance
+    url: conformance/flowaccount-conformance.yml
+- aid: flowaccount:flowaccount-batch-import-api
+  name: FlowAccount Batch Import API
+  description: The Batch Import API from FlowAccount — 10 operation(s) for batch import.
+  humanURL: https://developers.flowaccount.com/
+  baseURL: https://openapi.flowaccount.com/v3-alpha
+  tags:
+  - Batch Import
+  properties:
+  - type: OpenAPI
+    url: openapi/flowaccount-batch-import-api-openapi.yml
+  - type: APIReference
+    url: https://developers.flowaccount.com/
+  - type: Authentication
+    url: authentication/flowaccount-authentication.yml
+  - type: OAuthScopes
+    url: scopes/flowaccount-scopes.yml
+  - type: Conventions
+    url: conventions/flowaccount-conventions.yml
+  - type: Sandbox
+    url: sandbox/flowaccount-sandbox.yml
+  - type: Webhooks
+    url: asyncapi/flowaccount-webhooks.yml
+  - type: DataModel
+    url: data-model/flowaccount-data-model.yml
+  - type: Conformance
+    url: conformance/flowaccount-conformance.yml
+- aid: flowaccount:flowaccount-credit-note-api
+  name: FlowAccount Credit Note API
+  description: The Credit Note API from FlowAccount — 9 operation(s) for credit note.
+  humanURL: https://developers.flowaccount.com/
+  baseURL: https://openapi.flowaccount.com/v3-alpha
+  tags:
+  - Credit Note
+  properties:
+  - type: OpenAPI
+    url: openapi/flowaccount-credit-note-api-openapi.yml
+  - type: APIReference
+    url: https://developers.flowaccount.com/
+  - type: Authentication
+    url: authentication/flowaccount-authentication.yml
+  - type: OAuthScopes
+    url: scopes/flowaccount-scopes.yml
+  - type: Conventions
+    url: conventions/flowaccount-conventions.yml
+  - type: Sandbox
+    url: sandbox/flowaccount-sandbox.yml
+  - type: Webhooks
+    url: asyncapi/flowaccount-webhooks.yml
+  - type: DataModel
+    url: data-model/flowaccount-data-model.yml
+  - type: Conformance
+    url: conformance/flowaccount-conformance.yml
+- aid: flowaccount:flowaccount-product-category-api
+  name: FlowAccount Product Category API
+  description: The Product Category API from FlowAccount — 2 operation(s) for product category.
+  humanURL: https://developers.flowaccount.com/
+  baseURL: https://openapi.flowaccount.com/v3-alpha
+  tags:
+  - Product Category
+  properties:
+  - type: OpenAPI
+    url: openapi/flowaccount-product-category-api-openapi.yml
+  - type: APIReference
+    url: https://developers.flowaccount.com/
+  - type: Authentication
+    url: authentication/flowaccount-authentication.yml
+  - type: OAuthScopes
+    url: scopes/flowaccount-scopes.yml
+  - type: Conventions
+    url: conventions/flowaccount-conventions.yml
+  - type: Sandbox
+    url: sandbox/flowaccount-sandbox.yml
+  - type: Webhooks
+    url: asyncapi/flowaccount-webhooks.yml
+  - type: DataModel
+    url: data-model/flowaccount-data-model.yml
+  - type: Conformance
+    url: conformance/flowaccount-conformance.yml
+- aid: flowaccount:flowaccount-product-inventory-api
+  name: FlowAccount Product Inventory API
+  description: The Product Inventory API from FlowAccount — 2 operation(s) for product inventory.
+  humanURL: https://developers.flowaccount.com/
+  baseURL: https://openapi.flowaccount.com/v3-alpha
+  tags:
+  - Product Inventory
+  properties:
+  - type: OpenAPI
+    url: openapi/flowaccount-product-inventory-api-openapi.yml
+  - type: APIReference
+    url: https://developers.flowaccount.com/
+  - type: Authentication
+    url: authentication/flowaccount-authentication.yml
+  - type: OAuthScopes
+    url: scopes/flowaccount-scopes.yml
+  - type: Conventions
+    url: conventions/flowaccount-conventions.yml
+  - type: Sandbox
+    url: sandbox/flowaccount-sandbox.yml
+  - type: Webhooks
+    url: asyncapi/flowaccount-webhooks.yml
+  - type: DataModel
+    url: data-model/flowaccount-data-model.yml
+  - type: Conformance
+    url: conformance/flowaccount-conformance.yml
+- aid: flowaccount:flowaccount-purchase-order-api
+  name: FlowAccount Purchase Order API
+  description: The Purchase Order API from FlowAccount — 8 operation(s) for purchase order.
+  humanURL: https://developers.flowaccount.com/
+  baseURL: https://openapi.flowaccount.com/v3-alpha
+  tags:
+  - Purchase Order
+  properties:
+  - type: OpenAPI
+    url: openapi/flowaccount-purchase-order-api-openapi.yml
   - type: APIReference
     url: https://developers.flowaccount.com/
   - type: Authentication
