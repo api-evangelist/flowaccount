@@ -230,6 +230,8 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
+  - Expenses
+  tags_raw:
   - Expense
   properties:
   - type: OpenAPI
@@ -466,6 +468,8 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
+  - CreditNote
+  tags_raw:
   - Credit Note
   properties:
   - type: OpenAPI
