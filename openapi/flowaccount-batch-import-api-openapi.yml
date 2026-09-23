@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: FlowAccount Open BatchImport API
+  title: FlowAccount Open Batch Import API
   version: 1.0.0
 servers:
 - url: https://openapi.flowaccount.com/sandbox
@@ -10,20 +10,21 @@ servers:
 security:
 - bearer: []
 tags:
-- name: BatchImport
+- name: Batch Import
 paths:
   /{culture}/cash-invoices/batch-metadata:
     get:
       tags:
-      - BatchImport
+      - Batch Import
       summary: To get details of a document
       operationId: BatchImport_GenerateBacthIdMetadata
       parameters:
       - name: fileName
         in: query
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         x-position: 1
       - name: culture
         in: path
@@ -43,7 +44,7 @@ paths:
   /{culture}/cash-invoices/batch-import-history:
     post:
       tags:
-      - BatchImport
+      - Batch Import
       operationId: BatchImport_QueryBatchHistory
       parameters:
       - name: culture
@@ -61,10 +62,12 @@ paths:
                 $ref: '#/components/schemas/BatchHistory'
       security:
       - bearer: []
+      summary: Batch import query batch history
+      x-summary-source: derived
   /{culture}/cash-invoices/query-batch:
     post:
       tags:
-      - BatchImport
+      - Batch Import
       summary: Query the batch by id and status
       operationId: BatchImport_QueryBatch
       parameters:
@@ -99,7 +102,7 @@ paths:
   /{culture}/cash-invoices/retry-simple-documents:
     post:
       tags:
-      - BatchImport
+      - Batch Import
       operationId: BatchImport_RetrySimpleDocuments
       parameters:
       - name: culture
@@ -125,11 +128,13 @@ paths:
                 type: boolean
       security:
       - bearer: []
+      summary: Batch import retry simple documents
+      x-summary-source: derived
   /{culture}/cash-invoices/mark-viewed:
     post:
       tags:
-      - BatchImport
-      summary: Mark the batch as viewed in notification.
+      - Batch Import
+      summary: Mark the batch as viewed in notification
       operationId: BatchImport_MarkViewed
       parameters:
       - name: userId
@@ -141,8 +146,9 @@ paths:
       - name: batchId
         in: query
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         x-position: 3
       - name: culture
         in: path
@@ -169,7 +175,7 @@ paths:
   /{culture}/cash-invoices/get-presign-for-upload-simpledoc:
     post:
       tags:
-      - BatchImport
+      - Batch Import
       summary: Get presign url to upload the file with payloads
       operationId: BatchImport_GetPresign
       parameters:
@@ -206,7 +212,7 @@ paths:
   /{culture}/cash-invoices/get-batch-import-org-file/{batchId}:
     get:
       tags:
-      - BatchImport
+      - Batch Import
       summary: Get Original File
       operationId: BatchImport_GetOrgingalFile
       parameters:
@@ -214,8 +220,9 @@ paths:
         in: path
         required: true
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         x-position: 1
       - name: culture
         in: path
@@ -236,7 +243,7 @@ paths:
   /{culture}/cash-invoices/get-batch-s3-data/{batchId}:
     get:
       tags:
-      - BatchImport
+      - Batch Import
       summary: Get data from Storage
       operationId: BatchImport_GetBatchS3Data
       parameters:
@@ -244,8 +251,9 @@ paths:
         in: path
         required: true
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         x-position: 1
       - name: culture
         in: path
@@ -266,7 +274,7 @@ paths:
   /{culture}/cash-invoices/custom-template:
     post:
       tags:
-      - BatchImport
+      - Batch Import
       summary: Create or Update (Upsert) custom template
       operationId: BatchImport_UpsertCustomTemplate
       parameters:
@@ -297,7 +305,7 @@ paths:
   /{culture}/cash-invoices/custom-template/{templateId}:
     get:
       tags:
-      - BatchImport
+      - Batch Import
       summary: Get custom template
       operationId: BatchImport_GetCustomTemplate
       parameters:
@@ -305,8 +313,9 @@ paths:
         in: path
         required: true
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         x-position: 1
       - name: culture
         in: path
@@ -326,7 +335,7 @@ paths:
       - bearer: []
     delete:
       tags:
-      - BatchImport
+      - Batch Import
       summary: Delete custom template
       operationId: BatchImport_DeleteCustomTemplate
       parameters:
@@ -334,8 +343,9 @@ paths:
         in: path
         required: true
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         x-position: 1
       - name: culture
         in: path
@@ -355,54 +365,78 @@ paths:
       - bearer: []
 components:
   schemas:
-    CustomTemplate:
+    SimpleProductItem:
+      allOf:
+      - $ref: '#/components/schemas/ProductItem'
+      - type: object
+        additionalProperties: false
+    BatchImportRetry:
       type: object
       additionalProperties: false
       properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-          nullable: true
-        sheetIndex:
-          type: integer
-          format: int32
-        columns:
-          nullable: true
-        dateFormat:
-          nullable: true
-          oneOf:
-          - $ref: '#/components/schemas/DateInfo'
-        ignoreLastRow:
-          type: boolean
-        imageUrl:
-          type: string
-          nullable: true
-        customTemplateInfo:
-          nullable: true
-          oneOf:
-          - $ref: '#/components/schemas/CustomTemplateInfo'
-        formulas:
-          nullable: true
-    BatchImportPayload:
-      type: object
-      additionalProperties: false
-      properties:
-        simpleDocuments:
-          type: array
-          nullable: true
-          items:
-            $ref: '#/components/schemas/SimpleDocument'
         batchId:
-          type: string
-          nullable: true
-        fileName:
-          type: string
-          nullable: true
-        batchCount:
-          type: integer
-          format: int32
+          type:
+          - string
+          - 'null'
+        messageIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+    BatchImportStatus:
+      type: integer
+      description: '0 = None
+
+        1 = Awaiting
+
+        3 = Pending
+
+        5 = Failed
+
+        6 = HandledDuplicated
+
+        7 = Succeed'
+      x-enumNames:
+      - None
+      - Awaiting
+      - Pending
+      - Failed
+      - HandledDuplicated
+      - Succeed
+      enum:
+      - 0
+      - 1
+      - 3
+      - 5
+      - 6
+      - 7
+    CustomTemplateInfo:
+      type: object
+      additionalProperties: false
+      properties:
+        headerIndex:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        includeTax:
+          type:
+          - string
+          - 'null'
+        isChooseDateColumn:
+          type: boolean
+        isChooseUnitPriceColumn:
+          type: boolean
+        columns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CustomTemplateColumn'
     SimpleDocument:
       example:
         items:
@@ -463,19 +497,321 @@ components:
         additionalProperties: false
         properties:
           items:
-            type: array
-            nullable: true
+            type:
+            - array
+            - 'null'
             items:
               $ref: '#/components/schemas/SimpleProductItem'
           documentReference:
-            type: array
-            nullable: true
+            type:
+            - array
+            - 'null'
             items:
               $ref: '#/components/schemas/UpgradeDocument'
           exemptAmount:
-            type: number
+            type:
+            - number
+            - 'null'
             format: decimal
-            nullable: true
+    Document:
+      type: object
+      additionalProperties: false
+      properties:
+        recordId:
+          type: integer
+          format: int64
+        contactCode:
+          type:
+          - string
+          - 'null'
+        contactName:
+          type:
+          - string
+          - 'null'
+        contactAddress:
+          type:
+          - string
+          - 'null'
+        contactTaxId:
+          type:
+          - string
+          - 'null'
+        contactBranch:
+          type:
+          - string
+          - 'null'
+        contactPerson:
+          type:
+          - string
+          - 'null'
+        contactEmail:
+          type:
+          - string
+          - 'null'
+        contactNumber:
+          type:
+          - string
+          - 'null'
+        contactZipCode:
+          type:
+          - string
+          - 'null'
+        contactGroup:
+          type: integer
+          format: int32
+        publishedOn:
+          type: string
+          format: date-time
+        creditType:
+          type: integer
+          format: int32
+        creditDays:
+          type: integer
+          format: int32
+        dueDate:
+          type: string
+          format: date-time
+        salesName:
+          type:
+          - string
+          - 'null'
+        projectName:
+          type:
+          - string
+          - 'null'
+        reference:
+          type:
+          - string
+          - 'null'
+        isVatInclusive:
+          type: boolean
+        useReceiptDeduction:
+          type: boolean
+        subTotal:
+          type: number
+          format: decimal
+        discountPercentage:
+          type: integer
+          format: int32
+        discountAmount:
+          type: number
+          format: decimal
+        totalAfterDiscount:
+          type: number
+          format: decimal
+        isVat:
+          type: boolean
+        vatAmount:
+          type: number
+          format: decimal
+        grandTotal:
+          type: number
+          format: decimal
+        documentShowWithholdingTax:
+          type: boolean
+        documentWithholdingTaxPercentage:
+          type: integer
+          format: int32
+        documentWithholdingTaxAmount:
+          type: number
+          format: decimal
+        documentDeductionType:
+          type: integer
+          format: int32
+        documentDeductionAmount:
+          type: number
+          format: decimal
+        remarks:
+          type:
+          - string
+          - 'null'
+        internalNotes:
+          type:
+          - string
+          - 'null'
+        showSignatureOrStamp:
+          type: boolean
+        documentStructureType:
+          type:
+          - string
+          - 'null'
+        externalId:
+          type:
+          - string
+          - 'null'
+        saleAndPurchaseChannel:
+          type:
+          - string
+          - 'null'
+        rowIndex:
+          type:
+          - string
+          - 'null'
+    DateInfo:
+      type: object
+      additionalProperties: false
+      properties:
+        format:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+    BatchStatus:
+      type: object
+      additionalProperties: false
+      properties:
+        messages:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BatchMessageStatus'
+        metadata:
+          oneOf:
+          - $ref: '#/components/schemas/BatchImportMetadata'
+    CustomTemplateColumn:
+      type: object
+      additionalProperties: false
+    BatchMessageStatus:
+      type: object
+      additionalProperties: false
+      properties:
+        companyUserGuid:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        batchId:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/BatchImportStatus'
+        messageId:
+          type:
+          - string
+          - 'null'
+        failedReason:
+          type:
+          - string
+          - 'null'
+        payload:
+          type:
+          - string
+          - 'null'
+        retryCount:
+          type: integer
+          format: int32
+        documentSerial:
+          type:
+          - string
+          - 'null'
+        sqlId:
+          type: integer
+          format: int64
+        rowIndex:
+          type: integer
+          format: int32
+    UpgradeDocument:
+      type: object
+      additionalProperties: false
+      properties:
+        recordId:
+          type: integer
+          format: int64
+        referenceDocumentSerial:
+          type:
+          - string
+          - 'null'
+        referenceDocumentType:
+          type: integer
+          format: int64
+    BatchHistory:
+      type: object
+      additionalProperties: false
+      properties:
+        metadataList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BatchImportMetadata'
+    CustomTemplate:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type:
+          - string
+          - 'null'
+        sheetIndex:
+          type: integer
+          format: int32
+        columns: {}
+        dateFormat:
+          oneOf:
+          - $ref: '#/components/schemas/DateInfo'
+        ignoreLastRow:
+          type: boolean
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        customTemplateInfo:
+          oneOf:
+          - $ref: '#/components/schemas/CustomTemplateInfo'
+        formulas: {}
+    ProductItem:
+      type: object
+      additionalProperties: false
+      properties:
+        type:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        quantity:
+          type: number
+          format: decimal
+        unitName:
+          type:
+          - string
+          - 'null'
+        pricePerUnit:
+          type: number
+          format: decimal
+        total:
+          type: number
+          format: decimal
+        sellChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        productCode:
+          type:
+          - string
+          - 'null'
     DocumentTypes:
       type: integer
       description: '1 = PurchaseOrder
@@ -635,105 +971,14 @@ components:
       - 202
       - 203
       - 204
-    DateInfo:
-      type: object
-      additionalProperties: false
-      properties:
-        format:
-          type: string
-          nullable: true
-        type:
-          type: string
-          nullable: true
-    BatchStatus:
-      type: object
-      additionalProperties: false
-      properties:
-        messages:
-          type: array
-          nullable: true
-          items:
-            $ref: '#/components/schemas/BatchMessageStatus'
-        metadata:
-          nullable: true
-          oneOf:
-          - $ref: '#/components/schemas/BatchImportMetadata'
-    BatchMessageStatus:
-      type: object
-      additionalProperties: false
-      properties:
-        companyUserGuid:
-          type: string
-          nullable: true
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        batchId:
-          type: string
-          nullable: true
-        status:
-          $ref: '#/components/schemas/BatchImportStatus'
-        messageId:
-          type: string
-          nullable: true
-        failedReason:
-          type: string
-          nullable: true
-        payload:
-          type: string
-          nullable: true
-        retryCount:
-          type: integer
-          format: int32
-        documentSerial:
-          type: string
-          nullable: true
-        sqlId:
-          type: integer
-          format: int64
-        rowIndex:
-          type: integer
-          format: int32
-    BatchImportStatus:
-      type: integer
-      description: '0 = None
-
-        1 = Awaiting
-
-        3 = Pending
-
-        5 = Failed
-
-        6 = HandledDuplicated
-
-        7 = Succeed'
-      x-enumNames:
-      - None
-      - Awaiting
-      - Pending
-      - Failed
-      - HandledDuplicated
-      - Succeed
-      enum:
-      - 0
-      - 1
-      - 3
-      - 5
-      - 6
-      - 7
-    CustomTemplateColumn:
-      type: object
-      additionalProperties: false
     BatchImportMetadata:
       type: object
       additionalProperties: false
       properties:
         companyUserGuid:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         createdAt:
           type: string
           format: date-time
@@ -741,14 +986,17 @@ components:
           type: string
           format: date-time
         templateId:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         batchId:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         filename:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         documentType:
           $ref: '#/components/schemas/DocumentTypes'
         status:
@@ -763,8 +1011,9 @@ components:
           type: integer
           format: int32
         s3Key:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         userId:
           type: integer
           format: int64
@@ -773,217 +1022,27 @@ components:
           format: int64
         isViewed:
           type: boolean
-    UpgradeDocument:
+    BatchImportPayload:
       type: object
       additionalProperties: false
       properties:
-        recordId:
-          type: integer
-          format: int64
-        referenceDocumentSerial:
-          type: string
-          nullable: true
-        referenceDocumentType:
-          type: integer
-          format: int64
-    Document:
-      type: object
-      additionalProperties: false
-      properties:
-        recordId:
-          type: integer
-          format: int64
-        contactCode:
-          type: string
-          nullable: true
-        contactName:
-          type: string
-          nullable: true
-        contactAddress:
-          type: string
-          nullable: true
-        contactTaxId:
-          type: string
-          nullable: true
-        contactBranch:
-          type: string
-          nullable: true
-        contactPerson:
-          type: string
-          nullable: true
-        contactEmail:
-          type: string
-          nullable: true
-        contactNumber:
-          type: string
-          nullable: true
-        contactZipCode:
-          type: string
-          nullable: true
-        contactGroup:
-          type: integer
-          format: int32
-        publishedOn:
-          type: string
-          format: date-time
-        creditType:
-          type: integer
-          format: int32
-        creditDays:
-          type: integer
-          format: int32
-        dueDate:
-          type: string
-          format: date-time
-        salesName:
-          type: string
-          nullable: true
-        projectName:
-          type: string
-          nullable: true
-        reference:
-          type: string
-          nullable: true
-        isVatInclusive:
-          type: boolean
-        useReceiptDeduction:
-          type: boolean
-        subTotal:
-          type: number
-          format: decimal
-        discountPercentage:
-          type: integer
-          format: int32
-        discountAmount:
-          type: number
-          format: decimal
-        totalAfterDiscount:
-          type: number
-          format: decimal
-        isVat:
-          type: boolean
-        vatAmount:
-          type: number
-          format: decimal
-        grandTotal:
-          type: number
-          format: decimal
-        documentShowWithholdingTax:
-          type: boolean
-        documentWithholdingTaxPercentage:
-          type: integer
-          format: int32
-        documentWithholdingTaxAmount:
-          type: number
-          format: decimal
-        documentDeductionType:
-          type: integer
-          format: int32
-        documentDeductionAmount:
-          type: number
-          format: decimal
-        remarks:
-          type: string
-          nullable: true
-        internalNotes:
-          type: string
-          nullable: true
-        showSignatureOrStamp:
-          type: boolean
-        documentStructureType:
-          type: string
-          nullable: true
-        externalId:
-          type: string
-          nullable: true
-        saleAndPurchaseChannel:
-          type: string
-          nullable: true
-        rowIndex:
-          type: string
-          nullable: true
-    BatchImportRetry:
-      type: object
-      additionalProperties: false
-      properties:
+        simpleDocuments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SimpleDocument'
         batchId:
-          type: string
-          nullable: true
-        messageIds:
-          type: array
-          nullable: true
-          items:
-            type: string
-    BatchHistory:
-      type: object
-      additionalProperties: false
-      properties:
-        metadataList:
-          type: array
-          nullable: true
-          items:
-            $ref: '#/components/schemas/BatchImportMetadata'
-    SimpleProductItem:
-      allOf:
-      - $ref: '#/components/schemas/ProductItem'
-      - type: object
-        additionalProperties: false
-    ProductItem:
-      type: object
-      additionalProperties: false
-      properties:
-        type:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+        batchCount:
           type: integer
           format: int32
-        name:
-          type: string
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        quantity:
-          type: number
-          format: decimal
-        unitName:
-          type: string
-          nullable: true
-        pricePerUnit:
-          type: number
-          format: decimal
-        total:
-          type: number
-          format: decimal
-        sellChartOfAccountCode:
-          type: string
-          nullable: true
-        buyChartOfAccountCode:
-          type: string
-          nullable: true
-        productCode:
-          type: string
-          nullable: true
-    CustomTemplateInfo:
-      type: object
-      additionalProperties: false
-      properties:
-        headerIndex:
-          type: string
-          nullable: true
-        productName:
-          type: string
-          nullable: true
-        includeTax:
-          type: string
-          nullable: true
-        isChooseDateColumn:
-          type: boolean
-        isChooseUnitPriceColumn:
-          type: boolean
-        columns:
-          type: array
-          nullable: true
-          items:
-            $ref: '#/components/schemas/CustomTemplateColumn'
   securitySchemes:
     bearer:
       type: http
