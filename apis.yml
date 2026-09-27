@@ -51,7 +51,7 @@ tags:
 - Invoicing
 - Payroll
 - Point-of-Sale
-- SME
+- Small Business
 - Finance
 - Tax
 - Thailand
@@ -468,8 +468,6 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
-  - CreditNote
-  tags_raw:
   - Credit Note
   properties:
   - type: OpenAPI

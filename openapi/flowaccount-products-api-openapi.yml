@@ -347,59 +347,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ISimpleListResultOfIProductResult:
-      type: object
-      x-abstract: true
-      additionalProperties: false
-      properties:
-        list:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IProductResult'
-    ImageResult:
-      type: object
-      additionalProperties: false
-      properties:
-        companyId:
-          type: integer
-          format: int64
-        fileName:
-          type:
-          - string
-          - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-        previewURL:
-          type:
-          - string
-          - 'null'
-        thumbURL:
-          type:
-          - string
-          - 'null'
-    VatTypes:
-      type: integer
-      description: '1 = Include
-
-        3 = Exclude
-
-        5 = Zero
-
-        7 = None'
-      x-enumNames:
-      - Include
-      - Exclude
-      - Zero
-      - None
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
     AdjustInventoryReason:
       type: integer
       description: '0 = Default
@@ -527,48 +474,57 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/IStockCard'
-    ProductNonInventoryType:
+    InventoryType:
       type: integer
-      description: '1 = NonStockProduct
+      description: '3 = Initial
 
-        3 = SparepartProduct
+        5 = BroughtForward
 
-        5 = SampleProduct
+        7 = In
 
-        7 = FreemiumProduct
+        11 = TransferIn
 
-        9 = SupplyProduct
+        17 = Out
 
-        11 = OthersProduct'
+        21 = TransferOut
+
+        25 = CreditNote
+
+        27 = DebitNote
+
+        29 = InternalUse
+
+        31 = Hold
+
+        35 = AdjustIn
+
+        39 = AdjustOut'
       x-enumNames:
-      - NonStockProduct
-      - SparepartProduct
-      - SampleProduct
-      - FreemiumProduct
-      - SupplyProduct
-      - OthersProduct
+      - Initial
+      - BroughtForward
+      - In
+      - TransferIn
+      - Out
+      - TransferOut
+      - CreditNote
+      - DebitNote
+      - InternalUse
+      - Hold
+      - AdjustIn
+      - AdjustOut
       enum:
-      - 1
       - 3
       - 5
       - 7
-      - 9
       - 11
-    ProductTypes:
-      type: integer
-      description: '1 = Service
-
-        3 = ProductWithNoStock
-
-        5 = ProductWithStock'
-      x-enumNames:
-      - Service
-      - ProductWithNoStock
-      - ProductWithStock
-      enum:
-      - 1
-      - 3
-      - 5
+      - 17
+      - 21
+      - 25
+      - 27
+      - 29
+      - 31
+      - 35
+      - 39
     IProductResult:
       type: object
       x-abstract: true
@@ -725,57 +681,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/IStockCard'
-    InventoryType:
-      type: integer
-      description: '3 = Initial
-
-        5 = BroughtForward
-
-        7 = In
-
-        11 = TransferIn
-
-        17 = Out
-
-        21 = TransferOut
-
-        25 = CreditNote
-
-        27 = DebitNote
-
-        29 = InternalUse
-
-        31 = Hold
-
-        35 = AdjustIn
-
-        39 = AdjustOut'
-      x-enumNames:
-      - Initial
-      - BroughtForward
-      - In
-      - TransferIn
-      - Out
-      - TransferOut
-      - CreditNote
-      - DebitNote
-      - InternalUse
-      - Hold
-      - AdjustIn
-      - AdjustOut
-      enum:
-      - 3
-      - 5
-      - 7
-      - 11
-      - 17
-      - 21
-      - 25
-      - 27
-      - 29
-      - 31
-      - 35
-      - 39
     ObjectId:
       type: object
       description: Represents an ObjectId (see also BsonObjectId).
@@ -806,164 +711,33 @@ components:
           type: string
           description: Gets the creation time (derived from the timestamp).
           format: date-time
-    ProductResult:
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        type:
-          $ref: '#/components/schemas/ProductTypes'
-        code:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        barcode:
-          type:
-          - string
-          - 'null'
-        image:
-          oneOf:
-          - $ref: '#/components/schemas/ImageResult'
-        buyVatType:
-          $ref: '#/components/schemas/VatTypes'
-        buyPrice:
-          type: number
-          format: decimal
-        buyPriceWithVat:
-          type: number
-          format: decimal
-        buyDescription:
-          type:
-          - string
-          - 'null'
-        buyChartOfAccountId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        buyChartOfAccountCode:
-          type:
-          - string
-          - 'null'
-        buyChartOfAccountNameLocal:
-          type:
-          - string
-          - 'null'
-        buyChartOfAccountNameForeign:
-          type:
-          - string
-          - 'null'
-        sellVatType:
-          $ref: '#/components/schemas/VatTypes'
-        sellPrice:
-          type: number
-          format: decimal
-        sellPriceWithVat:
-          type: number
-          format: decimal
-        sellDescription:
-          type:
-          - string
-          - 'null'
-        sellChartOfAccountId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        sellChartOfAccountCode:
-          type:
-          - string
-          - 'null'
-        sellChartOfAccountNameLocal:
-          type:
-          - string
-          - 'null'
-        sellChartOfAccountNameForeign:
-          type:
-          - string
-          - 'null'
-        categoryId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        categoryName:
-          type:
-          - string
-          - 'null'
-        unitId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        unitName:
-          type:
-          - string
-          - 'null'
-        productNonInventoryType:
-          oneOf:
-          - $ref: '#/components/schemas/ProductNonInventoryType'
-        broughtForwardOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        inventoryPublishedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        inventoryQuantity:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        inventoryPrice:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        inventoryTotal:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        inventoryRemark:
-          type:
-          - string
-          - 'null'
-        averageBuyPrice:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        averageSellPrice:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        remainingStock:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        totalValueInHand:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        stockCard:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IStockCard'
+    ProductNonInventoryType:
+      type: integer
+      description: '1 = NonStockProduct
+
+        3 = SparepartProduct
+
+        5 = SampleProduct
+
+        7 = FreemiumProduct
+
+        9 = SupplyProduct
+
+        11 = OthersProduct'
+      x-enumNames:
+      - NonStockProduct
+      - SparepartProduct
+      - SampleProduct
+      - FreemiumProduct
+      - SupplyProduct
+      - OthersProduct
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
     APIResponseOfBoolean:
       type: object
       additionalProperties: false
@@ -979,22 +753,6 @@ components:
           format: int32
         data:
           type: boolean
-    APIResponseOfISimpleListResultOfIProductResult:
-      type: object
-      additionalProperties: false
-      properties:
-        status:
-          type: boolean
-        message:
-          type:
-          - string
-          - 'null'
-        code:
-          type: integer
-          format: int32
-        data:
-          oneOf:
-          - $ref: '#/components/schemas/ISimpleListResultOfIProductResult'
     DocumentTypes:
       type: integer
       description: '1 = PurchaseOrder
@@ -1154,6 +912,248 @@ components:
       - 202
       - 203
       - 204
+    ISimpleListResultOfIProductResult:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        list:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IProductResult'
+    VatTypes:
+      type: integer
+      description: '1 = Include
+
+        3 = Exclude
+
+        5 = Zero
+
+        7 = None'
+      x-enumNames:
+      - Include
+      - Exclude
+      - Zero
+      - None
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+    ProductResult:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        type:
+          $ref: '#/components/schemas/ProductTypes'
+        code:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        barcode:
+          type:
+          - string
+          - 'null'
+        image:
+          oneOf:
+          - $ref: '#/components/schemas/ImageResult'
+        buyVatType:
+          $ref: '#/components/schemas/VatTypes'
+        buyPrice:
+          type: number
+          format: decimal
+        buyPriceWithVat:
+          type: number
+          format: decimal
+        buyDescription:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        buyChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountNameLocal:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountNameForeign:
+          type:
+          - string
+          - 'null'
+        sellVatType:
+          $ref: '#/components/schemas/VatTypes'
+        sellPrice:
+          type: number
+          format: decimal
+        sellPriceWithVat:
+          type: number
+          format: decimal
+        sellDescription:
+          type:
+          - string
+          - 'null'
+        sellChartOfAccountId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        sellChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        sellChartOfAccountNameLocal:
+          type:
+          - string
+          - 'null'
+        sellChartOfAccountNameForeign:
+          type:
+          - string
+          - 'null'
+        categoryId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        categoryName:
+          type:
+          - string
+          - 'null'
+        unitId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitName:
+          type:
+          - string
+          - 'null'
+        productNonInventoryType:
+          oneOf:
+          - $ref: '#/components/schemas/ProductNonInventoryType'
+        broughtForwardOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inventoryPublishedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inventoryQuantity:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        inventoryPrice:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        inventoryTotal:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        inventoryRemark:
+          type:
+          - string
+          - 'null'
+        averageBuyPrice:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        averageSellPrice:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        remainingStock:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        totalValueInHand:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        stockCard:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IStockCard'
+    ProductTypes:
+      type: integer
+      description: '1 = Service
+
+        3 = ProductWithNoStock
+
+        5 = ProductWithStock'
+      x-enumNames:
+      - Service
+      - ProductWithNoStock
+      - ProductWithStock
+      enum:
+      - 1
+      - 3
+      - 5
+    APIResponseOfISimpleListResultOfIProductResult:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: boolean
+        message:
+          type:
+          - string
+          - 'null'
+        code:
+          type: integer
+          format: int32
+        data:
+          oneOf:
+          - $ref: '#/components/schemas/ISimpleListResultOfIProductResult'
+    ImageResult:
+      type: object
+      additionalProperties: false
+      properties:
+        companyId:
+          type: integer
+          format: int64
+        fileName:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        previewURL:
+          type:
+          - string
+          - 'null'
+        thumbURL:
+          type:
+          - string
+          - 'null'
   securitySchemes:
     bearer:
       type: http
