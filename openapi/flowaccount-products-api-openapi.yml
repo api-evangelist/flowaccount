@@ -390,90 +390,21 @@ components:
       - 13
       - 15
       - 17
-    IStockCard:
+    APIResponseOfBoolean:
       type: object
-      x-abstract: true
       additionalProperties: false
       properties:
-        id:
-          $ref: '#/components/schemas/ObjectId'
-        productId:
-          type: integer
-          format: int64
-        productName:
-          type:
-          - string
-          - 'null'
-        productCode:
-          type:
-          - string
-          - 'null'
-        inventoryId:
-          type: integer
-          format: int64
-        inventoryType:
-          $ref: '#/components/schemas/InventoryType'
-        date:
-          type: string
-          format: date-time
-        quantity:
-          type: number
-          format: decimal
-        unitId:
-          type: integer
-          format: int64
-        unitPrice:
-          type: number
-          format: decimal
-        unitName:
-          type:
-          - string
-          - 'null'
-        total:
-          type: number
-          format: decimal
-        remaining:
-          type: number
-          format: decimal
-        documentType:
-          $ref: '#/components/schemas/DocumentTypes'
-        documentSerial:
-          type:
-          - string
-          - 'null'
-        allowDelete:
+        status:
           type: boolean
-        remarks:
+        message:
           type:
           - string
           - 'null'
-        reason:
-          $ref: '#/components/schemas/AdjustInventoryReason'
-        contactName:
-          type:
-          - string
-          - 'null'
-        isOverSold:
-          type: boolean
-        rowIndex:
+        code:
           type: integer
           format: int32
-        reasonDescription:
-          type:
-          - string
-          - 'null'
-        averagePricePerUnit:
-          type: number
-          format: decimal
-        remainingAmount:
-          type: number
-          format: decimal
-        transactions:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IStockCard'
+        data:
+          type: boolean
     InventoryType:
       type: integer
       description: '3 = Initial
@@ -525,423 +456,6 @@ components:
       - 31
       - 35
       - 39
-    IProductResult:
-      type: object
-      x-abstract: true
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        type:
-          $ref: '#/components/schemas/ProductTypes'
-        code:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        barcode:
-          type:
-          - string
-          - 'null'
-        buyVatType:
-          $ref: '#/components/schemas/VatTypes'
-        buyPrice:
-          type: number
-          format: decimal
-        buyPriceWithVat:
-          type: number
-          format: decimal
-        buyDescription:
-          type:
-          - string
-          - 'null'
-        buyChartOfAccountId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        buyChartOfAccountCode:
-          type:
-          - string
-          - 'null'
-        buyChartOfAccountNameLocal:
-          type:
-          - string
-          - 'null'
-        buyChartOfAccountNameForeign:
-          type:
-          - string
-          - 'null'
-        sellVatType:
-          $ref: '#/components/schemas/VatTypes'
-        sellPrice:
-          type: number
-          format: decimal
-        sellPriceWithVat:
-          type: number
-          format: decimal
-        sellDescription:
-          type:
-          - string
-          - 'null'
-        sellChartOfAccountId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        sellChartOfAccountCode:
-          type:
-          - string
-          - 'null'
-        sellChartOfAccountNameLocal:
-          type:
-          - string
-          - 'null'
-        sellChartOfAccountNameForeign:
-          type:
-          - string
-          - 'null'
-        categoryId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        categoryName:
-          type:
-          - string
-          - 'null'
-        unitId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        unitName:
-          type:
-          - string
-          - 'null'
-        productNonInventoryType:
-          oneOf:
-          - $ref: '#/components/schemas/ProductNonInventoryType'
-        broughtForwardOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        inventoryPublishedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        inventoryQuantity:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        inventoryPrice:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        inventoryTotal:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        inventoryRemark:
-          type:
-          - string
-          - 'null'
-        averageBuyPrice:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        averageSellPrice:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        remainingStock:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        totalValueInHand:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        stockCard:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IStockCard'
-    ObjectId:
-      type: object
-      description: Represents an ObjectId (see also BsonObjectId).
-      additionalProperties: false
-      properties:
-        Timestamp:
-          type: integer
-          description: Gets the timestamp.
-          format: int32
-        Machine:
-          type: integer
-          description: Gets the machine.
-          format: int32
-          deprecated: true
-          x-deprecatedMessage: This property will be removed in a later release.
-        Pid:
-          type: integer
-          description: Gets the PID.
-          deprecated: true
-          x-deprecatedMessage: This property will be removed in a later release.
-        Increment:
-          type: integer
-          description: Gets the increment.
-          format: int32
-          deprecated: true
-          x-deprecatedMessage: This property will be removed in a later release.
-        CreationTime:
-          type: string
-          description: Gets the creation time (derived from the timestamp).
-          format: date-time
-    ProductNonInventoryType:
-      type: integer
-      description: '1 = NonStockProduct
-
-        3 = SparepartProduct
-
-        5 = SampleProduct
-
-        7 = FreemiumProduct
-
-        9 = SupplyProduct
-
-        11 = OthersProduct'
-      x-enumNames:
-      - NonStockProduct
-      - SparepartProduct
-      - SampleProduct
-      - FreemiumProduct
-      - SupplyProduct
-      - OthersProduct
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
-      - 11
-    APIResponseOfBoolean:
-      type: object
-      additionalProperties: false
-      properties:
-        status:
-          type: boolean
-        message:
-          type:
-          - string
-          - 'null'
-        code:
-          type: integer
-          format: int32
-        data:
-          type: boolean
-    DocumentTypes:
-      type: integer
-      description: '1 = PurchaseOrder
-
-        3 = Quotation
-
-        5 = BillingNote
-
-        7 = TaxInvoice
-
-        9 = Receipt
-
-        13 = Expense
-
-        15 = Vendor
-
-        17 = WithHoldingTax
-
-        19 = BillingNotePartials
-
-        21 = TaxInvoicePartails
-
-        23 = Purchase
-
-        24 = PurchaseTax
-
-        25 = ReceivableInvoice
-
-        29 = AdjustInventory
-
-        31 = CreditNote
-
-        33 = DebitNote
-
-        35 = CashInvoice
-
-        37 = PaymentSlip
-
-        51 = JournalEntry
-
-        53 = PurchaseVoucher
-
-        55 = SalesVoucher
-
-        57 = PaymentVoucher
-
-        59 = ReceivedVoucher
-
-        61 = ConversionBalance
-
-        63 = Transaction
-
-        65 = SupplierInvoice
-
-        67 = BatchTaxFiling
-
-        69 = FixedAsset
-
-        71 = Depreciation
-
-        73 = BankTransfer
-
-        151 = DraftJournalEntry
-
-        153 = DraftPurchaseVoucher
-
-        155 = DraftSalesVoucher
-
-        157 = DraftPaymentVoucher
-
-        159 = DraftReceivedVoucher
-
-        201 = Payroll
-
-        202 = PayrollDetail
-
-        203 = Employee
-
-        204 = PayrollPayment'
-      x-enumNames:
-      - PurchaseOrder
-      - Quotation
-      - BillingNote
-      - TaxInvoice
-      - Receipt
-      - Expense
-      - Vendor
-      - WithHoldingTax
-      - BillingNotePartials
-      - TaxInvoicePartails
-      - Purchase
-      - PurchaseTax
-      - ReceivableInvoice
-      - AdjustInventory
-      - CreditNote
-      - DebitNote
-      - CashInvoice
-      - PaymentSlip
-      - JournalEntry
-      - PurchaseVoucher
-      - SalesVoucher
-      - PaymentVoucher
-      - ReceivedVoucher
-      - ConversionBalance
-      - Transaction
-      - SupplierInvoice
-      - BatchTaxFiling
-      - FixedAsset
-      - Depreciation
-      - BankTransfer
-      - DraftJournalEntry
-      - DraftPurchaseVoucher
-      - DraftSalesVoucher
-      - DraftPaymentVoucher
-      - DraftReceivedVoucher
-      - Payroll
-      - PayrollDetail
-      - Employee
-      - PayrollPayment
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
-      - 13
-      - 15
-      - 17
-      - 19
-      - 21
-      - 23
-      - 24
-      - 25
-      - 29
-      - 31
-      - 33
-      - 35
-      - 37
-      - 51
-      - 53
-      - 55
-      - 57
-      - 59
-      - 61
-      - 63
-      - 65
-      - 67
-      - 69
-      - 71
-      - 73
-      - 151
-      - 153
-      - 155
-      - 157
-      - 159
-      - 201
-      - 202
-      - 203
-      - 204
-    ISimpleListResultOfIProductResult:
-      type: object
-      x-abstract: true
-      additionalProperties: false
-      properties:
-        list:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IProductResult'
-    VatTypes:
-      type: integer
-      description: '1 = Include
-
-        3 = Exclude
-
-        5 = Zero
-
-        7 = None'
-      x-enumNames:
-      - Include
-      - Exclude
-      - Zero
-      - None
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
     ProductResult:
       type: object
       additionalProperties: false
@@ -1115,6 +629,336 @@ components:
       - 1
       - 3
       - 5
+    VatTypes:
+      type: integer
+      description: '1 = Include
+
+        3 = Exclude
+
+        5 = Zero
+
+        7 = None'
+      x-enumNames:
+      - Include
+      - Exclude
+      - Zero
+      - None
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+    DocumentTypes:
+      type: integer
+      description: '1 = PurchaseOrder
+
+        3 = Quotation
+
+        5 = BillingNote
+
+        7 = TaxInvoice
+
+        9 = Receipt
+
+        13 = Expense
+
+        15 = Vendor
+
+        17 = WithHoldingTax
+
+        19 = BillingNotePartials
+
+        21 = TaxInvoicePartails
+
+        23 = Purchase
+
+        24 = PurchaseTax
+
+        25 = ReceivableInvoice
+
+        29 = AdjustInventory
+
+        31 = CreditNote
+
+        33 = DebitNote
+
+        35 = CashInvoice
+
+        37 = PaymentSlip
+
+        51 = JournalEntry
+
+        53 = PurchaseVoucher
+
+        55 = SalesVoucher
+
+        57 = PaymentVoucher
+
+        59 = ReceivedVoucher
+
+        61 = ConversionBalance
+
+        63 = Transaction
+
+        65 = SupplierInvoice
+
+        67 = BatchTaxFiling
+
+        69 = FixedAsset
+
+        71 = Depreciation
+
+        73 = BankTransfer
+
+        151 = DraftJournalEntry
+
+        153 = DraftPurchaseVoucher
+
+        155 = DraftSalesVoucher
+
+        157 = DraftPaymentVoucher
+
+        159 = DraftReceivedVoucher
+
+        201 = Payroll
+
+        202 = PayrollDetail
+
+        203 = Employee
+
+        204 = PayrollPayment'
+      x-enumNames:
+      - PurchaseOrder
+      - Quotation
+      - BillingNote
+      - TaxInvoice
+      - Receipt
+      - Expense
+      - Vendor
+      - WithHoldingTax
+      - BillingNotePartials
+      - TaxInvoicePartails
+      - Purchase
+      - PurchaseTax
+      - ReceivableInvoice
+      - AdjustInventory
+      - CreditNote
+      - DebitNote
+      - CashInvoice
+      - PaymentSlip
+      - JournalEntry
+      - PurchaseVoucher
+      - SalesVoucher
+      - PaymentVoucher
+      - ReceivedVoucher
+      - ConversionBalance
+      - Transaction
+      - SupplierInvoice
+      - BatchTaxFiling
+      - FixedAsset
+      - Depreciation
+      - BankTransfer
+      - DraftJournalEntry
+      - DraftPurchaseVoucher
+      - DraftSalesVoucher
+      - DraftPaymentVoucher
+      - DraftReceivedVoucher
+      - Payroll
+      - PayrollDetail
+      - Employee
+      - PayrollPayment
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 13
+      - 15
+      - 17
+      - 19
+      - 21
+      - 23
+      - 24
+      - 25
+      - 29
+      - 31
+      - 33
+      - 35
+      - 37
+      - 51
+      - 53
+      - 55
+      - 57
+      - 59
+      - 61
+      - 63
+      - 65
+      - 67
+      - 69
+      - 71
+      - 73
+      - 151
+      - 153
+      - 155
+      - 157
+      - 159
+      - 201
+      - 202
+      - 203
+      - 204
+    ObjectId:
+      type: object
+      description: Represents an ObjectId (see also BsonObjectId).
+      additionalProperties: false
+      properties:
+        Timestamp:
+          type: integer
+          description: Gets the timestamp.
+          format: int32
+        Machine:
+          type: integer
+          description: Gets the machine.
+          format: int32
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        Pid:
+          type: integer
+          description: Gets the PID.
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        Increment:
+          type: integer
+          description: Gets the increment.
+          format: int32
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        CreationTime:
+          type: string
+          description: Gets the creation time (derived from the timestamp).
+          format: date-time
+    IStockCard:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        productId:
+          type: integer
+          format: int64
+        productName:
+          type:
+          - string
+          - 'null'
+        productCode:
+          type:
+          - string
+          - 'null'
+        inventoryId:
+          type: integer
+          format: int64
+        inventoryType:
+          $ref: '#/components/schemas/InventoryType'
+        date:
+          type: string
+          format: date-time
+        quantity:
+          type: number
+          format: decimal
+        unitId:
+          type: integer
+          format: int64
+        unitPrice:
+          type: number
+          format: decimal
+        unitName:
+          type:
+          - string
+          - 'null'
+        total:
+          type: number
+          format: decimal
+        remaining:
+          type: number
+          format: decimal
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        documentSerial:
+          type:
+          - string
+          - 'null'
+        allowDelete:
+          type: boolean
+        remarks:
+          type:
+          - string
+          - 'null'
+        reason:
+          $ref: '#/components/schemas/AdjustInventoryReason'
+        contactName:
+          type:
+          - string
+          - 'null'
+        isOverSold:
+          type: boolean
+        rowIndex:
+          type: integer
+          format: int32
+        reasonDescription:
+          type:
+          - string
+          - 'null'
+        averagePricePerUnit:
+          type: number
+          format: decimal
+        remainingAmount:
+          type: number
+          format: decimal
+        transactions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IStockCard'
+    ISimpleListResultOfIProductResult:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        list:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IProductResult'
+    ProductNonInventoryType:
+      type: integer
+      description: '1 = NonStockProduct
+
+        3 = SparepartProduct
+
+        5 = SampleProduct
+
+        7 = FreemiumProduct
+
+        9 = SupplyProduct
+
+        11 = OthersProduct'
+      x-enumNames:
+      - NonStockProduct
+      - SparepartProduct
+      - SampleProduct
+      - FreemiumProduct
+      - SupplyProduct
+      - OthersProduct
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
     APIResponseOfISimpleListResultOfIProductResult:
       type: object
       additionalProperties: false
@@ -1154,6 +998,162 @@ components:
           type:
           - string
           - 'null'
+    IProductResult:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        type:
+          $ref: '#/components/schemas/ProductTypes'
+        code:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        barcode:
+          type:
+          - string
+          - 'null'
+        buyVatType:
+          $ref: '#/components/schemas/VatTypes'
+        buyPrice:
+          type: number
+          format: decimal
+        buyPriceWithVat:
+          type: number
+          format: decimal
+        buyDescription:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        buyChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountNameLocal:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountNameForeign:
+          type:
+          - string
+          - 'null'
+        sellVatType:
+          $ref: '#/components/schemas/VatTypes'
+        sellPrice:
+          type: number
+          format: decimal
+        sellPriceWithVat:
+          type: number
+          format: decimal
+        sellDescription:
+          type:
+          - string
+          - 'null'
+        sellChartOfAccountId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        sellChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        sellChartOfAccountNameLocal:
+          type:
+          - string
+          - 'null'
+        sellChartOfAccountNameForeign:
+          type:
+          - string
+          - 'null'
+        categoryId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        categoryName:
+          type:
+          - string
+          - 'null'
+        unitId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitName:
+          type:
+          - string
+          - 'null'
+        productNonInventoryType:
+          oneOf:
+          - $ref: '#/components/schemas/ProductNonInventoryType'
+        broughtForwardOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inventoryPublishedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inventoryQuantity:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        inventoryPrice:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        inventoryTotal:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        inventoryRemark:
+          type:
+          - string
+          - 'null'
+        averageBuyPrice:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        averageSellPrice:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        remainingStock:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        totalValueInHand:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        stockCard:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IStockCard'
   securitySchemes:
     bearer:
       type: http

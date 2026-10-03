@@ -365,27 +365,19 @@ paths:
       - bearer: []
 components:
   schemas:
-    BatchImportPayload:
+    BatchStatus:
       type: object
       additionalProperties: false
       properties:
-        simpleDocuments:
+        messages:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/SimpleDocument'
-        batchId:
-          type:
-          - string
-          - 'null'
-        fileName:
-          type:
-          - string
-          - 'null'
-        batchCount:
-          type: integer
-          format: int32
+            $ref: '#/components/schemas/BatchMessageStatus'
+        metadata:
+          oneOf:
+          - $ref: '#/components/schemas/BatchImportMetadata'
     ProductItem:
       type: object
       additionalProperties: false
@@ -426,6 +418,54 @@ components:
           type:
           - string
           - 'null'
+    BatchImportStatus:
+      type: integer
+      description: '0 = None
+
+        1 = Awaiting
+
+        3 = Pending
+
+        5 = Failed
+
+        6 = HandledDuplicated
+
+        7 = Succeed'
+      x-enumNames:
+      - None
+      - Awaiting
+      - Pending
+      - Failed
+      - HandledDuplicated
+      - Succeed
+      enum:
+      - 0
+      - 1
+      - 3
+      - 5
+      - 6
+      - 7
+    BatchImportPayload:
+      type: object
+      additionalProperties: false
+      properties:
+        simpleDocuments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SimpleDocument'
+        batchId:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+        batchCount:
+          type: integer
+          format: int32
     Document:
       type: object
       additionalProperties: false
@@ -560,24 +600,87 @@ components:
           type:
           - string
           - 'null'
+    SimpleDocument:
+      example:
+        items:
+        - type: 1
+          name: ค่าสินค้าและบริการ POS
+          description: ''
+          quantity: 1.0
+          unitName: ''
+          pricePerUnit: 210.28
+          total: 210.28
+          sellChartOfAccountCode: null
+          buyChartOfAccountCode: null
+          productCode: null
+        documentReference: null
+        exemptAmount: 0.0
+        recordId: 0
+        contactCode: null
+        contactName: test_payload_mock_new1112
+        contactAddress: ''
+        contactTaxId: ''
+        contactBranch: สำนักงานใหญ่
+        contactPerson: ''
+        contactEmail: ''
+        contactNumber: ''
+        contactZipCode: ''
+        contactGroup: 1
+        publishedOn: '2022-10-10T09:37:39.2943643+07:00'
+        creditType: 3
+        creditDays: 0
+        dueDate: '2022-10-10T09:37:39.294366+07:00'
+        salesName: Wongnai POS
+        projectName: ''
+        reference: null
+        isVatInclusive: false
+        useReceiptDeduction: true
+        subTotal: 210.28
+        discountPercentage: 0
+        discountAmount: 0.0
+        totalAfterDiscount: 210.28
+        isVat: true
+        vatAmount: 14.72
+        grandTotal: 225.0
+        documentShowWithholdingTax: false
+        documentWithholdingTaxPercentage: 0
+        documentWithholdingTaxAmount: 0.0
+        documentDeductionType: 1
+        documentDeductionAmount: 2.0
+        remarks: POS ID 1\nรหัสถาดเก็บเงิน 5G5
+        internalNotes: INV. No D/00002407\nหมายเลขใบเสร็จ / ID NUT9G
+        showSignatureOrStamp: true
+        documentStructureType: null
+        externalId: null
+        saleAndPurchaseChannel: ''
+        rowIndex: null
+      allOf:
+      - $ref: '#/components/schemas/Document'
+      - type: object
+        additionalProperties: false
+        properties:
+          items:
+            type:
+            - array
+            - 'null'
+            items:
+              $ref: '#/components/schemas/SimpleProductItem'
+          documentReference:
+            type:
+            - array
+            - 'null'
+            items:
+              $ref: '#/components/schemas/UpgradeDocument'
+          exemptAmount:
+            type:
+            - number
+            - 'null'
+            format: decimal
     SimpleProductItem:
       allOf:
       - $ref: '#/components/schemas/ProductItem'
       - type: object
         additionalProperties: false
-    BatchStatus:
-      type: object
-      additionalProperties: false
-      properties:
-        messages:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/BatchMessageStatus'
-        metadata:
-          oneOf:
-          - $ref: '#/components/schemas/BatchImportMetadata'
     BatchHistory:
       type: object
       additionalProperties: false
@@ -588,34 +691,60 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/BatchImportMetadata'
-    CustomTemplate:
+    UpgradeDocument:
       type: object
       additionalProperties: false
       properties:
-        id:
+        recordId:
           type: integer
           format: int64
-        name:
+        referenceDocumentSerial:
           type:
           - string
           - 'null'
-        sheetIndex:
+        referenceDocumentType:
           type: integer
-          format: int32
-        columns: {}
-        dateFormat:
-          oneOf:
-          - $ref: '#/components/schemas/DateInfo'
-        ignoreLastRow:
-          type: boolean
-        imageUrl:
+          format: int64
+    CustomTemplateInfo:
+      type: object
+      additionalProperties: false
+      properties:
+        headerIndex:
           type:
           - string
           - 'null'
-        customTemplateInfo:
-          oneOf:
-          - $ref: '#/components/schemas/CustomTemplateInfo'
-        formulas: {}
+        productName:
+          type:
+          - string
+          - 'null'
+        includeTax:
+          type:
+          - string
+          - 'null'
+        isChooseDateColumn:
+          type: boolean
+        isChooseUnitPriceColumn:
+          type: boolean
+        columns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CustomTemplateColumn'
+    BatchImportRetry:
+      type: object
+      additionalProperties: false
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        messageIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
     DocumentTypes:
       type: integer
       description: '1 = PurchaseOrder
@@ -775,162 +904,34 @@ components:
       - 202
       - 203
       - 204
-    BatchImportMetadata:
+    CustomTemplate:
       type: object
       additionalProperties: false
       properties:
-        companyUserGuid:
-          type:
-          - string
-          - 'null'
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        templateId:
-          type:
-          - string
-          - 'null'
-        batchId:
-          type:
-          - string
-          - 'null'
-        filename:
-          type:
-          - string
-          - 'null'
-        documentType:
-          $ref: '#/components/schemas/DocumentTypes'
-        status:
-          $ref: '#/components/schemas/BatchImportStatus'
-        documentCount:
-          type: integer
-          format: int32
-        successCount:
-          type: integer
-          format: int32
-        failedCount:
-          type: integer
-          format: int32
-        s3Key:
-          type:
-          - string
-          - 'null'
-        userId:
+        id:
           type: integer
           format: int64
-        companyId:
+        name:
+          type:
+          - string
+          - 'null'
+        sheetIndex:
           type: integer
-          format: int64
-        isViewed:
+          format: int32
+        columns: {}
+        dateFormat:
+          oneOf:
+          - $ref: '#/components/schemas/DateInfo'
+        ignoreLastRow:
           type: boolean
-    CustomTemplateInfo:
-      type: object
-      additionalProperties: false
-      properties:
-        headerIndex:
+        imageUrl:
           type:
           - string
           - 'null'
-        productName:
-          type:
-          - string
-          - 'null'
-        includeTax:
-          type:
-          - string
-          - 'null'
-        isChooseDateColumn:
-          type: boolean
-        isChooseUnitPriceColumn:
-          type: boolean
-        columns:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/CustomTemplateColumn'
-    CustomTemplateColumn:
-      type: object
-      additionalProperties: false
-    SimpleDocument:
-      example:
-        items:
-        - type: 1
-          name: ค่าสินค้าและบริการ POS
-          description: ''
-          quantity: 1.0
-          unitName: ''
-          pricePerUnit: 210.28
-          total: 210.28
-          sellChartOfAccountCode: null
-          buyChartOfAccountCode: null
-          productCode: null
-        documentReference: null
-        exemptAmount: 0.0
-        recordId: 0
-        contactCode: null
-        contactName: test_payload_mock_new1112
-        contactAddress: ''
-        contactTaxId: ''
-        contactBranch: สำนักงานใหญ่
-        contactPerson: ''
-        contactEmail: ''
-        contactNumber: ''
-        contactZipCode: ''
-        contactGroup: 1
-        publishedOn: '2022-10-10T09:37:39.2943643+07:00'
-        creditType: 3
-        creditDays: 0
-        dueDate: '2022-10-10T09:37:39.294366+07:00'
-        salesName: Wongnai POS
-        projectName: ''
-        reference: null
-        isVatInclusive: false
-        useReceiptDeduction: true
-        subTotal: 210.28
-        discountPercentage: 0
-        discountAmount: 0.0
-        totalAfterDiscount: 210.28
-        isVat: true
-        vatAmount: 14.72
-        grandTotal: 225.0
-        documentShowWithholdingTax: false
-        documentWithholdingTaxPercentage: 0
-        documentWithholdingTaxAmount: 0.0
-        documentDeductionType: 1
-        documentDeductionAmount: 2.0
-        remarks: POS ID 1\nรหัสถาดเก็บเงิน 5G5
-        internalNotes: INV. No D/00002407\nหมายเลขใบเสร็จ / ID NUT9G
-        showSignatureOrStamp: true
-        documentStructureType: null
-        externalId: null
-        saleAndPurchaseChannel: ''
-        rowIndex: null
-      allOf:
-      - $ref: '#/components/schemas/Document'
-      - type: object
-        additionalProperties: false
-        properties:
-          items:
-            type:
-            - array
-            - 'null'
-            items:
-              $ref: '#/components/schemas/SimpleProductItem'
-          documentReference:
-            type:
-            - array
-            - 'null'
-            items:
-              $ref: '#/components/schemas/UpgradeDocument'
-          exemptAmount:
-            type:
-            - number
-            - 'null'
-            format: decimal
+        customTemplateInfo:
+          oneOf:
+          - $ref: '#/components/schemas/CustomTemplateInfo'
+        formulas: {}
     BatchMessageStatus:
       type: object
       additionalProperties: false
@@ -988,61 +989,60 @@ components:
           type:
           - string
           - 'null'
-    UpgradeDocument:
+    BatchImportMetadata:
       type: object
       additionalProperties: false
       properties:
-        recordId:
-          type: integer
-          format: int64
-        referenceDocumentSerial:
+        companyUserGuid:
           type:
           - string
           - 'null'
-        referenceDocumentType:
-          type: integer
-          format: int64
-    BatchImportRetry:
-      type: object
-      additionalProperties: false
-      properties:
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        templateId:
+          type:
+          - string
+          - 'null'
         batchId:
           type:
           - string
           - 'null'
-        messageIds:
+        filename:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            type: string
-    BatchImportStatus:
-      type: integer
-      description: '0 = None
-
-        1 = Awaiting
-
-        3 = Pending
-
-        5 = Failed
-
-        6 = HandledDuplicated
-
-        7 = Succeed'
-      x-enumNames:
-      - None
-      - Awaiting
-      - Pending
-      - Failed
-      - HandledDuplicated
-      - Succeed
-      enum:
-      - 0
-      - 1
-      - 3
-      - 5
-      - 6
-      - 7
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        status:
+          $ref: '#/components/schemas/BatchImportStatus'
+        documentCount:
+          type: integer
+          format: int32
+        successCount:
+          type: integer
+          format: int32
+        failedCount:
+          type: integer
+          format: int32
+        s3Key:
+          type:
+          - string
+          - 'null'
+        userId:
+          type: integer
+          format: int64
+        companyId:
+          type: integer
+          format: int64
+        isViewed:
+          type: boolean
+    CustomTemplateColumn:
+      type: object
+      additionalProperties: false
   securitySchemes:
     bearer:
       type: http
