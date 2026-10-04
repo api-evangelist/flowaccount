@@ -347,115 +347,21 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    AdjustInventoryReason:
+    ProductTypes:
       type: integer
-      description: '0 = Default
+      description: '1 = Service
 
-        1 = DisastersFire
+        3 = ProductWithNoStock
 
-        3 = StolenGoods
-
-        5 = StockWrittenOff
-
-        7 = StockTakingResults
-
-        9 = ReturnedStock
-
-        11 = DamagedGoods
-
-        13 = RawMaterialUsed
-
-        15 = FinishedGoodsTransfer
-
-        17 = Other'
+        5 = ProductWithStock'
       x-enumNames:
-      - Default
-      - DisastersFire
-      - StolenGoods
-      - StockWrittenOff
-      - StockTakingResults
-      - ReturnedStock
-      - DamagedGoods
-      - RawMaterialUsed
-      - FinishedGoodsTransfer
-      - Other
+      - Service
+      - ProductWithNoStock
+      - ProductWithStock
       enum:
-      - 0
       - 1
       - 3
       - 5
-      - 7
-      - 9
-      - 11
-      - 13
-      - 15
-      - 17
-    APIResponseOfBoolean:
-      type: object
-      additionalProperties: false
-      properties:
-        status:
-          type: boolean
-        message:
-          type:
-          - string
-          - 'null'
-        code:
-          type: integer
-          format: int32
-        data:
-          type: boolean
-    InventoryType:
-      type: integer
-      description: '3 = Initial
-
-        5 = BroughtForward
-
-        7 = In
-
-        11 = TransferIn
-
-        17 = Out
-
-        21 = TransferOut
-
-        25 = CreditNote
-
-        27 = DebitNote
-
-        29 = InternalUse
-
-        31 = Hold
-
-        35 = AdjustIn
-
-        39 = AdjustOut'
-      x-enumNames:
-      - Initial
-      - BroughtForward
-      - In
-      - TransferIn
-      - Out
-      - TransferOut
-      - CreditNote
-      - DebitNote
-      - InternalUse
-      - Hold
-      - AdjustIn
-      - AdjustOut
-      enum:
-      - 3
-      - 5
-      - 7
-      - 11
-      - 17
-      - 21
-      - 25
-      - 27
-      - 29
-      - 31
-      - 35
-      - 39
     ProductResult:
       type: object
       additionalProperties: false
@@ -614,21 +520,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/IStockCard'
-    ProductTypes:
-      type: integer
-      description: '1 = Service
-
-        3 = ProductWithNoStock
-
-        5 = ProductWithStock'
-      x-enumNames:
-      - Service
-      - ProductWithNoStock
-      - ProductWithStock
-      enum:
-      - 1
-      - 3
-      - 5
     VatTypes:
       type: integer
       description: '1 = Include
@@ -648,6 +539,105 @@ components:
       - 3
       - 5
       - 7
+    ISimpleListResultOfIProductResult:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        list:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IProductResult'
+    AdjustInventoryReason:
+      type: integer
+      description: '0 = Default
+
+        1 = DisastersFire
+
+        3 = StolenGoods
+
+        5 = StockWrittenOff
+
+        7 = StockTakingResults
+
+        9 = ReturnedStock
+
+        11 = DamagedGoods
+
+        13 = RawMaterialUsed
+
+        15 = FinishedGoodsTransfer
+
+        17 = Other'
+      x-enumNames:
+      - Default
+      - DisastersFire
+      - StolenGoods
+      - StockWrittenOff
+      - StockTakingResults
+      - ReturnedStock
+      - DamagedGoods
+      - RawMaterialUsed
+      - FinishedGoodsTransfer
+      - Other
+      enum:
+      - 0
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+      - 13
+      - 15
+      - 17
+    APIResponseOfBoolean:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: boolean
+        message:
+          type:
+          - string
+          - 'null'
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+    ObjectId:
+      type: object
+      description: Represents an ObjectId (see also BsonObjectId).
+      additionalProperties: false
+      properties:
+        Timestamp:
+          type: integer
+          description: Gets the timestamp.
+          format: int32
+        Machine:
+          type: integer
+          description: Gets the machine.
+          format: int32
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        Pid:
+          type: integer
+          description: Gets the PID.
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        Increment:
+          type: integer
+          description: Gets the increment.
+          format: int32
+          deprecated: true
+          x-deprecatedMessage: This property will be removed in a later release.
+        CreationTime:
+          type: string
+          description: Gets the creation time (derived from the timestamp).
+          format: date-time
     DocumentTypes:
       type: integer
       description: '1 = PurchaseOrder
@@ -807,36 +797,57 @@ components:
       - 202
       - 203
       - 204
-    ObjectId:
-      type: object
-      description: Represents an ObjectId (see also BsonObjectId).
-      additionalProperties: false
-      properties:
-        Timestamp:
-          type: integer
-          description: Gets the timestamp.
-          format: int32
-        Machine:
-          type: integer
-          description: Gets the machine.
-          format: int32
-          deprecated: true
-          x-deprecatedMessage: This property will be removed in a later release.
-        Pid:
-          type: integer
-          description: Gets the PID.
-          deprecated: true
-          x-deprecatedMessage: This property will be removed in a later release.
-        Increment:
-          type: integer
-          description: Gets the increment.
-          format: int32
-          deprecated: true
-          x-deprecatedMessage: This property will be removed in a later release.
-        CreationTime:
-          type: string
-          description: Gets the creation time (derived from the timestamp).
-          format: date-time
+    InventoryType:
+      type: integer
+      description: '3 = Initial
+
+        5 = BroughtForward
+
+        7 = In
+
+        11 = TransferIn
+
+        17 = Out
+
+        21 = TransferOut
+
+        25 = CreditNote
+
+        27 = DebitNote
+
+        29 = InternalUse
+
+        31 = Hold
+
+        35 = AdjustIn
+
+        39 = AdjustOut'
+      x-enumNames:
+      - Initial
+      - BroughtForward
+      - In
+      - TransferIn
+      - Out
+      - TransferOut
+      - CreditNote
+      - DebitNote
+      - InternalUse
+      - Hold
+      - AdjustIn
+      - AdjustOut
+      enum:
+      - 3
+      - 5
+      - 7
+      - 11
+      - 17
+      - 21
+      - 25
+      - 27
+      - 29
+      - 31
+      - 35
+      - 39
     IStockCard:
       type: object
       x-abstract: true
@@ -921,44 +932,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/IStockCard'
-    ISimpleListResultOfIProductResult:
-      type: object
-      x-abstract: true
-      additionalProperties: false
-      properties:
-        list:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IProductResult'
-    ProductNonInventoryType:
-      type: integer
-      description: '1 = NonStockProduct
-
-        3 = SparepartProduct
-
-        5 = SampleProduct
-
-        7 = FreemiumProduct
-
-        9 = SupplyProduct
-
-        11 = OthersProduct'
-      x-enumNames:
-      - NonStockProduct
-      - SparepartProduct
-      - SampleProduct
-      - FreemiumProduct
-      - SupplyProduct
-      - OthersProduct
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
-      - 11
     APIResponseOfISimpleListResultOfIProductResult:
       type: object
       additionalProperties: false
@@ -975,29 +948,6 @@ components:
         data:
           oneOf:
           - $ref: '#/components/schemas/ISimpleListResultOfIProductResult'
-    ImageResult:
-      type: object
-      additionalProperties: false
-      properties:
-        companyId:
-          type: integer
-          format: int64
-        fileName:
-          type:
-          - string
-          - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-        previewURL:
-          type:
-          - string
-          - 'null'
-        thumbURL:
-          type:
-          - string
-          - 'null'
     IProductResult:
       type: object
       x-abstract: true
@@ -1154,6 +1104,56 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/IStockCard'
+    ProductNonInventoryType:
+      type: integer
+      description: '1 = NonStockProduct
+
+        3 = SparepartProduct
+
+        5 = SampleProduct
+
+        7 = FreemiumProduct
+
+        9 = SupplyProduct
+
+        11 = OthersProduct'
+      x-enumNames:
+      - NonStockProduct
+      - SparepartProduct
+      - SampleProduct
+      - FreemiumProduct
+      - SupplyProduct
+      - OthersProduct
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+    ImageResult:
+      type: object
+      additionalProperties: false
+      properties:
+        companyId:
+          type: integer
+          format: int64
+        fileName:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        previewURL:
+          type:
+          - string
+          - 'null'
+        thumbURL:
+          type:
+          - string
+          - 'null'
   securitySchemes:
     bearer:
       type: http

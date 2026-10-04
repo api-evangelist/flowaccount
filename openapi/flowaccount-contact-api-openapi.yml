@@ -234,140 +234,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    JournalEntryStatus:
-      type: integer
-      description: '0 = Delete
-
-        1 = Awaiting
-
-        5 = Approved
-
-        9 = Void'
-      x-enumNames:
-      - Delete
-      - Awaiting
-      - Approved
-      - Void
-      enum:
-      - 0
-      - 1
-      - 5
-      - 9
-    FiscalYear:
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        companyId:
-          type: integer
-          format: int64
-        beginPeriod:
-          type: string
-          format: date-time
-        endPeriod:
-          type: string
-          format: date-time
-        status:
-          $ref: '#/components/schemas/FiscalYearStatus'
-        closedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        closedBy:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        createdOn:
-          type: string
-          format: date-time
-        company:
-          oneOf:
-          - $ref: '#/components/schemas/Company'
-    User:
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        firstname:
-          type:
-          - string
-          - 'null'
-          maxLength: 255
-          minLength: 0
-        lastname:
-          type:
-          - string
-          - 'null'
-          maxLength: 255
-          minLength: 0
-        createdon:
-          type: string
-          format: date-time
-          default: CURRENT_TIMESTAMP
-        email:
-          type:
-          - string
-          - 'null'
-          maxLength: 255
-          minLength: 0
-        phoneNumber:
-          type:
-          - string
-          - 'null'
-          maxLength: 2147483647
-          minLength: 0
-        mobile:
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-          minLength: 0
-        referralCode:
-          type:
-          - string
-          - 'null'
-          maxLength: 50
-          minLength: 0
-    ChartOfAccountCategory:
-      type: integer
-      description: '1 = Assets
-
-        2 = Liabilities
-
-        3 = Equity
-
-        4 = Revenue
-
-        5 = Expenses'
-      x-enumNames:
-      - Assets
-      - Liabilities
-      - Equity
-      - Revenue
-      - Expenses
-      enum:
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-    TemplateFont:
-      type: integer
-      description: '1 = ChatThai
-
-        3 = Rsu'
-      x-enumNames:
-      - ChatThai
-      - Rsu
-      enum:
-      - 1
-      - 3
     ProductTypes:
       type: integer
       description: '1 = Service
@@ -383,29 +249,142 @@ components:
       - 1
       - 3
       - 5
-    RuleCompileStatus:
+    IChartOfAccount:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        category:
+          $ref: '#/components/schemas/ChartOfAccountCategory'
+        code:
+          type:
+          - string
+          - 'null'
+        nameLocal:
+          type:
+          - string
+          - 'null'
+        nameForeign:
+          type:
+          - string
+          - 'null'
+        descriptionLocal:
+          type:
+          - string
+          - 'null'
+        descriptionForeign:
+          type:
+          - string
+          - 'null'
+        parentId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isFolder:
+          type: boolean
+        isBank:
+          type: boolean
+        isReceivable:
+          type: boolean
+        isDelete:
+          type: boolean
+        isLock:
+          type: boolean
+        createdon:
+          type: string
+          format: date-time
+        modifiedon:
+          type: string
+          format: date-time
+        modifiedby:
+          type: integer
+          format: int64
+        value:
+          type: number
+          format: decimal
+        left:
+          type: integer
+          format: int32
+        right:
+          type: integer
+          format: int32
+        isDefault:
+          type: boolean
+    DocumentTemplates:
       type: integer
-      description: '1 = Pending
+      description: '1 = Default
 
-        3 = Execute
+        3 = Template1
 
-        5 = Success
+        5 = Template2
 
-        7 = Error
+        7 = Template3
 
-        9 = WHTWarning
+        9 = Template4
 
-        11 = NoMoreCompile
+        11 = Template5
 
-        13 = Ignore'
+        13 = TemplateA5
+
+        15 = Template9x11withOriginal
+
+        17 = Template8
+
+        101 = NativeDefault
+
+        103 = Native1
+
+        105 = Native3
+
+        107 = Native5
+
+        109 = Native7
+
+        111 = Native9
+
+        113 = Native11
+
+        115 = Native13
+
+        201 = Thermal1
+
+        203 = Thermal2
+
+        205 = SocialSlip
+
+        301 = ShortCA1
+
+        303 = ShortCA2
+
+        305 = ShortCA3'
       x-enumNames:
-      - Pending
-      - Execute
-      - Success
-      - Error
-      - WHTWarning
-      - NoMoreCompile
-      - Ignore
+      - Default
+      - Template1
+      - Template2
+      - Template3
+      - Template4
+      - Template5
+      - TemplateA5
+      - Template9x11withOriginal
+      - Template8
+      - NativeDefault
+      - Native1
+      - Native3
+      - Native5
+      - Native7
+      - Native9
+      - Native11
+      - Native13
+      - Thermal1
+      - Thermal2
+      - SocialSlip
+      - ShortCA1
+      - ShortCA2
+      - ShortCA3
       enum:
       - 1
       - 3
@@ -414,6 +393,22 @@ components:
       - 9
       - 11
       - 13
+      - 15
+      - 17
+      - 101
+      - 103
+      - 105
+      - 107
+      - 109
+      - 111
+      - 113
+      - 115
+      - 201
+      - 203
+      - 205
+      - 301
+      - 303
+      - 305
     DocumentTypes:
       type: integer
       description: '1 = PurchaseOrder
@@ -573,105 +568,187 @@ components:
       - 202
       - 203
       - 204
-    PaymentChannel:
-      type: integer
-      description: '1 = Omise
-
-        3 = InAppIOS
-
-        5 = InAppAndriod
-
-        7 = UssdAis
-
-        9 = BankTranfer
-
-        11 = PrePaidSerial'
-      x-enumNames:
-      - Omise
-      - InAppIOS
-      - InAppAndriod
-      - UssdAis
-      - BankTranfer
-      - PrePaidSerial
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
-      - 11
-    ProductUnit:
+    Media:
       type: object
       additionalProperties: false
       required:
-      - name
+      - url
       properties:
         id:
           type: integer
-          format: int64
-        name:
+          format: int32
+        url:
           type: string
           maxLength: 255
           minLength: 0
-        isShare:
-          type: boolean
-        isDelete:
-          type: boolean
-    Gallery:
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type:
-          - string
-          - 'null'
         description:
           type:
           - string
           - 'null'
           maxLength: 255
           minLength: 0
-        productList:
+        orderNumber:
           type:
-          - array
+          - integer
           - 'null'
-          items:
-            $ref: '#/components/schemas/ProductList'
-        media:
+          format: int32
+        createdOn:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/Media'
+          format: date-time
+        isDisplay:
+          type: boolean
+        isDeleted:
+          type: boolean
+        galleryId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        mediaType:
+          type: integer
+          format: int32
+        companyId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        path:
+          type:
+          - string
+          - 'null'
+        company:
+          oneOf:
+          - $ref: '#/components/schemas/Company'
+        gallery:
+          oneOf:
+          - $ref: '#/components/schemas/Gallery'
+        user:
+          oneOf:
+          - $ref: '#/components/schemas/User'
+    BookOfAccountStatus:
+      type: integer
+      description: '0 = Delete
+
+        1 = Awaiting
+
+        5 = Approved
+
+        9 = Void
+
+        -9 = ResetVoid
+
+        -5 = ResetApproved
+
+        -1 = ResetAwaiting'
+      x-enumNames:
+      - Delete
+      - Awaiting
+      - Approved
+      - Void
+      - ResetVoid
+      - ResetApproved
+      - ResetAwaiting
+      enum:
+      - 0
+      - 1
+      - 5
+      - 9
+      - -9
+      - -5
+      - -1
+    ChartOfAccountCategory:
+      type: integer
+      description: '1 = Assets
+
+        2 = Liabilities
+
+        3 = Equity
+
+        4 = Revenue
+
+        5 = Expenses'
+      x-enumNames:
+      - Assets
+      - Liabilities
+      - Equity
+      - Revenue
+      - Expenses
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+    IBookOfAccount:
+      type: object
+      x-abstract: true
+      additionalProperties: false
+      properties:
+        journalEntryId:
+          type: integer
+          format: int64
+        companyId:
+          type: integer
+          format: int64
+        debitCredit:
+          $ref: '#/components/schemas/FinancialTransactionType'
+        bookOfAccountStatus:
+          $ref: '#/components/schemas/BookOfAccountStatus'
+        chartOfAccountId:
+          type: integer
+          format: int64
+        postedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdOn:
+          type: string
+          format: date-time
+        modifiedOn:
+          type: string
+          format: date-time
+        approvedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        value:
+          type: number
+          format: decimal
+        balance:
+          type: number
+          format: decimal
+        excludeVoidBalance:
+          type: number
+          format: decimal
+        rowNumber:
+          type: integer
+          format: int32
+        description:
+          type:
+          - string
+          - 'null'
+        descriptionForeign:
+          type:
+          - string
+          - 'null'
+        chartOfAccountName:
+          type:
+          - string
+          - 'null'
         journalEntry:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/JournalEntry'
-        receivableInvoice:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ReceivableInvoice'
-        supplierInvoice:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SupplierInvoice'
-    JournalEntry:
+          oneOf:
+          - $ref: '#/components/schemas/IJournalEntryBase'
+        chartOfAccount:
+          oneOf:
+          - $ref: '#/components/schemas/IChartOfAccount'
+    FiscalYear:
       type: object
       additionalProperties: false
-      required:
-      - documentType
-      - status
-      - documentDate
-      - isSystemDocument
       properties:
         id:
           type: integer
@@ -679,239 +756,494 @@ components:
         companyId:
           type: integer
           format: int64
-        documentSerial:
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-          minLength: 0
-        documentType:
-          $ref: '#/components/schemas/DocumentTypes'
-        status:
-          $ref: '#/components/schemas/JournalEntryStatus'
-        documentDate:
+        beginPeriod:
           type: string
           format: date-time
-          default: CURRENT_TIMESTAMP
-          minLength: 1
-        description:
-          type:
-          - string
-          - 'null'
-          maxLength: 2000
-          minLength: 0
-        descriptionForeign:
-          type:
-          - string
-          - 'null'
-          maxLength: 2000
-          minLength: 0
-        voidDescription:
-          type:
-          - string
-          - 'null'
-          maxLength: 2000
-          minLength: 0
-        voidedOn:
+        endPeriod:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/FiscalYearStatus'
+        closedOn:
           type:
           - string
           - 'null'
           format: date-time
-        approvedOn:
+        closedBy:
           type:
-          - string
+          - integer
           - 'null'
+          format: int64
+        createdOn:
+          type: string
           format: date-time
-        transactionNo:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        note:
-          type:
-          - string
-          - 'null'
-        templateType:
-          $ref: '#/components/schemas/JournalEntryTemplateType'
-        contactName:
-          type:
-          - string
-          - 'null'
-        documentSerialNoPrefix:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        createdBy:
+        company:
+          oneOf:
+          - $ref: '#/components/schemas/Company'
+    Contact:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
           type: integer
           format: int64
+        nameLocal:
+          type:
+          - string
+          - 'null'
+        nameForeign:
+          type:
+          - string
+          - 'null'
+        addressLocal:
+          type:
+          - string
+          - 'null'
+        addressForeign:
+          type:
+          - string
+          - 'null'
+        addressLocalLine2:
+          type:
+          - string
+          - 'null'
+        addressForeignLine2:
+          type:
+          - string
+          - 'null'
+        addressLocalLine3:
+          type:
+          - string
+          - 'null'
+        addressForeignLine3:
+          type:
+          - string
+          - 'null'
+        branch:
+          type:
+          - string
+          - 'null'
+        branchForeign:
+          type:
+          - string
+          - 'null'
+        companyTaxId:
+          type:
+          - string
+          - 'null'
+        fax:
+          type:
+          - string
+          - 'null'
+        phone1:
+          type:
+          - string
+          - 'null'
+        phone2:
+          type:
+          - string
+          - 'null'
+        phone3:
+          type:
+          - string
+          - 'null'
+        websites:
+          type:
+          - string
+          - 'null'
+        createdOn:
+          type: string
+          format: date-time
+        modifiedOn:
+          type: string
+          format: date-time
         modifiedBy:
           type: integer
           format: int64
-        approvedBy:
+        isDelete:
+          type: boolean
+        isDefault:
+          type: boolean
+        logoImage:
+          type:
+          - string
+          - 'null'
+        defaultCreditDays:
           type:
           - integer
           - 'null'
-          format: int64
-        voidedBy:
+          format: int32
+        vatRate:
+          type: integer
+          format: int32
+        email:
           type:
-          - integer
+          - string
           - 'null'
-          format: int64
+        contactPerson:
+          type:
+          - string
+          - 'null'
+        isActive:
+          type: boolean
+        contactType:
+          $ref: '#/components/schemas/ContactTypes'
+        contactGroup:
+          $ref: '#/components/schemas/ContactGroups'
+        remarks:
+          type:
+          - string
+          - 'null'
         galleryId:
           type:
           - integer
           - 'null'
           format: int64
-        contactId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        runningNumberType:
-          oneOf:
-          - $ref: '#/components/schemas/RunningNumberType'
-        fiscalYearId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        gallery:
-          oneOf:
-          - $ref: '#/components/schemas/Gallery'
-        company:
-          oneOf:
-          - $ref: '#/components/schemas/Company'
-        approvedByUser:
-          oneOf:
-          - $ref: '#/components/schemas/User'
-        modifiedByUser:
-          oneOf:
-          - $ref: '#/components/schemas/User'
-        voidedByUser:
-          oneOf:
-          - $ref: '#/components/schemas/User'
-        remarks:
-          type:
-          - string
-          - 'null'
-          maxLength: 2000
-          minLength: 0
-        contact:
-          oneOf:
-          - $ref: '#/components/schemas/Contact'
-        fiscalYear:
-          oneOf:
-          - $ref: '#/components/schemas/FiscalYear'
-        reference:
+        branchCode:
           type:
           - string
           - 'null'
           maxLength: 50
           minLength: 0
-        referenceId:
+        transactionId:
+          type:
+          - string
+          - 'null'
+          maxLength: 50
+          minLength: 0
+        resetTransactionId:
           type:
           - integer
           - 'null'
           format: int64
-        referenceDocumentType:
-          oneOf:
-          - $ref: '#/components/schemas/DocumentTypes'
-        isSystemDocument:
-          type: boolean
-          default: false
-        ruleCompileStatus:
-          $ref: '#/components/schemas/RuleCompileStatus'
-        bookOfAccounts:
+        contactCode:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/IBookOfAccount'
-        isChangedDocumentDate:
+        internalNotes:
+          type:
+          - string
+          - 'null'
+        shippingAddress:
+          type:
+          - string
+          - 'null'
+        zipCode:
+          type:
+          - string
+          - 'null'
+        swiftCode:
+          type:
+          - string
+          - 'null'
+        bankAddress:
+          type:
+          - string
+          - 'null'
+        useForeignBank:
+          type:
+          - boolean
+          - 'null'
+        isMigrate:
           type: boolean
-        isResetDocument:
-          type: boolean
-    SalesType:
+    RuleCompileStatus:
       type: integer
-      description: '1 = Cash
+      description: '1 = Pending
 
-        3 = Credit
+        3 = Execute
 
-        5 = Both'
-      x-enumNames:
-      - Cash
-      - Credit
-      - Both
-      enum:
-      - 1
-      - 3
-      - 5
-    KConnectProductCode:
-      type: integer
-      description: '1 = PCT
+        5 = Success
 
-        3 = PPA
+        7 = Error
 
-        5 = PPB'
-      x-enumNames:
-      - PCT
-      - PPA
-      - PPB
-      enum:
-      - 1
-      - 3
-      - 5
-    CompanyTypeEnum:
-      type: integer
-      description: '10 = PrivateWithTax
+        9 = WHTWarning
 
-        20 = PrivateWithoutTax
+        11 = NoMoreCompile
 
-        30 = Personal
-
-        40 = PersonalWithTax
-
-        50 = PartnershipLimitedWithTax
-
-        60 = PartnershipLimitedWithoutTax'
-      x-enumNames:
-      - PrivateWithTax
-      - PrivateWithoutTax
-      - Personal
-      - PersonalWithTax
-      - PartnershipLimitedWithTax
-      - PartnershipLimitedWithoutTax
-      enum:
-      - 10
-      - 20
-      - 30
-      - 40
-      - 50
-      - 60
-    PackageStatus:
-      type: integer
-      description: '10 = Pending
-
-        30 = Approve
-
-        50 = Suspend
-
-        70 = Terminated
-
-        90 = Delete'
+        13 = Ignore'
       x-enumNames:
       - Pending
-      - Approve
-      - Suspend
-      - Terminated
-      - Delete
+      - Execute
+      - Success
+      - Error
+      - WHTWarning
+      - NoMoreCompile
+      - Ignore
       enum:
-      - 10
-      - 30
-      - 50
-      - 70
-      - 90
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+      - 13
+    TemplateFont:
+      type: integer
+      description: '1 = ChatThai
+
+        3 = Rsu'
+      x-enumNames:
+      - ChatThai
+      - Rsu
+      enum:
+      - 1
+      - 3
+    ReceivableInvoice:
+      allOf:
+      - $ref: '#/components/schemas/Document2'
+      - type: object
+        additionalProperties: false
+        required:
+        - companyId
+        - createdOn
+        - modifiedOn
+        - publishedOn
+        - documentDate
+        properties:
+          id:
+            type: integer
+            format: int64
+          contactId:
+            type: integer
+            format: int64
+          companyId:
+            type: integer
+            format: int64
+          status:
+            $ref: '#/components/schemas/ReceivableInvoiceStatus'
+          createdOn:
+            type: string
+            format: date-time
+            default: CURRENT_TIMESTAMP
+            minLength: 1
+          modifiedOn:
+            type: string
+            format: date-time
+            default: CURRENT_TIMESTAMP
+            minLength: 1
+          publishedOn:
+            type: string
+            format: date-time
+            default: CURRENT_TIMESTAMP
+            minLength: 1
+          documentDate:
+            type: string
+            format: date-time
+            default: CURRENT_TIMESTAMP
+            minLength: 1
+          published:
+            type: boolean
+          approved:
+            type: boolean
+          approvedBy:
+            type:
+            - integer
+            - 'null'
+            format: int64
+          approvedByClientId:
+            type:
+            - integer
+            - 'null'
+            format: int64
+          approvedImageUrl:
+            type:
+            - string
+            - 'null'
+          documentSerial:
+            type:
+            - string
+            - 'null'
+          remarks:
+            type:
+            - string
+            - 'null'
+          name:
+            type:
+            - string
+            - 'null'
+          value:
+            type: number
+            format: decimal
+          dueDate:
+            type:
+            - string
+            - 'null'
+            format: date-time
+          expectedDate:
+            type:
+            - string
+            - 'null'
+            format: date-time
+          createdBy:
+            type: integer
+            format: int64
+          documentId:
+            type:
+            - string
+            - 'null'
+          isDelete:
+            type: boolean
+          vatRate:
+            type: integer
+            format: int32
+          internalNotes:
+            type:
+            - string
+            - 'null'
+          galleryId:
+            type:
+            - integer
+            - 'null'
+            format: int64
+          isVatInclusive:
+            type: boolean
+          salesId:
+            type:
+            - integer
+            - 'null'
+            format: int64
+          salesName:
+            type:
+            - string
+            - 'null'
+          roundingAdjustment:
+            type: number
+            format: decimal
+          isInlineDiscount:
+            type: boolean
+            default: false
+          isInlineVat:
+            type: boolean
+            default: false
+          tax:
+            type:
+            - number
+            - 'null'
+            format: decimal
+          documentSerialNoPrefix:
+            type:
+            - integer
+            - 'null'
+            format: int64
+          vatValue:
+            type:
+            - number
+            - 'null'
+            format: decimal
+          resetTransactionId:
+            type:
+            - integer
+            - 'null'
+            format: int64
+          contact:
+            oneOf:
+            - $ref: '#/components/schemas/Contact'
+          approvedByClient:
+            oneOf:
+            - $ref: '#/components/schemas/User'
+          company:
+            oneOf:
+            - $ref: '#/components/schemas/Company'
+          createdByUser:
+            oneOf:
+            - $ref: '#/components/schemas/User'
+          approvedByUser:
+            oneOf:
+            - $ref: '#/components/schemas/User'
+          sales:
+            oneOf:
+            - $ref: '#/components/schemas/User'
+          gallery:
+            oneOf:
+            - $ref: '#/components/schemas/Gallery'
+          inlineVatValue:
+            type: number
+            format: decimal
+          inlineDiscountValue:
+            type: number
+            format: decimal
+          ruleCompileStatus:
+            $ref: '#/components/schemas/RuleCompileStatus'
+          runningNumberType:
+            type: integer
+            format: int32
+          runningModifiedOn:
+            type:
+            - string
+            - 'null'
+            format: date-time
+          exemptAmount:
+            type: number
+            format: decimal
+          vatableAmount:
+            type: number
+            format: decimal
+          totalAfterDiscount:
+            type: number
+            format: decimal
+          subTotal:
+            type: number
+            format: decimal
+          documentReferences:
+            type:
+            - array
+            - 'null'
+            items:
+              $ref: '#/components/schemas/IDocumentReference'
+          referencedToMe:
+            type:
+            - array
+            - 'null'
+            items:
+              $ref: '#/components/schemas/IDocumentReference'
+          referencedByMe:
+            type:
+            - array
+            - 'null'
+            items:
+              $ref: '#/components/schemas/IDocumentReference'
+          statusInt:
+            type: integer
+            format: int32
+          isReCalculate:
+            type: boolean
+          partialPaymentMethod:
+            oneOf:
+            - $ref: '#/components/schemas/PartialPaymentMethod'
+          vatAmount:
+            type:
+            - number
+            - 'null'
+            format: decimal
+          isMigrate:
+            type: boolean
+    PartialPaymentMethod:
+      type: integer
+      description: '0 = Default
+
+        1 = None
+
+        3 = Quantity
+
+        5 = Price
+
+        7 = Percentage
+
+        11 = RECPartial'
+      x-enumNames:
+      - Default
+      - None
+      - Quantity
+      - Price
+      - Percentage
+      - RECPartial
+      enum:
+      - 0
+      - 1
+      - 3
+      - 5
+      - 7
+      - 11
     CompanyPreferences:
       type: object
       additionalProperties: false
@@ -1495,703 +1827,6 @@ components:
           type:
           - string
           - 'null'
-    UpgradeType:
-      type: integer
-      description: '1 = Upgrade
-
-        3 = Renew
-
-        5 = ChangePackage'
-      x-enumNames:
-      - Upgrade
-      - Renew
-      - ChangePackage
-      enum:
-      - 1
-      - 3
-      - 5
-    PartialPaymentMethod:
-      type: integer
-      description: '0 = Default
-
-        1 = None
-
-        3 = Quantity
-
-        5 = Price
-
-        7 = Percentage
-
-        11 = RECPartial'
-      x-enumNames:
-      - Default
-      - None
-      - Quantity
-      - Price
-      - Percentage
-      - RECPartial
-      enum:
-      - 0
-      - 1
-      - 3
-      - 5
-      - 7
-      - 11
-    IChartOfAccount:
-      type: object
-      x-abstract: true
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        category:
-          $ref: '#/components/schemas/ChartOfAccountCategory'
-        code:
-          type:
-          - string
-          - 'null'
-        nameLocal:
-          type:
-          - string
-          - 'null'
-        nameForeign:
-          type:
-          - string
-          - 'null'
-        descriptionLocal:
-          type:
-          - string
-          - 'null'
-        descriptionForeign:
-          type:
-          - string
-          - 'null'
-        parentId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isFolder:
-          type: boolean
-        isBank:
-          type: boolean
-        isReceivable:
-          type: boolean
-        isDelete:
-          type: boolean
-        isLock:
-          type: boolean
-        createdon:
-          type: string
-          format: date-time
-        modifiedon:
-          type: string
-          format: date-time
-        modifiedby:
-          type: integer
-          format: int64
-        value:
-          type: number
-          format: decimal
-        left:
-          type: integer
-          format: int32
-        right:
-          type: integer
-          format: int32
-        isDefault:
-          type: boolean
-    BusinessType:
-      type: integer
-      description: '1 = SellingProducts
-
-        3 = SellingServices
-
-        5 = SellingBoth
-
-        7 = Custom'
-      x-enumNames:
-      - SellingProducts
-      - SellingServices
-      - SellingBoth
-      - Custom
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-    ProductCategory:
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type:
-          - string
-          - 'null'
-        isDelete:
-          type: boolean
-        isShare:
-          type: boolean
-        resetTransactionId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-    IDocumentReference:
-      type: object
-      x-abstract: true
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        companyId:
-          type: integer
-          format: int64
-        referenceId:
-          type: integer
-          format: int64
-        referenceDocumentType:
-          $ref: '#/components/schemas/DocumentTypes'
-        referenceDocumentSerial:
-          type:
-          - string
-          - 'null'
-        documentId:
-          type: integer
-          format: int64
-        documentType:
-          $ref: '#/components/schemas/DocumentTypes'
-        documentSerial:
-          type:
-          - string
-          - 'null'
-        isDelete:
-          type: boolean
-        type:
-          $ref: '#/components/schemas/DocumentReferenceTypes'
-        documentStatus:
-          type: integer
-          format: int32
-        documentStatusString:
-          type:
-          - string
-          - 'null'
-        documentDate:
-          type: string
-          format: date-time
-        documentAmount:
-          type: number
-          format: decimal
-        documentAmountWithVat:
-          type: number
-          format: decimal
-        refDocumentStatus:
-          type: integer
-          format: int32
-        refDocumentStatusString:
-          type:
-          - string
-          - 'null'
-        refDocumentDate:
-          type: string
-          format: date-time
-        refDocumentAmount:
-          type: number
-          format: decimal
-        refDocumentAmountWithVat:
-          type: number
-          format: decimal
-        partialPaymentTotalAmount:
-          type: number
-          format: decimal
-        partialPaymentTotalPercent:
-          type: number
-          format: decimal
-        refCreatedOn:
-          type: string
-          format: date-time
-        refModifiedOn:
-          type: string
-          format: date-time
-        refIsMigrate:
-          type: boolean
-        isCompileRule:
-          type: boolean
-        documentCollected:
-          type: number
-          format: decimal
-    ReceivableInvoice:
-      allOf:
-      - $ref: '#/components/schemas/Document2'
-      - type: object
-        additionalProperties: false
-        required:
-        - companyId
-        - createdOn
-        - modifiedOn
-        - publishedOn
-        - documentDate
-        properties:
-          id:
-            type: integer
-            format: int64
-          contactId:
-            type: integer
-            format: int64
-          companyId:
-            type: integer
-            format: int64
-          status:
-            $ref: '#/components/schemas/ReceivableInvoiceStatus'
-          createdOn:
-            type: string
-            format: date-time
-            default: CURRENT_TIMESTAMP
-            minLength: 1
-          modifiedOn:
-            type: string
-            format: date-time
-            default: CURRENT_TIMESTAMP
-            minLength: 1
-          publishedOn:
-            type: string
-            format: date-time
-            default: CURRENT_TIMESTAMP
-            minLength: 1
-          documentDate:
-            type: string
-            format: date-time
-            default: CURRENT_TIMESTAMP
-            minLength: 1
-          published:
-            type: boolean
-          approved:
-            type: boolean
-          approvedBy:
-            type:
-            - integer
-            - 'null'
-            format: int64
-          approvedByClientId:
-            type:
-            - integer
-            - 'null'
-            format: int64
-          approvedImageUrl:
-            type:
-            - string
-            - 'null'
-          documentSerial:
-            type:
-            - string
-            - 'null'
-          remarks:
-            type:
-            - string
-            - 'null'
-          name:
-            type:
-            - string
-            - 'null'
-          value:
-            type: number
-            format: decimal
-          dueDate:
-            type:
-            - string
-            - 'null'
-            format: date-time
-          expectedDate:
-            type:
-            - string
-            - 'null'
-            format: date-time
-          createdBy:
-            type: integer
-            format: int64
-          documentId:
-            type:
-            - string
-            - 'null'
-          isDelete:
-            type: boolean
-          vatRate:
-            type: integer
-            format: int32
-          internalNotes:
-            type:
-            - string
-            - 'null'
-          galleryId:
-            type:
-            - integer
-            - 'null'
-            format: int64
-          isVatInclusive:
-            type: boolean
-          salesId:
-            type:
-            - integer
-            - 'null'
-            format: int64
-          salesName:
-            type:
-            - string
-            - 'null'
-          roundingAdjustment:
-            type: number
-            format: decimal
-          isInlineDiscount:
-            type: boolean
-            default: false
-          isInlineVat:
-            type: boolean
-            default: false
-          tax:
-            type:
-            - number
-            - 'null'
-            format: decimal
-          documentSerialNoPrefix:
-            type:
-            - integer
-            - 'null'
-            format: int64
-          vatValue:
-            type:
-            - number
-            - 'null'
-            format: decimal
-          resetTransactionId:
-            type:
-            - integer
-            - 'null'
-            format: int64
-          contact:
-            oneOf:
-            - $ref: '#/components/schemas/Contact'
-          approvedByClient:
-            oneOf:
-            - $ref: '#/components/schemas/User'
-          company:
-            oneOf:
-            - $ref: '#/components/schemas/Company'
-          createdByUser:
-            oneOf:
-            - $ref: '#/components/schemas/User'
-          approvedByUser:
-            oneOf:
-            - $ref: '#/components/schemas/User'
-          sales:
-            oneOf:
-            - $ref: '#/components/schemas/User'
-          gallery:
-            oneOf:
-            - $ref: '#/components/schemas/Gallery'
-          inlineVatValue:
-            type: number
-            format: decimal
-          inlineDiscountValue:
-            type: number
-            format: decimal
-          ruleCompileStatus:
-            $ref: '#/components/schemas/RuleCompileStatus'
-          runningNumberType:
-            type: integer
-            format: int32
-          runningModifiedOn:
-            type:
-            - string
-            - 'null'
-            format: date-time
-          exemptAmount:
-            type: number
-            format: decimal
-          vatableAmount:
-            type: number
-            format: decimal
-          totalAfterDiscount:
-            type: number
-            format: decimal
-          subTotal:
-            type: number
-            format: decimal
-          documentReferences:
-            type:
-            - array
-            - 'null'
-            items:
-              $ref: '#/components/schemas/IDocumentReference'
-          referencedToMe:
-            type:
-            - array
-            - 'null'
-            items:
-              $ref: '#/components/schemas/IDocumentReference'
-          referencedByMe:
-            type:
-            - array
-            - 'null'
-            items:
-              $ref: '#/components/schemas/IDocumentReference'
-          statusInt:
-            type: integer
-            format: int32
-          isReCalculate:
-            type: boolean
-          partialPaymentMethod:
-            oneOf:
-            - $ref: '#/components/schemas/PartialPaymentMethod'
-          vatAmount:
-            type:
-            - number
-            - 'null'
-            format: decimal
-          isMigrate:
-            type: boolean
-    DocumentReferenceTypes:
-      type: integer
-      description: '1 = ImportDocument
-
-        3 = PartialPayments
-
-        5 = Batch
-
-        7 = Etax
-
-        9 = MiigratePartialPayments
-
-        11 = BatchPartialPayments
-
-        13 = DepositFirst
-
-        15 = DepositLast'
-      x-enumNames:
-      - ImportDocument
-      - PartialPayments
-      - Batch
-      - Etax
-      - MiigratePartialPayments
-      - BatchPartialPayments
-      - DepositFirst
-      - DepositLast
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
-      - 11
-      - 13
-      - 15
-    FiscalYearStatus:
-      type: integer
-      description: '1 = Current
-
-        3 = Opening
-
-        5 = Closed'
-      x-enumNames:
-      - Current
-      - Opening
-      - Closed
-      enum:
-      - 1
-      - 3
-      - 5
-    PackageList:
-      type: object
-      additionalProperties: false
-      required:
-      - packageName
-      - configuration
-      properties:
-        id:
-          type: integer
-          format: int32
-        packageName:
-          type: string
-          minLength: 1
-        description:
-          type:
-          - string
-          - 'null'
-        configuration:
-          type: string
-          minLength: 1
-        remarks:
-          type:
-          - string
-          - 'null'
-        displayNameTH:
-          type:
-          - string
-          - 'null'
-        displayNameEN:
-          type:
-          - string
-          - 'null'
-    DocumentTemplates:
-      type: integer
-      description: '1 = Default
-
-        3 = Template1
-
-        5 = Template2
-
-        7 = Template3
-
-        9 = Template4
-
-        11 = Template5
-
-        13 = TemplateA5
-
-        15 = Template9x11withOriginal
-
-        17 = Template8
-
-        101 = NativeDefault
-
-        103 = Native1
-
-        105 = Native3
-
-        107 = Native5
-
-        109 = Native7
-
-        111 = Native9
-
-        113 = Native11
-
-        115 = Native13
-
-        201 = Thermal1
-
-        203 = Thermal2
-
-        205 = SocialSlip
-
-        301 = ShortCA1
-
-        303 = ShortCA2
-
-        305 = ShortCA3'
-      x-enumNames:
-      - Default
-      - Template1
-      - Template2
-      - Template3
-      - Template4
-      - Template5
-      - TemplateA5
-      - Template9x11withOriginal
-      - Template8
-      - NativeDefault
-      - Native1
-      - Native3
-      - Native5
-      - Native7
-      - Native9
-      - Native11
-      - Native13
-      - Thermal1
-      - Thermal2
-      - SocialSlip
-      - ShortCA1
-      - ShortCA2
-      - ShortCA3
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
-      - 11
-      - 13
-      - 15
-      - 17
-      - 101
-      - 103
-      - 105
-      - 107
-      - 109
-      - 111
-      - 113
-      - 115
-      - 201
-      - 203
-      - 205
-      - 301
-      - 303
-      - 305
-    ContactTypes:
-      type: integer
-      description: '0 = OwnCompany
-
-        3 = Client
-
-        5 = Vendor
-
-        7 = VendorAndClient
-
-        9 = ExpenseVendor'
-      x-enumNames:
-      - OwnCompany
-      - Client
-      - Vendor
-      - VendorAndClient
-      - ExpenseVendor
-      enum:
-      - 0
-      - 3
-      - 5
-      - 7
-      - 9
-    ContactGroups:
-      type: integer
-      description: '1 = Individual
-
-        3 = Juristic
-
-        9 = Undefined'
-      x-enumNames:
-      - Individual
-      - Juristic
-      - Undefined
-      enum:
-      - 1
-      - 3
-      - 9
-    RunningNumberType:
-      type: integer
-      description: '1 = Default
-
-        3 = YearMonth
-
-        5 = Month
-
-        7 = Year
-
-        9 = FreeHand'
-      x-enumNames:
-      - Default
-      - YearMonth
-      - Month
-      - Year
-      - FreeHand
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
     ProductList:
       type: object
       additionalProperties: false
@@ -2354,33 +1989,282 @@ components:
           - $ref: '#/components/schemas/ProductCategory'
         isMigrate:
           type: boolean
-    JournalEntryTemplateType:
+    BusinessType:
       type: integer
-      description: '1 = Default
+      description: '1 = SellingProducts
 
-        3 = DocumentCreated
+        3 = SellingServices
 
-        5 = Payment
+        5 = SellingBoth
 
-        7 = ChequeDate
-
-        9 = TaxNoRefund
-
-        11 = VATManagementHistory'
+        7 = Custom'
       x-enumNames:
-      - Default
-      - DocumentCreated
-      - Payment
-      - ChequeDate
-      - TaxNoRefund
-      - VATManagementHistory
+      - SellingProducts
+      - SellingServices
+      - SellingBoth
+      - Custom
       enum:
       - 1
       - 3
       - 5
       - 7
-      - 9
-      - 11
+    CompanySubscription:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        companyId:
+          type: integer
+          format: int64
+        packageId:
+          type: integer
+          format: int32
+        packageStatus:
+          $ref: '#/components/schemas/PackageStatus'
+        transactionDate:
+          type: string
+          format: date-time
+        transactionId:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type: string
+          format: date-time
+        couponId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paidBy:
+          type: integer
+          format: int64
+        createdOn:
+          type: string
+          format: date-time
+        modifiedOn:
+          type: string
+          format: date-time
+        days:
+          type: integer
+          format: int32
+        packageDays:
+          type: integer
+          format: int32
+        quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        type:
+          $ref: '#/components/schemas/UpgradeType'
+        paymentChannel:
+          oneOf:
+          - $ref: '#/components/schemas/PaymentChannel'
+        value:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        isWithheld:
+          type: boolean
+        withheld:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        internalFile:
+          type:
+          - string
+          - 'null'
+        invoiceId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        remarks:
+          type:
+          - string
+          - 'null'
+        isRequestInvoice:
+          type:
+          - boolean
+          - 'null'
+        addOn:
+          type:
+          - string
+          - 'null'
+        packageList:
+          oneOf:
+          - $ref: '#/components/schemas/PackageList'
+        paySlipImageDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        paySlipImageTime:
+          type:
+          - string
+          - 'null'
+          format: time-span
+        paySlipImageAmount:
+          type:
+          - number
+          - 'null'
+          format: decimal
+        paySlipImageContact:
+          type:
+          - string
+          - 'null'
+    ProductCategory:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type:
+          - string
+          - 'null'
+        isDelete:
+          type: boolean
+        isShare:
+          type: boolean
+        resetTransactionId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+    ContactResult:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        contactType:
+          $ref: '#/components/schemas/ContactTypes'
+        code:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        addressLocal:
+          type:
+          - string
+          - 'null'
+        addressLocalLine2:
+          type:
+          - string
+          - 'null'
+        addressLocalLine3:
+          type:
+          - string
+          - 'null'
+        taxId:
+          type:
+          - string
+          - 'null'
+        branch:
+          type:
+          - string
+          - 'null'
+        branchCode:
+          type:
+          - string
+          - 'null'
+        contactPerson:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        mobile:
+          type:
+          - string
+          - 'null'
+        defaultCreditDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        office:
+          type:
+          - string
+          - 'null'
+        fax:
+          type:
+          - string
+          - 'null'
+        website:
+          type:
+          - string
+          - 'null'
+        shippingAddress:
+          type:
+          - string
+          - 'null'
+        internalNotes:
+          type:
+          - string
+          - 'null'
+        remarks:
+          type:
+          - string
+          - 'null'
+        zipCode:
+          type:
+          - string
+          - 'null'
+        bankId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        bankName:
+          type:
+          - string
+          - 'null'
+        bankBranch:
+          type:
+          - string
+          - 'null'
+        bankAccountNumber:
+          type:
+          - string
+          - 'null'
+        swiftCode:
+          type:
+          - string
+          - 'null'
+        bankAddress:
+          type:
+          - string
+          - 'null'
+        useForeignBank:
+          type: boolean
+        bankAccountType:
+          oneOf:
+          - $ref: '#/components/schemas/BankAccountType'
+        contactGroup:
+          $ref: '#/components/schemas/ContactGroups'
+        media:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Media'
+        qrCode:
+          oneOf:
+          - $ref: '#/components/schemas/Media'
     Company:
       type: object
       additionalProperties: false
@@ -2578,169 +2462,599 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/CompanySubscription'
-    Media:
+    JournalEntry:
       type: object
       additionalProperties: false
       required:
-      - url
+      - documentType
+      - status
+      - documentDate
+      - isSystemDocument
       properties:
         id:
           type: integer
-          format: int32
-        url:
-          type: string
-          maxLength: 255
+          format: int64
+        companyId:
+          type: integer
+          format: int64
+        documentSerial:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
           minLength: 0
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        status:
+          $ref: '#/components/schemas/JournalEntryStatus'
+        documentDate:
+          type: string
+          format: date-time
+          default: CURRENT_TIMESTAMP
+          minLength: 1
         description:
           type:
           - string
           - 'null'
-          maxLength: 255
+          maxLength: 2000
           minLength: 0
-        orderNumber:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        createdOn:
+        descriptionForeign:
           type:
           - string
           - 'null'
-          format: date-time
-        isDisplay:
-          type: boolean
-        isDeleted:
-          type: boolean
-        galleryId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        mediaType:
-          type: integer
-          format: int32
-        companyId:
-          type: integer
-          format: int64
-        userId:
-          type: integer
-          format: int64
-        path:
+          maxLength: 2000
+          minLength: 0
+        voidDescription:
           type:
           - string
           - 'null'
-        company:
-          oneOf:
-          - $ref: '#/components/schemas/Company'
-        gallery:
-          oneOf:
-          - $ref: '#/components/schemas/Gallery'
-        user:
-          oneOf:
-          - $ref: '#/components/schemas/User'
-    IBookOfAccount:
-      type: object
-      x-abstract: true
-      additionalProperties: false
-      properties:
-        journalEntryId:
-          type: integer
-          format: int64
-        companyId:
-          type: integer
-          format: int64
-        debitCredit:
-          $ref: '#/components/schemas/FinancialTransactionType'
-        bookOfAccountStatus:
-          $ref: '#/components/schemas/BookOfAccountStatus'
-        chartOfAccountId:
-          type: integer
-          format: int64
-        postedDate:
+          maxLength: 2000
+          minLength: 0
+        voidedOn:
           type:
           - string
           - 'null'
-          format: date-time
-        createdOn:
-          type: string
-          format: date-time
-        modifiedOn:
-          type: string
           format: date-time
         approvedOn:
           type:
           - string
           - 'null'
           format: date-time
-        value:
-          type: number
-          format: decimal
-        balance:
-          type: number
-          format: decimal
-        excludeVoidBalance:
-          type: number
-          format: decimal
-        rowNumber:
+        transactionNo:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        note:
+          type:
+          - string
+          - 'null'
+        templateType:
+          $ref: '#/components/schemas/JournalEntryTemplateType'
+        contactName:
+          type:
+          - string
+          - 'null'
+        documentSerialNoPrefix:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        createdBy:
           type: integer
-          format: int32
+          format: int64
+        modifiedBy:
+          type: integer
+          format: int64
+        approvedBy:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        voidedBy:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        galleryId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        contactId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        runningNumberType:
+          oneOf:
+          - $ref: '#/components/schemas/RunningNumberType'
+        fiscalYearId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        gallery:
+          oneOf:
+          - $ref: '#/components/schemas/Gallery'
+        company:
+          oneOf:
+          - $ref: '#/components/schemas/Company'
+        approvedByUser:
+          oneOf:
+          - $ref: '#/components/schemas/User'
+        modifiedByUser:
+          oneOf:
+          - $ref: '#/components/schemas/User'
+        voidedByUser:
+          oneOf:
+          - $ref: '#/components/schemas/User'
+        remarks:
+          type:
+          - string
+          - 'null'
+          maxLength: 2000
+          minLength: 0
+        contact:
+          oneOf:
+          - $ref: '#/components/schemas/Contact'
+        fiscalYear:
+          oneOf:
+          - $ref: '#/components/schemas/FiscalYear'
+        reference:
+          type:
+          - string
+          - 'null'
+          maxLength: 50
+          minLength: 0
+        referenceId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        referenceDocumentType:
+          oneOf:
+          - $ref: '#/components/schemas/DocumentTypes'
+        isSystemDocument:
+          type: boolean
+          default: false
+        ruleCompileStatus:
+          $ref: '#/components/schemas/RuleCompileStatus'
+        bookOfAccounts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IBookOfAccount'
+        isChangedDocumentDate:
+          type: boolean
+        isResetDocument:
+          type: boolean
+    Gallery:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type:
+          - string
+          - 'null'
         description:
           type:
           - string
           - 'null'
-        descriptionForeign:
+          maxLength: 255
+          minLength: 0
+        productList:
           type:
-          - string
+          - array
           - 'null'
-        chartOfAccountName:
+          items:
+            $ref: '#/components/schemas/ProductList'
+        media:
           type:
-          - string
+          - array
           - 'null'
+          items:
+            $ref: '#/components/schemas/Media'
         journalEntry:
-          oneOf:
-          - $ref: '#/components/schemas/IJournalEntryBase'
-        chartOfAccount:
-          oneOf:
-          - $ref: '#/components/schemas/IChartOfAccount'
-    BookOfAccountStatus:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/JournalEntry'
+        receivableInvoice:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ReceivableInvoice'
+        supplierInvoice:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SupplierInvoice'
+    PackageStatus:
       type: integer
-      description: '0 = Delete
+      description: '10 = Pending
 
-        1 = Awaiting
+        30 = Approve
 
-        5 = Approved
+        50 = Suspend
 
-        9 = Void
+        70 = Terminated
 
-        -9 = ResetVoid
-
-        -5 = ResetApproved
-
-        -1 = ResetAwaiting'
+        90 = Delete'
       x-enumNames:
+      - Pending
+      - Approve
+      - Suspend
+      - Terminated
       - Delete
+      enum:
+      - 10
+      - 30
+      - 50
+      - 70
+      - 90
+    FinancialTransactionType:
+      type: integer
+      description: '1 = Debit
+
+        3 = Credit'
+      x-enumNames:
+      - Debit
+      - Credit
+      enum:
+      - 1
+      - 3
+    BankAccountType:
+      type: integer
+      description: '1 = SavingAccount
+
+        3 = CurrentAccount
+
+        5 = CreditCardAccount
+
+        7 = DepositAccount'
+      x-enumNames:
+      - SavingAccount
+      - CurrentAccount
+      - CreditCardAccount
+      - DepositAccount
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+    RunningNumberType:
+      type: integer
+      description: '1 = Default
+
+        3 = YearMonth
+
+        5 = Month
+
+        7 = Year
+
+        9 = FreeHand'
+      x-enumNames:
+      - Default
+      - YearMonth
+      - Month
+      - Year
+      - FreeHand
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+    SalesType:
+      type: integer
+      description: '1 = Cash
+
+        3 = Credit
+
+        5 = Both'
+      x-enumNames:
+      - Cash
+      - Credit
+      - Both
+      enum:
+      - 1
+      - 3
+      - 5
+    Document2:
+      type: object
+      additionalProperties: false
+    ReceivableInvoiceStatus:
+      type: integer
+      description: '1 = Awaiting
+
+        3 = Approved
+
+        5 = ApprovedAndProcessed
+
+        7 = Void
+
+        9 = Delete'
+      x-enumNames:
       - Awaiting
       - Approved
+      - ApprovedAndProcessed
       - Void
-      - ResetVoid
-      - ResetApproved
-      - ResetAwaiting
+      - Delete
       enum:
-      - 0
       - 1
+      - 3
       - 5
+      - 7
       - 9
-      - -9
-      - -5
-      - -1
-    SupplierInvoice:
+    PackageList:
       type: object
       additionalProperties: false
       required:
-      - companyId
-      - documentDate
-      - createdOn
-      - modifiedOn
+      - packageName
+      - configuration
+      properties:
+        id:
+          type: integer
+          format: int32
+        packageName:
+          type: string
+          minLength: 1
+        description:
+          type:
+          - string
+          - 'null'
+        configuration:
+          type: string
+          minLength: 1
+        remarks:
+          type:
+          - string
+          - 'null'
+        displayNameTH:
+          type:
+          - string
+          - 'null'
+        displayNameEN:
+          type:
+          - string
+          - 'null'
+    ProductNonInventoryType:
+      type: integer
+      description: '1 = NonStockProduct
+
+        3 = SparepartProduct
+
+        5 = SampleProduct
+
+        7 = FreemiumProduct
+
+        9 = SupplyProduct
+
+        11 = OthersProduct'
+      x-enumNames:
+      - NonStockProduct
+      - SparepartProduct
+      - SampleProduct
+      - FreemiumProduct
+      - SupplyProduct
+      - OthersProduct
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+    KConnectProductCode:
+      type: integer
+      description: '1 = PCT
+
+        3 = PPA
+
+        5 = PPB'
+      x-enumNames:
+      - PCT
+      - PPA
+      - PPB
+      enum:
+      - 1
+      - 3
+      - 5
+    UpgradeType:
+      type: integer
+      description: '1 = Upgrade
+
+        3 = Renew
+
+        5 = ChangePackage'
+      x-enumNames:
+      - Upgrade
+      - Renew
+      - ChangePackage
+      enum:
+      - 1
+      - 3
+      - 5
+    User:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstname:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+          minLength: 0
+        lastname:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+          minLength: 0
+        createdon:
+          type: string
+          format: date-time
+          default: CURRENT_TIMESTAMP
+        email:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+          minLength: 0
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+          maxLength: 2147483647
+          minLength: 0
+        mobile:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+          minLength: 0
+        referralCode:
+          type:
+          - string
+          - 'null'
+          maxLength: 50
+          minLength: 0
+    JournalEntryTemplateType:
+      type: integer
+      description: '1 = Default
+
+        3 = DocumentCreated
+
+        5 = Payment
+
+        7 = ChequeDate
+
+        9 = TaxNoRefund
+
+        11 = VATManagementHistory'
+      x-enumNames:
+      - Default
+      - DocumentCreated
+      - Payment
+      - ChequeDate
+      - TaxNoRefund
+      - VATManagementHistory
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+    FiscalYearStatus:
+      type: integer
+      description: '1 = Current
+
+        3 = Opening
+
+        5 = Closed'
+      x-enumNames:
+      - Current
+      - Opening
+      - Closed
+      enum:
+      - 1
+      - 3
+      - 5
+    PaymentChannel:
+      type: integer
+      description: '1 = Omise
+
+        3 = InAppIOS
+
+        5 = InAppAndriod
+
+        7 = UssdAis
+
+        9 = BankTranfer
+
+        11 = PrePaidSerial'
+      x-enumNames:
+      - Omise
+      - InAppIOS
+      - InAppAndriod
+      - UssdAis
+      - BankTranfer
+      - PrePaidSerial
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+    ProductUnit:
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          maxLength: 255
+          minLength: 0
+        isShare:
+          type: boolean
+        isDelete:
+          type: boolean
+    DocumentReferenceTypes:
+      type: integer
+      description: '1 = ImportDocument
+
+        3 = PartialPayments
+
+        5 = Batch
+
+        7 = Etax
+
+        9 = MiigratePartialPayments
+
+        11 = BatchPartialPayments
+
+        13 = DepositFirst
+
+        15 = DepositLast'
+      x-enumNames:
+      - ImportDocument
+      - PartialPayments
+      - Batch
+      - Etax
+      - MiigratePartialPayments
+      - BatchPartialPayments
+      - DepositFirst
+      - DepositLast
+      enum:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 11
+      - 13
+      - 15
+    IDocumentReference:
+      type: object
+      x-abstract: true
+      additionalProperties: false
       properties:
         id:
           type: integer
@@ -2748,67 +3062,79 @@ components:
         companyId:
           type: integer
           format: int64
-        documentDate:
-          type: string
-          format: date-time
-          default: CURRENT_TIMESTAMP
-          minLength: 1
+        referenceId:
+          type: integer
+          format: int64
+        referenceDocumentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        referenceDocumentSerial:
+          type:
+          - string
+          - 'null'
+        documentId:
+          type: integer
+          format: int64
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
         documentSerial:
-          type:
-          - string
-          - 'null'
-        contactName:
-          type:
-          - string
-          - 'null'
-        contactTaxId:
-          type:
-          - string
-          - 'null'
-        contactBranch:
           type:
           - string
           - 'null'
         isDelete:
           type: boolean
-        galleryId:
+        type:
+          $ref: '#/components/schemas/DocumentReferenceTypes'
+        documentStatus:
+          type: integer
+          format: int32
+        documentStatusString:
           type:
-          - integer
+          - string
           - 'null'
-          format: int64
-        referenceDocumentId:
-          type: integer
-          format: int64
-        referenceDocumentType:
-          $ref: '#/components/schemas/DocumentTypes'
-        createdBy:
-          type: integer
-          format: int64
-        modifiedBy:
-          type: integer
-          format: int64
-        createdOn:
+        documentDate:
           type: string
           format: date-time
-          default: CURRENT_TIMESTAMP
-          minLength: 1
-        modifiedOn:
+        documentAmount:
+          type: number
+          format: decimal
+        documentAmountWithVat:
+          type: number
+          format: decimal
+        refDocumentStatus:
+          type: integer
+          format: int32
+        refDocumentStatusString:
+          type:
+          - string
+          - 'null'
+        refDocumentDate:
           type: string
           format: date-time
-          default: CURRENT_TIMESTAMP
-          minLength: 1
-        company:
-          oneOf:
-          - $ref: '#/components/schemas/Company'
-        createdByUser:
-          oneOf:
-          - $ref: '#/components/schemas/User'
-        modifiedByUser:
-          oneOf:
-          - $ref: '#/components/schemas/User'
-        gallery:
-          oneOf:
-          - $ref: '#/components/schemas/Gallery'
+        refDocumentAmount:
+          type: number
+          format: decimal
+        refDocumentAmountWithVat:
+          type: number
+          format: decimal
+        partialPaymentTotalAmount:
+          type: number
+          format: decimal
+        partialPaymentTotalPercent:
+          type: number
+          format: decimal
+        refCreatedOn:
+          type: string
+          format: date-time
+        refModifiedOn:
+          type: string
+          format: date-time
+        refIsMigrate:
+          type: boolean
+        isCompileRule:
+          type: boolean
+        documentCollected:
+          type: number
+          format: decimal
     IJournalEntryBase:
       type: object
       x-abstract: true
@@ -2929,355 +3255,90 @@ components:
           type: boolean
         ruleCompileStatus:
           $ref: '#/components/schemas/RuleCompileStatus'
-    ReceivableInvoiceStatus:
+    ContactTypes:
       type: integer
-      description: '1 = Awaiting
+      description: '0 = OwnCompany
 
-        3 = Approved
+        3 = Client
 
-        5 = ApprovedAndProcessed
+        5 = Vendor
 
-        7 = Void
+        7 = VendorAndClient
 
-        9 = Delete'
+        9 = ExpenseVendor'
       x-enumNames:
-      - Awaiting
-      - Approved
-      - ApprovedAndProcessed
-      - Void
-      - Delete
+      - OwnCompany
+      - Client
+      - Vendor
+      - VendorAndClient
+      - ExpenseVendor
       enum:
-      - 1
+      - 0
       - 3
       - 5
       - 7
       - 9
-    Document2:
-      type: object
-      additionalProperties: false
-    FinancialTransactionType:
+    JournalEntryStatus:
       type: integer
-      description: '1 = Debit
+      description: '0 = Delete
 
-        3 = Credit'
+        1 = Awaiting
+
+        5 = Approved
+
+        9 = Void'
       x-enumNames:
-      - Debit
-      - Credit
+      - Delete
+      - Awaiting
+      - Approved
+      - Void
       enum:
+      - 0
       - 1
-      - 3
-    BankAccountType:
-      type: integer
-      description: '1 = SavingAccount
-
-        3 = CurrentAccount
-
-        5 = CreditCardAccount
-
-        7 = DepositAccount'
-      x-enumNames:
-      - SavingAccount
-      - CurrentAccount
-      - CreditCardAccount
-      - DepositAccount
-      enum:
-      - 1
-      - 3
       - 5
-      - 7
-    ContactResult:
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        contactType:
-          $ref: '#/components/schemas/ContactTypes'
-        code:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        addressLocal:
-          type:
-          - string
-          - 'null'
-        addressLocalLine2:
-          type:
-          - string
-          - 'null'
-        addressLocalLine3:
-          type:
-          - string
-          - 'null'
-        taxId:
-          type:
-          - string
-          - 'null'
-        branch:
-          type:
-          - string
-          - 'null'
-        branchCode:
-          type:
-          - string
-          - 'null'
-        contactPerson:
-          type:
-          - string
-          - 'null'
-        email:
-          type:
-          - string
-          - 'null'
-        mobile:
-          type:
-          - string
-          - 'null'
-        defaultCreditDays:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        office:
-          type:
-          - string
-          - 'null'
-        fax:
-          type:
-          - string
-          - 'null'
-        website:
-          type:
-          - string
-          - 'null'
-        shippingAddress:
-          type:
-          - string
-          - 'null'
-        internalNotes:
-          type:
-          - string
-          - 'null'
-        remarks:
-          type:
-          - string
-          - 'null'
-        zipCode:
-          type:
-          - string
-          - 'null'
-        bankId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        bankName:
-          type:
-          - string
-          - 'null'
-        bankBranch:
-          type:
-          - string
-          - 'null'
-        bankAccountNumber:
-          type:
-          - string
-          - 'null'
-        swiftCode:
-          type:
-          - string
-          - 'null'
-        bankAddress:
-          type:
-          - string
-          - 'null'
-        useForeignBank:
-          type: boolean
-        bankAccountType:
-          oneOf:
-          - $ref: '#/components/schemas/BankAccountType'
-        contactGroup:
-          $ref: '#/components/schemas/ContactGroups'
-        media:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Media'
-        qrCode:
-          oneOf:
-          - $ref: '#/components/schemas/Media'
-    Contact:
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: integer
-          format: int64
-        nameLocal:
-          type:
-          - string
-          - 'null'
-        nameForeign:
-          type:
-          - string
-          - 'null'
-        addressLocal:
-          type:
-          - string
-          - 'null'
-        addressForeign:
-          type:
-          - string
-          - 'null'
-        addressLocalLine2:
-          type:
-          - string
-          - 'null'
-        addressForeignLine2:
-          type:
-          - string
-          - 'null'
-        addressLocalLine3:
-          type:
-          - string
-          - 'null'
-        addressForeignLine3:
-          type:
-          - string
-          - 'null'
-        branch:
-          type:
-          - string
-          - 'null'
-        branchForeign:
-          type:
-          - string
-          - 'null'
-        companyTaxId:
-          type:
-          - string
-          - 'null'
-        fax:
-          type:
-          - string
-          - 'null'
-        phone1:
-          type:
-          - string
-          - 'null'
-        phone2:
-          type:
-          - string
-          - 'null'
-        phone3:
-          type:
-          - string
-          - 'null'
-        websites:
-          type:
-          - string
-          - 'null'
-        createdOn:
-          type: string
-          format: date-time
-        modifiedOn:
-          type: string
-          format: date-time
-        modifiedBy:
-          type: integer
-          format: int64
-        isDelete:
-          type: boolean
-        isDefault:
-          type: boolean
-        logoImage:
-          type:
-          - string
-          - 'null'
-        defaultCreditDays:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        vatRate:
-          type: integer
-          format: int32
-        email:
-          type:
-          - string
-          - 'null'
-        contactPerson:
-          type:
-          - string
-          - 'null'
-        isActive:
-          type: boolean
-        contactType:
-          $ref: '#/components/schemas/ContactTypes'
-        contactGroup:
-          $ref: '#/components/schemas/ContactGroups'
-        remarks:
-          type:
-          - string
-          - 'null'
-        galleryId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        branchCode:
-          type:
-          - string
-          - 'null'
-          maxLength: 50
-          minLength: 0
-        transactionId:
-          type:
-          - string
-          - 'null'
-          maxLength: 50
-          minLength: 0
-        resetTransactionId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        contactCode:
-          type:
-          - string
-          - 'null'
-        internalNotes:
-          type:
-          - string
-          - 'null'
-        shippingAddress:
-          type:
-          - string
-          - 'null'
-        zipCode:
-          type:
-          - string
-          - 'null'
-        swiftCode:
-          type:
-          - string
-          - 'null'
-        bankAddress:
-          type:
-          - string
-          - 'null'
-        useForeignBank:
-          type:
-          - boolean
-          - 'null'
-        isMigrate:
-          type: boolean
+      - 9
+    ContactGroups:
+      type: integer
+      description: '1 = Individual
+
+        3 = Juristic
+
+        9 = Undefined'
+      x-enumNames:
+      - Individual
+      - Juristic
+      - Undefined
+      enum:
+      - 1
+      - 3
+      - 9
+    CompanyTypeEnum:
+      type: integer
+      description: '10 = PrivateWithTax
+
+        20 = PrivateWithoutTax
+
+        30 = Personal
+
+        40 = PersonalWithTax
+
+        50 = PartnershipLimitedWithTax
+
+        60 = PartnershipLimitedWithoutTax'
+      x-enumNames:
+      - PrivateWithTax
+      - PrivateWithoutTax
+      - Personal
+      - PersonalWithTax
+      - PartnershipLimitedWithTax
+      - PartnershipLimitedWithoutTax
+      enum:
+      - 10
+      - 20
+      - 30
+      - 40
+      - 50
+      - 60
     PayrollPreferences:
       type: object
       additionalProperties: false
@@ -3357,36 +3418,14 @@ components:
           format: int32
         accessKConnect:
           type: boolean
-    ProductNonInventoryType:
-      type: integer
-      description: '1 = NonStockProduct
-
-        3 = SparepartProduct
-
-        5 = SampleProduct
-
-        7 = FreemiumProduct
-
-        9 = SupplyProduct
-
-        11 = OthersProduct'
-      x-enumNames:
-      - NonStockProduct
-      - SparepartProduct
-      - SampleProduct
-      - FreemiumProduct
-      - SupplyProduct
-      - OthersProduct
-      enum:
-      - 1
-      - 3
-      - 5
-      - 7
-      - 9
-      - 11
-    CompanySubscription:
+    SupplierInvoice:
       type: object
       additionalProperties: false
+      required:
+      - companyId
+      - documentDate
+      - createdOn
+      - modifiedOn
       properties:
         id:
           type: integer
@@ -3394,106 +3433,67 @@ components:
         companyId:
           type: integer
           format: int64
-        packageId:
-          type: integer
-          format: int32
-        packageStatus:
-          $ref: '#/components/schemas/PackageStatus'
-        transactionDate:
+        documentDate:
           type: string
           format: date-time
-        transactionId:
+          default: CURRENT_TIMESTAMP
+          minLength: 1
+        documentSerial:
           type:
           - string
           - 'null'
-        expirationDate:
-          type: string
-          format: date-time
-        couponId:
+        contactName:
+          type:
+          - string
+          - 'null'
+        contactTaxId:
+          type:
+          - string
+          - 'null'
+        contactBranch:
+          type:
+          - string
+          - 'null'
+        isDelete:
+          type: boolean
+        galleryId:
           type:
           - integer
           - 'null'
-          format: int32
-        paidBy:
+          format: int64
+        referenceDocumentId:
+          type: integer
+          format: int64
+        referenceDocumentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        createdBy:
+          type: integer
+          format: int64
+        modifiedBy:
           type: integer
           format: int64
         createdOn:
           type: string
           format: date-time
+          default: CURRENT_TIMESTAMP
+          minLength: 1
         modifiedOn:
           type: string
           format: date-time
-        days:
-          type: integer
-          format: int32
-        packageDays:
-          type: integer
-          format: int32
-        quantity:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        type:
-          $ref: '#/components/schemas/UpgradeType'
-        paymentChannel:
+          default: CURRENT_TIMESTAMP
+          minLength: 1
+        company:
           oneOf:
-          - $ref: '#/components/schemas/PaymentChannel'
-        value:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        isWithheld:
-          type: boolean
-        withheld:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        internalFile:
-          type:
-          - string
-          - 'null'
-        invoiceId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        remarks:
-          type:
-          - string
-          - 'null'
-        isRequestInvoice:
-          type:
-          - boolean
-          - 'null'
-        addOn:
-          type:
-          - string
-          - 'null'
-        packageList:
+          - $ref: '#/components/schemas/Company'
+        createdByUser:
           oneOf:
-          - $ref: '#/components/schemas/PackageList'
-        paySlipImageDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        paySlipImageTime:
-          type:
-          - string
-          - 'null'
-          format: time-span
-        paySlipImageAmount:
-          type:
-          - number
-          - 'null'
-          format: decimal
-        paySlipImageContact:
-          type:
-          - string
-          - 'null'
+          - $ref: '#/components/schemas/User'
+        modifiedByUser:
+          oneOf:
+          - $ref: '#/components/schemas/User'
+        gallery:
+          oneOf:
+          - $ref: '#/components/schemas/Gallery'
   securitySchemes:
     bearer:
       type: http

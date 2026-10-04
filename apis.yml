@@ -471,8 +471,6 @@ apis:
   humanURL: https://developers.flowaccount.com/
   baseURL: https://openapi.flowaccount.com/v3-alpha
   tags:
-  - CreditNote
-  tags_raw:
   - Credit Note
   properties:
   - type: OpenAPI
