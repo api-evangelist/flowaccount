@@ -1,0 +1,115 @@
+slug: flowaccount
+provider: FlowAccount
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 10
+edges:
+- tag: BillingNote
+  spec_file: flowaccount-billingnote-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.85
+  evidence: POST /{culture}/billing-notes/{id}/payments BillingNote_ReceivePayment To Accept payment with
+    the paymentModel
+  reason: Billing notes are customer-facing billing documents with payment receipt — customer invoicing
+    and cash application, i.e. Accounts Receivable Management.
+- tag: CashInvoice
+  spec_file: flowaccount-cashinvoice-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.85
+  evidence: POST /{culture}/cash-invoices/{id}/payments CashInvoice_ReceivePayment To Accept payment with
+    the paymentModel
+  reason: Creation, editing and payment receipt of customer cash invoices in a cloud accounting platform
+    — Accounts Receivable / customer invoicing.
+- tag: Credit Note
+  spec_file: flowaccount-credit-note-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.8
+  evidence: POST /{culture}/credit-notes/simple-document CreditNote_Create; POST /{culture}/credit-notes/{id}/payments
+    CreditNote_ReceivePayment
+  reason: Credit notes against customer invoices with payment handling — adjustment documents within customer
+    invoicing / accounts receivable.
+- tag: DebitNote
+  spec_file: flowaccount-debitnote-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.8
+  evidence: POST /{culture}/debit-notes/simple-document DebitNote_Create; POST /{culture}/debit-notes/{id}/payments
+    DebitNote_ReceivePayment
+  reason: Debit notes issued against customer documents with payment receipt — customer billing adjustments
+    within accounts receivable.
+- tag: Employee
+  spec_file: flowaccount-employee-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.8
+  evidence: GET /Employee Employee_GetList Get employee list with payrollQuery model; schema PayrollQuery,
+    Employee
+  reason: Employee record CRUD tied to the payroll product (PayrollQuery model) — employee records and
+    payroll administration, i.e. HR Operations Management.
+- tag: Purchase Order
+  spec_file: flowaccount-purchase-order-api-openapi.yml
+  capability_id: BC-500.30
+  capability_id_l1: BC-500
+  capability_name: Purchase Order Management
+  confidence: 0.8
+  evidence: POST /{culture}/purchase-orders/simple-document  PurchaseOrder_Create; POST /{culture}/purchase-orders/{documentId}/status-key/{statusKey}
+  reason: Creation, editing, approval-status change and deletion of purchase-order documents is plainly
+    purchase order management; the document-centric accounting context supports the procurement reading.
+- tag: ReceivableInvoice
+  spec_file: flowaccount-receivableinvoice-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.8
+  evidence: GET /{culture}/receivable-invoices  ReceivableInvoice_Index; POST /{culture}/receivable-invoices/{id}/payments  ReceivableInvoice_ReceivePayment
+  reason: Creation, editing and payment of receivable invoices is customer invoicing and cash application
+    — accounts receivable management in an accounting ledger.
+- tag: Quotation
+  spec_file: flowaccount-quotation-api-openapi.yml
+  capability_id: BC-410.40
+  capability_id_l1: BC-410
+  capability_name: Quote & Configuration Management
+  confidence: 0.75
+  evidence: POST /{culture}/quotations/simple-document  Quotation_Create  To Create a document with SimpleDocument
+    as the parameter
+  reason: Outbound customer quotation documents with product line items, status transitions and payment
+    acceptance — quote generation and management on the sales side. Vendor description confirms 'quotations'
+    as a core sales document.
+- tag: Expense
+  spec_file: flowaccount-expense-api-openapi.yml
+  capability_id: BC-200.20
+  capability_id_l1: BC-200
+  capability_name: Accounts Payable Management
+  confidence: 0.7
+  evidence: GET /{culture}/expenses/categories/accounting Expense_GetChartOfAccounts; POST /{culture}/expenses/simple-document
+    Expense_Create
+  reason: Creation and posting of supplier expense documents against chart-of-accounts categories — purchase
+    invoice capture and vendor accounting on the payables side of the ledger.
+- tag: Product Inventory
+  spec_file: flowaccount-product-inventory-api-openapi.yml
+  capability_id: BC-530.40
+  capability_id_l1: BC-530
+  capability_name: Inventory Accuracy Management
+  confidence: 0.7
+  evidence: POST /{culture}/product-inventories/adjust  ProductInventory_Adjust with schemas AdjustInventoryReason,
+    StockCard
+  reason: Operations read stock cards and post inventory adjustments with a reason code — stock-on-hand
+    correction, i.e. inventory management and specifically discrepancy/adjustment handling. Sub-capability
+    choice (accuracy vs. stock level) is somewhat uncertain.
