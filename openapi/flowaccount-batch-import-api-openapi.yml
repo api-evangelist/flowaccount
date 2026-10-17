@@ -402,168 +402,110 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/BatchImportMetadata'
-    Document:
+    UpgradeDocument:
       type: object
       additionalProperties: false
       properties:
         recordId:
           type: integer
           format: int64
-        contactCode:
+        referenceDocumentSerial:
           type:
           - string
           - 'null'
-        contactName:
-          type:
-          - string
-          - 'null'
-        contactAddress:
-          type:
-          - string
-          - 'null'
-        contactTaxId:
-          type:
-          - string
-          - 'null'
-        contactBranch:
-          type:
-          - string
-          - 'null'
-        contactPerson:
-          type:
-          - string
-          - 'null'
-        contactEmail:
-          type:
-          - string
-          - 'null'
-        contactNumber:
-          type:
-          - string
-          - 'null'
-        contactZipCode:
-          type:
-          - string
-          - 'null'
-        contactGroup:
+        referenceDocumentType:
           type: integer
-          format: int32
-        publishedOn:
-          type: string
-          format: date-time
-        creditType:
-          type: integer
-          format: int32
-        creditDays:
-          type: integer
-          format: int32
-        dueDate:
-          type: string
-          format: date-time
-        salesName:
-          type:
-          - string
-          - 'null'
-        projectName:
-          type:
-          - string
-          - 'null'
-        reference:
-          type:
-          - string
-          - 'null'
-        isVatInclusive:
-          type: boolean
-        useReceiptDeduction:
-          type: boolean
-        subTotal:
-          type: number
-          format: decimal
-        discountPercentage:
-          type: integer
-          format: int32
-        discountAmount:
-          type: number
-          format: decimal
-        totalAfterDiscount:
-          type: number
-          format: decimal
-        isVat:
-          type: boolean
-        vatAmount:
-          type: number
-          format: decimal
-        grandTotal:
-          type: number
-          format: decimal
-        documentShowWithholdingTax:
-          type: boolean
-        documentWithholdingTaxPercentage:
-          type: integer
-          format: int32
-        documentWithholdingTaxAmount:
-          type: number
-          format: decimal
-        documentDeductionType:
-          type: integer
-          format: int32
-        documentDeductionAmount:
-          type: number
-          format: decimal
-        remarks:
-          type:
-          - string
-          - 'null'
-        internalNotes:
-          type:
-          - string
-          - 'null'
-        showSignatureOrStamp:
-          type: boolean
-        documentStructureType:
-          type:
-          - string
-          - 'null'
-        externalId:
-          type:
-          - string
-          - 'null'
-        saleAndPurchaseChannel:
-          type:
-          - string
-          - 'null'
-        rowIndex:
-          type:
-          - string
-          - 'null'
-    CustomTemplate:
+          format: int64
+    BatchImportMetadata:
       type: object
       additionalProperties: false
       properties:
-        id:
-          type: integer
-          format: int64
-        name:
+        companyUserGuid:
           type:
           - string
           - 'null'
-        sheetIndex:
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        templateId:
+          type:
+          - string
+          - 'null'
+        batchId:
+          type:
+          - string
+          - 'null'
+        filename:
+          type:
+          - string
+          - 'null'
+        documentType:
+          $ref: '#/components/schemas/DocumentTypes'
+        status:
+          $ref: '#/components/schemas/BatchImportStatus'
+        documentCount:
           type: integer
           format: int32
-        columns: {}
-        dateFormat:
-          oneOf:
-          - $ref: '#/components/schemas/DateInfo'
-        ignoreLastRow:
-          type: boolean
-        imageUrl:
+        successCount:
+          type: integer
+          format: int32
+        failedCount:
+          type: integer
+          format: int32
+        s3Key:
           type:
           - string
           - 'null'
-        customTemplateInfo:
+        userId:
+          type: integer
+          format: int64
+        companyId:
+          type: integer
+          format: int64
+        isViewed:
+          type: boolean
+    BatchStatus:
+      type: object
+      additionalProperties: false
+      properties:
+        messages:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BatchMessageStatus'
+        metadata:
           oneOf:
-          - $ref: '#/components/schemas/CustomTemplateInfo'
-        formulas: {}
+          - $ref: '#/components/schemas/BatchImportMetadata'
+    CustomTemplateInfo:
+      type: object
+      additionalProperties: false
+      properties:
+        headerIndex:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        includeTax:
+          type:
+          - string
+          - 'null'
+        isChooseDateColumn:
+          type: boolean
+        isChooseUnitPriceColumn:
+          type: boolean
+        columns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CustomTemplateColumn'
     DocumentTypes:
       type: integer
       description: '1 = PurchaseOrder
@@ -723,67 +665,77 @@ components:
       - 202
       - 203
       - 204
+    CustomTemplate:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type:
+          - string
+          - 'null'
+        sheetIndex:
+          type: integer
+          format: int32
+        columns: {}
+        dateFormat:
+          oneOf:
+          - $ref: '#/components/schemas/DateInfo'
+        ignoreLastRow:
+          type: boolean
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        customTemplateInfo:
+          oneOf:
+          - $ref: '#/components/schemas/CustomTemplateInfo'
+        formulas: {}
     CustomTemplateColumn:
       type: object
       additionalProperties: false
-    BatchStatus:
+    ProductItem:
       type: object
       additionalProperties: false
       properties:
-        messages:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/BatchMessageStatus'
-        metadata:
-          oneOf:
-          - $ref: '#/components/schemas/BatchImportMetadata'
-    BatchMessageStatus:
-      type: object
-      additionalProperties: false
-      properties:
-        companyUserGuid:
-          type:
-          - string
-          - 'null'
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        batchId:
-          type:
-          - string
-          - 'null'
-        status:
-          $ref: '#/components/schemas/BatchImportStatus'
-        messageId:
-          type:
-          - string
-          - 'null'
-        failedReason:
-          type:
-          - string
-          - 'null'
-        payload:
-          type:
-          - string
-          - 'null'
-        retryCount:
+        type:
           type: integer
           format: int32
-        documentSerial:
+        name:
           type:
           - string
           - 'null'
-        sqlId:
-          type: integer
-          format: int64
-        rowIndex:
-          type: integer
-          format: int32
+        description:
+          type:
+          - string
+          - 'null'
+        quantity:
+          type: number
+          format: decimal
+        unitName:
+          type:
+          - string
+          - 'null'
+        pricePerUnit:
+          type: number
+          format: decimal
+        total:
+          type: number
+          format: decimal
+        sellChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        buyChartOfAccountCode:
+          type:
+          - string
+          - 'null'
+        productCode:
+          type:
+          - string
+          - 'null'
     SimpleDocument:
       example:
         items:
@@ -860,6 +812,51 @@ components:
             - number
             - 'null'
             format: decimal
+    BatchMessageStatus:
+      type: object
+      additionalProperties: false
+      properties:
+        companyUserGuid:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        batchId:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/BatchImportStatus'
+        messageId:
+          type:
+          - string
+          - 'null'
+        failedReason:
+          type:
+          - string
+          - 'null'
+        payload:
+          type:
+          - string
+          - 'null'
+        retryCount:
+          type: integer
+          format: int32
+        documentSerial:
+          type:
+          - string
+          - 'null'
+        sqlId:
+          type: integer
+          format: int64
+        rowIndex:
+          type: integer
+          format: int32
     BatchImportPayload:
       type: object
       additionalProperties: false
@@ -881,113 +878,137 @@ components:
         batchCount:
           type: integer
           format: int32
-    SimpleProductItem:
-      allOf:
-      - $ref: '#/components/schemas/ProductItem'
-      - type: object
-        additionalProperties: false
-    BatchImportMetadata:
+    Document:
       type: object
       additionalProperties: false
       properties:
-        companyUserGuid:
-          type:
-          - string
-          - 'null'
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        templateId:
-          type:
-          - string
-          - 'null'
-        batchId:
-          type:
-          - string
-          - 'null'
-        filename:
-          type:
-          - string
-          - 'null'
-        documentType:
-          $ref: '#/components/schemas/DocumentTypes'
-        status:
-          $ref: '#/components/schemas/BatchImportStatus'
-        documentCount:
-          type: integer
-          format: int32
-        successCount:
-          type: integer
-          format: int32
-        failedCount:
-          type: integer
-          format: int32
-        s3Key:
-          type:
-          - string
-          - 'null'
-        userId:
+        recordId:
           type: integer
           format: int64
-        companyId:
+        contactCode:
+          type:
+          - string
+          - 'null'
+        contactName:
+          type:
+          - string
+          - 'null'
+        contactAddress:
+          type:
+          - string
+          - 'null'
+        contactTaxId:
+          type:
+          - string
+          - 'null'
+        contactBranch:
+          type:
+          - string
+          - 'null'
+        contactPerson:
+          type:
+          - string
+          - 'null'
+        contactEmail:
+          type:
+          - string
+          - 'null'
+        contactNumber:
+          type:
+          - string
+          - 'null'
+        contactZipCode:
+          type:
+          - string
+          - 'null'
+        contactGroup:
           type: integer
-          format: int64
-        isViewed:
+          format: int32
+        publishedOn:
+          type: string
+          format: date-time
+        creditType:
+          type: integer
+          format: int32
+        creditDays:
+          type: integer
+          format: int32
+        dueDate:
+          type: string
+          format: date-time
+        salesName:
+          type:
+          - string
+          - 'null'
+        projectName:
+          type:
+          - string
+          - 'null'
+        reference:
+          type:
+          - string
+          - 'null'
+        isVatInclusive:
           type: boolean
-    BatchImportRetry:
-      type: object
-      additionalProperties: false
-      properties:
-        batchId:
-          type:
-          - string
-          - 'null'
-        messageIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-    ProductItem:
-      type: object
-      additionalProperties: false
-      properties:
-        type:
+        useReceiptDeduction:
+          type: boolean
+        subTotal:
+          type: number
+          format: decimal
+        discountPercentage:
           type: integer
           format: int32
-        name:
-          type:
-          - string
-          - 'null'
-        description:
-          type:
-          - string
-          - 'null'
-        quantity:
+        discountAmount:
           type: number
           format: decimal
-        unitName:
-          type:
-          - string
-          - 'null'
-        pricePerUnit:
+        totalAfterDiscount:
           type: number
           format: decimal
-        total:
+        isVat:
+          type: boolean
+        vatAmount:
           type: number
           format: decimal
-        sellChartOfAccountCode:
+        grandTotal:
+          type: number
+          format: decimal
+        documentShowWithholdingTax:
+          type: boolean
+        documentWithholdingTaxPercentage:
+          type: integer
+          format: int32
+        documentWithholdingTaxAmount:
+          type: number
+          format: decimal
+        documentDeductionType:
+          type: integer
+          format: int32
+        documentDeductionAmount:
+          type: number
+          format: decimal
+        remarks:
           type:
           - string
           - 'null'
-        buyChartOfAccountCode:
+        internalNotes:
           type:
           - string
           - 'null'
-        productCode:
+        showSignatureOrStamp:
+          type: boolean
+        documentStructureType:
+          type:
+          - string
+          - 'null'
+        externalId:
+          type:
+          - string
+          - 'null'
+        saleAndPurchaseChannel:
+          type:
+          - string
+          - 'null'
+        rowIndex:
           type:
           - string
           - 'null'
@@ -1003,46 +1024,25 @@ components:
           type:
           - string
           - 'null'
-    UpgradeDocument:
+    SimpleProductItem:
+      allOf:
+      - $ref: '#/components/schemas/ProductItem'
+      - type: object
+        additionalProperties: false
+    BatchImportRetry:
       type: object
       additionalProperties: false
       properties:
-        recordId:
-          type: integer
-          format: int64
-        referenceDocumentSerial:
+        batchId:
           type:
           - string
           - 'null'
-        referenceDocumentType:
-          type: integer
-          format: int64
-    CustomTemplateInfo:
-      type: object
-      additionalProperties: false
-      properties:
-        headerIndex:
-          type:
-          - string
-          - 'null'
-        productName:
-          type:
-          - string
-          - 'null'
-        includeTax:
-          type:
-          - string
-          - 'null'
-        isChooseDateColumn:
-          type: boolean
-        isChooseUnitPriceColumn:
-          type: boolean
-        columns:
+        messageIds:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/CustomTemplateColumn'
+            type: string
   securitySchemes:
     bearer:
       type: http
